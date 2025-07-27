@@ -1,6 +1,6 @@
 export { default as D } from './D'
 export { default as DiagonalDividingLine } from './DiagonalDividingLine'
-export { default as LovMe } from './LovMe'
+export { default as Neurora } from './Neurora'
 export { default as Gdpr } from './Gdpr'
 export { default as Github } from './Github'
 export { default as Highlight } from './Highlight'

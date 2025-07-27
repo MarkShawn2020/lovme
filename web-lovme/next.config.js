@@ -57,15 +57,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: true,
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/apps',
-        permanent: false,
-      },
-    ]
-  },
   output: 'standalone',
 }
 

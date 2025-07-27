@@ -11,9 +11,9 @@ import type {
   IWorkspace,
   InitValidateStatusResponse,
   InvitationResponse,
-  LangGeniusVersionResponse,
   Member,
   ModerateResponse,
+  NeuroraVersionResponse,
   OauthResponse,
   PluginProvider,
   Provider,
@@ -88,8 +88,8 @@ export const logout: Fetcher<CommonResponse, { url: string; params: Record<strin
   return get<CommonResponse>(url, params)
 }
 
-export const fetchLangGeniusVersion: Fetcher<LangGeniusVersionResponse, { url: string; params: Record<string, any> }> = ({ url, params }) => {
-  return get<LangGeniusVersionResponse>(url, { params })
+export const fetchNeuroraVersion: Fetcher<NeuroraVersionResponse, { url: string; params: Record<string, any> }> = ({ url, params }) => {
+  return get<NeuroraVersionResponse>(url, { params })
 }
 
 export const oauth: Fetcher<OauthResponse, { url: string; params: Record<string, any> }> = ({ url, params }) => {

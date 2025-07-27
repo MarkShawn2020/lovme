@@ -5,23 +5,23 @@ import dayjs from 'dayjs'
 import { RiCloseLine } from '@remixicon/react'
 import Modal from '@/app/components/base/modal'
 import Button from '@/app/components/base/button'
-import type { LangGeniusVersionResponse } from '@/models/common'
+import type { NeuroraVersionResponse } from '@/models/common'
 import { IS_CE_EDITION } from '@/config'
-import LovMeLogo from '@/app/components/base/logo/lovme-logo'
+import NeuroraLogo from '@/app/components/base/logo/neurora-logo'
 import { noop } from 'lodash-es'
 import { useGlobalPublicStore } from '@/context/global-public-context'
 
 type IAccountSettingProps = {
-  langGeniusVersionInfo: LangGeniusVersionResponse
+  neuroraVersionInfo: NeuroraVersionResponse
   onCancel: () => void
 }
 
 export default function AccountAbout({
-  langGeniusVersionInfo,
+  neuroraVersionInfo,
   onCancel,
 }: IAccountSettingProps) {
   const { t } = useTranslation()
-  const isLatest = langGeniusVersionInfo.current_version === langGeniusVersionInfo.latest_version
+  const isLatest = neuroraVersionInfo.current_version === neuroraVersionInfo.latest_version
   const systemFeatures = useGlobalPublicStore(s => s.systemFeatures)
 
   return (
@@ -41,9 +41,9 @@ export default function AccountAbout({
               className='block h-7 w-auto object-contain'
               alt='logo'
             />
-            : <LovMeLogo size='large' className='mx-auto' />}
+            : <NeuroraLogo size='large' className='mx-auto' />}
 
-          <div className='text-center text-xs font-normal text-text-tertiary'>Version {langGeniusVersionInfo?.current_version}</div>
+          <div className='text-center text-xs font-normal text-text-tertiary'>Version {neuroraVersionInfo?.current_version}</div>
           <div className='flex flex-col items-center gap-2 text-center text-xs font-normal text-text-secondary'>
             <div>© {dayjs().year()} Neurora Tech, Contributors.</div>
             <div className='text-text-accent'>
@@ -63,8 +63,8 @@ export default function AccountAbout({
           <div className='text-xs font-medium text-text-tertiary'>
             {
               isLatest
-                ? t('common.about.latestAvailable', { version: langGeniusVersionInfo.latest_version })
-                : t('common.about.nowAvailable', { version: langGeniusVersionInfo.latest_version })
+                ? t('common.about.latestAvailable', { version: neuroraVersionInfo.latest_version })
+                : t('common.about.nowAvailable', { version: neuroraVersionInfo.latest_version })
             }
           </div>
           <div className='flex items-center'>
@@ -80,7 +80,7 @@ export default function AccountAbout({
               !isLatest && !IS_CE_EDITION && (
                 <Button variant='primary' size='small'>
                   <Link
-                    href={langGeniusVersionInfo.release_notes}
+                    href={neuroraVersionInfo.release_notes}
                     target='_blank' rel='noopener noreferrer'
                   >
                     {t('common.about.updateNow')}

@@ -11,7 +11,7 @@ import Tooltip from '@/app/components/base/tooltip'
 import ActionButton from '@/app/components/base/action-button'
 import Divider from '@/app/components/base/divider'
 import ViewFormDropdown from '@/app/components/base/chat/embedded-chatbot/inputs-form/view-form-dropdown'
-import LovMeLogo from '@/app/components/base/logo/lovme-logo'
+import NeuroraLogo from '@/app/components/base/logo/neurora-logo'
 import cn from '@/utils/classnames'
 import { useGlobalPublicStore } from '@/context/global-public-context'
 
@@ -92,7 +92,7 @@ const Header: FC<IHeaderProps> = ({
                     ? <img src={systemFeatures.branding.workspace_logo} alt='logo' className='block h-5 w-auto' />
                     : appData?.custom_config?.replace_webapp_logo
                       ? <img src={`${appData?.custom_config?.replace_webapp_logo}`} alt='logo' className='block h-5 w-auto' />
-                      : <LovMeLogo size='small' />
+                      : <NeuroraLogo size='small' />
                 }
               </div>
             )}

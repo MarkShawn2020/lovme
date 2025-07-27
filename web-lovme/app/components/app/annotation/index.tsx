@@ -60,7 +60,6 @@ const Annotation: FC<Props> = (props) => {
 
   useEffect(() => {
     if (isChatApp) fetchAnnotationConfig()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const ensureJobCompleted = async (jobId: string, status: AnnotationEnableStatus) => {
@@ -89,7 +88,6 @@ const Annotation: FC<Props> = (props) => {
 
   useEffect(() => {
     fetchList(currPage + 1)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currPage, limit, debouncedQueryParams])
 
   const handleAdd = async (payload: AnnotationItemBasic) => {

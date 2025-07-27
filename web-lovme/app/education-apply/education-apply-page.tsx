@@ -23,7 +23,7 @@ import { useProviderContext } from '@/context/provider-context'
 import { useToastContext } from '@/app/components/base/toast'
 import { EDUCATION_VERIFYING_LOCALSTORAGE_ITEM } from '@/app/education-apply/constants'
 import { noop } from 'lodash-es'
-import LovMeLogo from '../components/base/logo/lovme-logo'
+import NeuroraLogo from '../components/base/logo/neurora-logo'
 import { useDocLink } from '@/context/i18n'
 const EducationApplyAge = () => {
   const { t } = useTranslation()
@@ -85,7 +85,7 @@ const EducationApplyAge = () => {
         >
         </div>
         <div className='mt-[-349px] box-content flex h-7 items-center justify-between p-6'>
-          <LovMeLogo size='large' style='monochromeWhite' />
+          <NeuroraLogo size='large' style='monochromeWhite' />
         </div>
         <div className='mx-auto max-w-[720px] px-8 pb-[180px]'>
           <div className='mb-2 flex h-[192px] flex-col justify-end pb-4 pt-3 text-text-primary-on-surface'>

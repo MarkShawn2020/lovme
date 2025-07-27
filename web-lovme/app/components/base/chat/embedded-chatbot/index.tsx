@@ -16,7 +16,7 @@ import Loading from '@/app/components/base/loading'
 import LogoHeader from '@/app/components/base/logo/logo-embedded-chat-header'
 import Header from '@/app/components/base/chat/embedded-chatbot/header'
 import ChatWrapper from '@/app/components/base/chat/embedded-chatbot/chat-wrapper'
-import LovMeLogo from '@/app/components/base/logo/lovme-logo'
+import NeuroraLogo from '@/app/components/base/logo/neurora-logo'
 import cn from '@/utils/classnames'
 import useDocumentTitle from '@/hooks/use-document-title'
 import { useGlobalPublicStore } from '@/context/global-public-context'
@@ -84,7 +84,7 @@ const Chatbot = () => {
                   ? <img src={systemFeatures.branding.workspace_logo} alt='logo' className='block h-5 w-auto' />
                   : appData?.custom_config?.replace_webapp_logo
                     ? <img src={`${appData?.custom_config?.replace_webapp_logo}`} alt='logo' className='block h-5 w-auto' />
-                    : <LovMeLogo size='small' />
+                    : <NeuroraLogo size='small' />
               }
             </div>
           )}

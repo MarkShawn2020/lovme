@@ -32,6 +32,7 @@ const NAMESPACES = [
   'dataset',
   'education',
   'explore',
+  'landing',
   'layout',
   'login',
   'plugin-tags',

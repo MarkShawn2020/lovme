@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic'
 import { useGlobalPublicStore } from '@/context/global-public-context'
 
 // Avoid rendering the logo and theme selector on the server
-const LovMeLogo = dynamic(() => import('@/app/components/base/logo/lovme-logo'), {
+const NeuroraLogo = dynamic(() => import('@/app/components/base/logo/neurora-logo'), {
   ssr: false,
   loading: () => <div className='h-7 w-16 bg-transparent' />,
 })
@@ -31,7 +31,7 @@ const Header = () => {
           className='block h-7 w-auto object-contain'
           alt='logo'
         />
-        : <LovMeLogo size='large' />}
+        : <NeuroraLogo size='large' />}
       <div className='flex items-center gap-1'>
         <Select
           value={locale}

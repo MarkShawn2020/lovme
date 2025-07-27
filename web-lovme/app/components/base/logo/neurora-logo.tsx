@@ -18,13 +18,13 @@ export const logoSizeMap: Record<LogoSize, string> = {
   small: 'w-9 h-4',
 }
 
-type LovMeLogoProps = {
+type NeuroraLogoProps = {
   style?: LogoStyle
   size?: LogoSize
   className?: string
 }
 
-const LovMeLogo: FC<LovMeLogoProps> = ({
+const NeuroraLogo: FC<NeuroraLogoProps> = ({
   style = 'default',
   size = 'medium',
   className,
@@ -36,9 +36,9 @@ const LovMeLogo: FC<LovMeLogoProps> = ({
     <img
       src={`${basePath}${logoPathMap[themedStyle]}`}
       className={classNames('block object-contain', logoSizeMap[size], className)}
-      alt='LovMe logo'
+      alt='Neurora logo'
     />
   )
 }
 
-export default LovMeLogo
+export default NeuroraLogo

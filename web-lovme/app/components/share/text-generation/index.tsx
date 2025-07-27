@@ -35,7 +35,7 @@ import Toast from '@/app/components/base/toast'
 import type { VisionFile, VisionSettings } from '@/types/app'
 import { Resolution, TransferMethod } from '@/types/app'
 import { useAppFavicon } from '@/hooks/use-app-favicon'
-import LovMeLogo from '@/app/components/base/logo/lovme-logo'
+import NeuroraLogo from '@/app/components/base/logo/neurora-logo'
 import cn from '@/utils/classnames'
 import { AccessMode } from '@/models/access-control'
 import { useGlobalPublicStore } from '@/context/global-public-context'
@@ -599,7 +599,7 @@ const TextGeneration: FC<IMainProps> = ({
                 ? <img src={systemFeatures.branding.workspace_logo} alt='logo' className='block h-5 w-auto' />
                 : customConfig?.replace_webapp_logo
                   ? <img src={`${customConfig?.replace_webapp_logo}`} alt='logo' className='block h-5 w-auto' />
-                  : <LovMeLogo size='small' />
+                  : <NeuroraLogo size='small' />
             }
           </div>
         )}

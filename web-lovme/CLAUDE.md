@@ -96,3 +96,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Environment**: Development requires `.env.local` configuration
 - **Build Output**: Configured for standalone deployment
 - **Performance**: Large codebase with 40k+ files - use specific paths when exploring
+
+## Development Hints
+
+- When working locally in dev mode, do not build the application
+- Use `pnpm eslint-fix-only-show-error` to ensure no compilation errors
