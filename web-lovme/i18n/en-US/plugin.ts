@@ -249,7 +249,7 @@ const translation = {
     empower: 'Empower your AI development',
     discover: 'Discover',
     and: 'and',
-    difyMarketplace: 'Dify Marketplace',
+    difyMarketplace: 'LovMe Marketplace',
     moreFrom: 'More from Marketplace',
     noPluginFound: 'No plugin found',
     pluginsResult: '{{num}} results',
@@ -261,8 +261,8 @@ const translation = {
       firstReleased: 'First Released',
     },
     viewMore: 'View more',
-    verifiedTip: 'Verified by Dify',
-    partnerTip: 'Verified by a Dify partner',
+    verifiedTip: 'Verified by LovMe',
+    partnerTip: 'Verified by a LovMe partner',
   },
   task: {
     installing: 'Installing {{installingLength}} plugins, 0 done.',
@@ -274,7 +274,7 @@ const translation = {
   },
   requestAPlugin: 'Request a plugin',
   publishPlugins: 'Publish plugins',
-  difyVersionNotCompatible: 'The current Dify version is not compatible with this plugin, please upgrade to the minimum version required: {{minimalDifyVersion}}',
+  difyVersionNotCompatible: 'The current LovMe version is not compatible with this plugin, please upgrade to the minimum version required: {{minimalLovMeVersion}}',
   auth: {
     default: 'Default',
     custom: 'Custom',

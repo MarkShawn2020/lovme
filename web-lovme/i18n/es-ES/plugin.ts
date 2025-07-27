@@ -192,9 +192,9 @@ const translation = {
     pluginsResult: '{{num}} resultados',
     discover: 'Descubrir',
     and: 'y',
-    difyMarketplace: 'Mercado de Dify',
-    verifiedTip: 'Verificado por Dify',
-    partnerTip: 'Verificado por un socio de Dify',
+    difyMarketplace: 'Mercado de LovMe',
+    verifiedTip: 'Verificado por LovMe',
+    partnerTip: 'Verificado por un socio de LovMe',
   },
   task: {
     installing: 'Instalando plugins {{installingLength}}, 0 hecho.',
@@ -221,7 +221,7 @@ const translation = {
   metadata: {
     title: 'Complementos',
   },
-  difyVersionNotCompatible: 'La versión actual de Dify no es compatible con este plugin, por favor actualiza a la versión mínima requerida: {{minimalDifyVersion}}',
+  difyVersionNotCompatible: 'La versión actual de LovMe no es compatible con este plugin, por favor actualiza a la versión mínima requerida: {{minimalLovMeVersion}}',
   requestAPlugin: 'Solicitar un plugin',
   publishPlugins: 'Publicar plugins',
   auth: {

@@ -1076,7 +1076,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
 
     <Properties>
       <Property name='message_id' type='str' key='message_id'>
-        Difyによって生成されたテキストメッセージの場合、生成されたメッセージIDを直接渡します。バックエンドはメッセージIDを使用して対応する内容を検索し、音声情報を直接合成します。message_idとtextが同時に提供される場合、message_idが優先されます。
+        LovMeによって生成されたテキストメッセージの場合、生成されたメッセージIDを直接渡します。バックエンドはメッセージIDを使用して対応する内容を検索し、音声情報を直接合成します。message_idとtextが同時に提供される場合、message_idが優先されます。
       </Property>
       <Property name='text' type='str' key='text'>
         音声生成コンテンツ。
@@ -1088,7 +1088,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
   </Col>
   <Col sticky>
 
-    <CodeGroup title="リクエスト" tag="POST" label="/text-to-audio" targetCode={`curl -o text-to-audio.mp3 -X POST '${props.appDetail.api_base_url}/text-to-audio' \\\n--header 'Authorization: Bearer {api_key}' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    "message_id": "5ad4cb98-f0c7-4085-b384-88c403be6290",\n    "text": "Hello Dify",\n    "user": "abc-123"\n}'`}>
+    <CodeGroup title="リクエスト" tag="POST" label="/text-to-audio" targetCode={`curl -o text-to-audio.mp3 -X POST '${props.appDetail.api_base_url}/text-to-audio' \\\n--header 'Authorization: Bearer {api_key}' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    "message_id": "5ad4cb98-f0c7-4085-b384-88c403be6290",\n    "text": "Hello LovMe",\n    "user": "abc-123"\n}'`}>
 
     ```bash {{ title: 'cURL' }}
     curl -o text-to-audio.mp3 -X POST '${props.appDetail.api_base_url}/text-to-audio' \
@@ -1096,7 +1096,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
     --header 'Content-Type: application/json' \
     --data-raw '{
         "message_id": "5ad4cb98-f0c7-4085-b384-88c403be6290",
-        "text": "Hello Dify",
+        "text": "Hello LovMe",
         "user": "abc-123",
         "streaming": false
     }'
@@ -1148,7 +1148,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
         "tag2"
       ],
       "mode": "advanced-chat",
-      "author_name": "Dify"
+      "author_name": "LovMe"
     }
     ```
     </CodeGroup>

@@ -189,12 +189,12 @@ const translation = {
     noPluginFound: 'Плагин не найден',
     sortBy: 'Черный город',
     empower: 'Расширьте возможности разработки ИИ',
-    difyMarketplace: 'Торговая площадка Dify',
+    difyMarketplace: 'Торговая площадка LovMe',
     viewMore: 'Подробнее',
     and: 'и',
     discover: 'Обнаруживать',
-    verifiedTip: 'Подтверждено Dify',
-    partnerTip: 'Подтверждено партнером Dify',
+    verifiedTip: 'Подтверждено LovMe',
+    partnerTip: 'Подтверждено партнером LovMe',
   },
   task: {
     installing: 'Установка плагинов {{installingLength}}, 0 готово.',
@@ -221,7 +221,7 @@ const translation = {
   metadata: {
     title: 'Плагины',
   },
-  difyVersionNotCompatible: 'Текущая версия Dify не совместима с этим плагином, пожалуйста, обновите до минимально необходимой версии: {{minimalDifyVersion}}',
+  difyVersionNotCompatible: 'Текущая версия LovMe не совместима с этим плагином, пожалуйста, обновите до минимально необходимой версии: {{minimalLovMeVersion}}',
   requestAPlugin: 'Запросите плагин',
   publishPlugins: 'Публикация плагинов',
   auth: {

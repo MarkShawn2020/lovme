@@ -18,13 +18,13 @@ export const logoSizeMap: Record<LogoSize, string> = {
   small: 'w-9 h-4',
 }
 
-type DifyLogoProps = {
+type LovMeLogoProps = {
   style?: LogoStyle
   size?: LogoSize
   className?: string
 }
 
-const DifyLogo: FC<DifyLogoProps> = ({
+const LovMeLogo: FC<LovMeLogoProps> = ({
   style = 'default',
   size = 'medium',
   className,
@@ -36,9 +36,9 @@ const DifyLogo: FC<DifyLogoProps> = ({
     <img
       src={`${basePath}${logoPathMap[themedStyle]}`}
       className={classNames('block object-contain', logoSizeMap[size], className)}
-      alt='Dify logo'
+      alt='LovMe logo'
     />
   )
 }
 
-export default DifyLogo
+export default LovMeLogo

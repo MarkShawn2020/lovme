@@ -33,14 +33,14 @@ describe('use default branding', () => {
       })
     })
   })
-  it('document title should be test-Dify if set title', () => {
+  it('document title should be test-LovMe if set title', () => {
     renderHook(() => useDocumentTitle('test'))
-    expect(document.title).toBe('test - Dify')
+    expect(document.title).toBe('test - LovMe')
   })
 
-  it('document title should be Dify if not set title', () => {
+  it('document title should be LovMe if not set title', () => {
     renderHook(() => useDocumentTitle(''))
-    expect(document.title).toBe('Dify')
+    expect(document.title).toBe('LovMe')
   })
 })
 
