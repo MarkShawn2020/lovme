@@ -50,7 +50,7 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <main className="relative">
-        <section className="flex h-screen flex-col items-center justify-center px-4 py-20 text-center">
+        <section className="flex min-h-screen flex-col items-center justify-center px-4 py-20 text-center">
           <div className="mx-auto max-w-7xl">
             <h1 className="supabase-h1">
               {t('landing.hero.title')}

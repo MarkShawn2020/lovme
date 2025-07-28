@@ -3,6 +3,9 @@ import { useTheme as useBaseTheme } from 'next-themes'
 
 const useTheme = () => {
   const { theme, resolvedTheme, ...rest } = useBaseTheme()
+
+  console.log({theme, resolvedTheme});
+  
   return {
     // only returns 'light' or 'dark' theme
     theme: theme === Theme.system ? resolvedTheme as Theme : theme as Theme,
