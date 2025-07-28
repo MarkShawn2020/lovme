@@ -160,6 +160,18 @@ const config = {
       },
       animation: {
         'spin-slow': 'spin 2s linear infinite',
+        'marquee-right': 'marquee-right 40s linear infinite',
+        'marquee-left': 'marquee-left 40s linear infinite',
+      },
+      keyframes: {
+        'marquee-right': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-left': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
     },
   },
