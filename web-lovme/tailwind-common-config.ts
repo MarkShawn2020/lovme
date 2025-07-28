@@ -162,6 +162,8 @@ const config = {
         'spin-slow': 'spin 2s linear infinite',
         'marquee-right': 'marquee-right 40s linear infinite',
         'marquee-left': 'marquee-left 40s linear infinite',
+        'gradient': 'gradient 3s linear infinite',
+        'float': 'float 3s ease-in-out infinite',
       },
       keyframes: {
         'marquee-right': {
@@ -171,6 +173,14 @@ const config = {
         'marquee-left': {
           '0%': { transform: 'translateX(-50%)' },
           '100%': { transform: 'translateX(0)' },
+        },
+        'gradient': {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
     },

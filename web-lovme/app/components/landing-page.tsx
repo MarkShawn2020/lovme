@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
+import cn from '@/utils/classnames'
 import NeuroraLogo from '@/app/components/base/logo/neurora-logo'
 import FeatureCard from '@/app/components/base/feature-card'
 import TestimonialCard from '@/app/components/base/testimonial-card'
@@ -56,38 +57,130 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <section className="relative flex min-h-screen flex-col items-center justify-center px-4 py-20 text-center">
-          <div className="mx-auto max-w-7xl">
-            {/* 严格按照 DESIGN.md 的 H1 规格 */}
-            <h1 className="text-6xl font-bold leading-tight tracking-tighter text-white md:text-7xl lg:text-8xl">
-              {t('landing.hero.title')}
-              <span className="block bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
-                {t('landing.hero.subtitle')}
-              </span>
-            </h1>
+        <section className="relative flex min-h-screen items-center px-4 py-20">
+          <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-16">
+              <div className="flex flex-col justify-center lg:col-span-6">
+                {/* Multi-line animated title */}
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+                  <span className="inline-block">{t('landing.hero.titlePrefix')}</span>
+                  <div className="overflow-hidden py-2">
+                    <span className="inline-block bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
+                      {t('landing.hero.titleHighlight')}
+                    </span>
+                  </div>
+                  <span className="overflow-hidden py-2 text-4xl font-bold">
+                    <span className="font-mono tracking-wider text-white/90">{t('landing.hero.titleSuffix')}</span>
+                  </span>
+                </h1>
 
-            {/* 严格按照 DESIGN.md 的段落规格 */}
-            <p className="mx-auto mt-8 max-w-3xl text-xl font-normal leading-relaxed text-[#AFAFAF]">
-              {t('landing.hero.description')}
-            </p>
+                {/* Animated gradient subtitle */}
+                <p className="mt-4 text-lg text-[#AFAFAF] sm:mt-5 sm:text-xl lg:mt-6">
+                  <span className="inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:300%_100%] bg-clip-text font-semibold text-transparent">
+                    {t('landing.hero.subtitleHighlight')}
+                  </span>
+                  {' '}{t('landing.hero.subtitleRest')}
+                </p>
 
-            <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
-              <button className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-8 py-4 text-lg font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]" onClick={handleGetStarted}>
-                {t('landing.hero.getStartedFree')}
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-              <button className="px-8 py-4 text-lg font-medium text-white/90 transition-colors duration-200 hover:text-white" onClick={handleSignIn}>
-                {t('landing.hero.signIn')}
-              </button>
-            </div>
+                {/* DevHunt Badge */}
+                <div className="mt-6 flex w-fit flex-row gap-2 rounded-lg border border-white/10 bg-black/50 px-4 py-2">
+                  <div className="flex h-12 w-12 items-center justify-center rounded bg-gradient-to-br from-amber-400 to-yellow-500">
+                    <span className="text-2xl font-bold text-black">#1</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-medium text-white">Product of the week</span>
+                    <span className="text-sm text-[#AFAFAF]">on DevHunt</span>
+                  </div>
+                </div>
 
-            {/* 添加视觉指示器 */}
-            <div className="mt-20 animate-bounce">
-              <svg className="mx-auto h-6 w-6 text-[#AFAFAF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
+                {/* CTA Buttons */}
+                <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:gap-6">
+                  <button
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-8 py-3 text-sm font-semibold text-black transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]"
+                    onClick={handleGetStarted}
+                  >
+                    {t('landing.hero.getStartedFree')}
+                  </button>
+                  <button
+                    className="inline-flex items-center justify-center gap-2 rounded-md border border-white/20 bg-black/50 px-8 py-3 text-sm font-medium text-white transition-all hover:border-white/30 hover:bg-white/5"
+                    onClick={() => router.push('/#features')}
+                  >
+                    {t('landing.hero.viewFeatures')}
+                  </button>
+                </div>
+
+                {/* Additional info */}
+                <p className="mt-4 text-sm text-[#888888]">
+                  {t('landing.hero.builtWith')} <span className="animate-pulse bg-gradient-to-r from-transparent via-white/80 to-transparent bg-clip-text text-transparent">Cursor AI</span>
+                </p>
+
+                {/* Social Proof */}
+                <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                  <div className="flex items-center gap-4">
+                    {/* Avatar Stack */}
+                    <div className="flex -space-x-4">
+                      {[1, 2, 3, 4].map(i => (
+                        <div key={i} className="h-10 w-10 rounded-full border-2 border-white/10 bg-gradient-to-br from-amber-400 to-yellow-500" />
+                      ))}
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white/10 bg-black text-xs font-medium text-white">
+                        +{t('landing.hero.userCount')}
+                      </div>
+                    </div>
+                    <div className="text-sm">
+                      <p className="font-medium text-white">{t('landing.hero.userCount')}+ {t('landing.hero.developers')}</p>
+                      <p className="text-[#AFAFAF]">{t('landing.hero.alreadyUsing')}</p>
+                    </div>
+                  </div>
+
+                  {/* Rating */}
+                  <div className="flex items-center gap-2">
+                    <div className="flex">
+                      {[...new Array(5)].map((_, i) => (
+                        <svg key={i} className="h-5 w-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="text-sm font-medium text-white">4.9</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right side - Visual element */}
+              <div className="relative mt-12 hidden lg:col-span-6 lg:mt-0 lg:block">
+                <div className="relative flex h-full max-w-lg items-center justify-center overflow-hidden rounded-lg">
+                  {/* Animated gradient orb */}
+                  <div className="absolute h-96 w-96 animate-pulse rounded-full bg-gradient-to-r from-amber-400/20 to-yellow-500/20 blur-3xl" />
+
+                  {/* Tech stack icons grid */}
+                  <div className="relative grid grid-cols-3 gap-4 p-8">
+                    {[
+                      { name: 'Next.js', color: 'text-white' },
+                      { name: 'TypeScript', color: 'text-blue-500' },
+                      { name: 'Tailwind', color: 'text-cyan-500' },
+                      { name: 'Supabase', color: 'text-emerald-500' },
+                      { name: 'Stripe', color: 'text-purple-500' },
+                      { name: 'OpenAI', color: 'text-white' },
+                      { name: 'Vercel', color: 'text-white' },
+                      { name: 'Prisma', color: 'text-white' },
+                      { name: 'React', color: 'text-cyan-400' },
+                    ].map((tech, i) => (
+                      <div
+                        key={tech.name}
+                        className="group relative flex h-24 w-24 animate-float items-center justify-center rounded-xl border border-white/10 bg-black/50 backdrop-blur transition-all hover:scale-110 hover:border-amber-400/50"
+                        style={{
+                          animationDelay: `${i * 100}ms`,
+                          animationDuration: `${3 + (i % 3) * 0.5}s`,
+                        }}
+                      >
+                        <span className={cn('text-xs font-medium opacity-80 group-hover:opacity-100', tech.color)}>
+                          {tech.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
