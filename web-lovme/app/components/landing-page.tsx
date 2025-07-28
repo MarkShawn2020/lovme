@@ -19,9 +19,9 @@ const LandingPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-bg-dark">
+    <div className="bg-background-body">
       {/* Header */}
-      <header className="relative z-10 border-b border-border-subtle bg-bg-dark/80 backdrop-blur-sm">
+      <header className="sticky top-0 z-50 border-b border-divider-subtle bg-background-body/95 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center">
@@ -50,7 +50,7 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <main className="relative">
-        <section className="flex flex-col items-center justify-center px-4 py-20 text-center">
+        <section className="flex h-screen flex-col items-center justify-center px-4 py-20 text-center">
           <div className="mx-auto max-w-7xl">
             <h1 className="supabase-h1">
               {t('landing.hero.title')}

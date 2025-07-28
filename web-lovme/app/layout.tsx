@@ -63,7 +63,7 @@ const LocaleLayout = async ({
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
       <body
-        className="color-scheme h-full select-auto bg-bg-dark font-sans text-text-secondary"
+        className="color-scheme h-full select-auto bg-background-body font-sans text-text-secondary"
         {...datasetMap}
       >
         <BrowserInitializer>
@@ -72,9 +72,9 @@ const LocaleLayout = async ({
               <ThemeProvider
                 attribute='data-theme'
                 defaultTheme='supabase-dark'
-                themes={['light', 'dark', 'supabase-dark', 'system']}
-                enableSystem
+                themes={['light', 'dark', 'supabase-dark']}
                 disableTransitionOnChange
+                forcedTheme='supabase-dark'
               >
                 <I18nServer>
                   <GlobalPublicStoreProvider>
