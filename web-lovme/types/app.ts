@@ -12,6 +12,7 @@ import type { AccessMode } from '@/models/access-control'
 export enum Theme {
   light = 'light',
   dark = 'dark',
+  supabaseDark = 'supabase-dark',
   system = 'system',
 }
 

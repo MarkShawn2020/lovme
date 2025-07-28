@@ -7,7 +7,7 @@ const useTheme = () => {
   console.log({theme, resolvedTheme});
   
   return {
-    // only returns 'light' or 'dark' theme
+    // only returns 'light' or 'dark' theme (原始逻辑是对的)
     theme: theme === Theme.system ? resolvedTheme as Theme : theme as Theme,
     ...rest,
   }

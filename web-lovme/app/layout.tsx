@@ -72,9 +72,9 @@ const LocaleLayout = async ({
               <ThemeProvider
                 attribute='data-theme'
                 defaultTheme='supabase-dark'
-                themes={['light', 'dark', 'supabase-dark']}
+                themes={['light', 'dark', 'supabase-dark', 'system']}
+                enableSystem
                 disableTransitionOnChange
-                forcedTheme='supabase-dark'
               >
                 <I18nServer>
                   <GlobalPublicStoreProvider>
