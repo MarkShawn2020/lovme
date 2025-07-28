@@ -638,6 +638,28 @@ button:focus-within {
   color: #888888;
 }
 
+/* Professional UI Utilities */
+.primary-glow {
+  box-shadow: 0 0 20px -5px #3ECF8E;
+}
+
+.primary-glow-hover:hover {
+  box-shadow: 0 0 30px -5px #3ECF8E;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, #3ECF8E 0%, #2AB973 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* border radius start */
 .radius-2xs {
   border-radius: 2px;
