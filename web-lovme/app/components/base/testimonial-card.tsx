@@ -31,9 +31,9 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
           </svg>
         ))}
       </div>
-      
+
       <p className="flex-1 text-base text-[#AFAFAF]">{content}</p>
-      
+
       <div className="flex items-center gap-3">
         {avatar && (
           <img

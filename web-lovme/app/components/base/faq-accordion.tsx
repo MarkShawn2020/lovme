@@ -31,11 +31,11 @@ const FAQAccordion: FC<FAQAccordionProps> = ({ items }) => {
             onClick={() => toggleItem(index)}
             className="flex w-full items-center justify-between p-6 text-left"
           >
-            <span className="text-lg font-medium text-white pr-4">{item.question}</span>
+            <span className="pr-4 text-lg font-medium text-white">{item.question}</span>
             <svg
               className={cn(
-                'h-5 w-5 flex-shrink-0 text-white/60 transition-transform duration-200',
-                openIndex === index && 'rotate-180'
+                'h-5 w-5 shrink-0 text-white/60 transition-transform duration-200',
+                openIndex === index && 'rotate-180',
               )}
               fill="none"
               stroke="currentColor"
@@ -48,11 +48,11 @@ const FAQAccordion: FC<FAQAccordionProps> = ({ items }) => {
           <div
             className={cn(
               'overflow-hidden transition-all duration-200',
-              openIndex === index ? 'max-h-96' : 'max-h-0'
+              openIndex === index ? 'max-h-96' : 'max-h-0',
             )}
           >
             <div className="border-t border-white/10 px-6 py-4">
-              <p className="text-white/80 leading-relaxed">{item.answer}</p>
+              <p className="leading-relaxed text-white/80">{item.answer}</p>
             </div>
           </div>
         </div>

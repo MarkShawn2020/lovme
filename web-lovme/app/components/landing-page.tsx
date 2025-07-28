@@ -3,7 +3,6 @@
 import { useRouter } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import NeuroraLogo from '@/app/components/base/logo/neurora-logo'
-import Button from '@/app/components/base/button'
 import FeatureCard from '@/app/components/base/feature-card'
 import TestimonialCard from '@/app/components/base/testimonial-card'
 import PricingCard from '@/app/components/base/pricing-card'
@@ -34,10 +33,10 @@ const LandingPage = () => {
               </span>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="text-white/90 hover:text-white transition-colors duration-200 px-4 py-2 font-medium" onClick={handleSignIn}>
+              <button className="px-4 py-2 font-medium text-white/90 transition-colors duration-200 hover:text-white" onClick={handleSignIn}>
                 {t('landing.header.signIn')}
               </button>
-              <button className="bg-gradient-to-r from-amber-400 to-yellow-500 text-black px-8 py-3 rounded-md font-semibold hover:shadow-[0_0_20px_rgba(251,191,36,0.4)] transition-all duration-200" onClick={handleGetStarted}>
+              <button className="rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-8 py-3 font-semibold text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]" onClick={handleGetStarted}>
                 {t('landing.header.getStarted')}
               </button>
             </div>
@@ -49,14 +48,14 @@ const LandingPage = () => {
       <main className="relative overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0">
-          <div className="absolute left-1/2 top-1/4 -translate-x-1/2 transform">
+          <div className="absolute left-1/2 top-1/4 -translate-x-1/2">
             <div className="h-96 w-96 rounded-full bg-amber-400/10 blur-3xl"></div>
           </div>
-          <div className="absolute right-1/4 top-1/2 -translate-y-1/2 transform">
+          <div className="absolute right-1/4 top-1/2 -translate-y-1/2">
             <div className="h-64 w-64 rounded-full bg-yellow-500/5 blur-2xl"></div>
           </div>
         </div>
-        
+
         <section className="relative flex min-h-screen flex-col items-center justify-center px-4 py-20 text-center">
           <div className="mx-auto max-w-7xl">
             {/* 严格按照 DESIGN.md 的 H1 规格 */}
@@ -73,17 +72,17 @@ const LandingPage = () => {
             </p>
 
             <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
-              <button className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-yellow-500 text-black px-8 py-4 rounded-md text-lg font-semibold hover:shadow-[0_0_20px_rgba(251,191,36,0.4)] transition-all duration-200 hover:scale-105" onClick={handleGetStarted}>
+              <button className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-8 py-4 text-lg font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]" onClick={handleGetStarted}>
                 {t('landing.hero.getStartedFree')}
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
-              <button className="text-white/90 hover:text-white transition-colors duration-200 px-8 py-4 text-lg font-medium" onClick={handleSignIn}>
+              <button className="px-8 py-4 text-lg font-medium text-white/90 transition-colors duration-200 hover:text-white" onClick={handleSignIn}>
                 {t('landing.hero.signIn')}
               </button>
             </div>
-            
+
             {/* 添加视觉指示器 */}
             <div className="mt-20 animate-bounce">
               <svg className="mx-auto h-6 w-6 text-[#AFAFAF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +103,7 @@ const LandingPage = () => {
                 {t('landing.techStack.subtitle')}
               </p>
             </div>
-            
+
             <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
               {/* Next.js */}
               <div className="flex items-center justify-center rounded-lg border border-white/10 bg-black/50 p-8 transition-all hover:border-amber-400/30 hover:bg-black/70">
@@ -118,7 +117,7 @@ const LandingPage = () => {
                   <p className="mt-3 text-sm font-medium text-white/60">Next.js</p>
                 </div>
               </div>
-              
+
               {/* Supabase */}
               <div className="flex items-center justify-center rounded-lg border border-white/10 bg-black/50 p-8 transition-all hover:border-amber-400/30 hover:bg-black/70">
                 <div className="text-center">
@@ -130,7 +129,7 @@ const LandingPage = () => {
                   <p className="mt-3 text-sm font-medium text-white/60">Supabase</p>
                 </div>
               </div>
-              
+
               {/* Tailwind CSS */}
               <div className="flex items-center justify-center rounded-lg border border-white/10 bg-black/50 p-8 transition-all hover:border-amber-400/30 hover:bg-black/70">
                 <div className="text-center">
@@ -142,7 +141,7 @@ const LandingPage = () => {
                   <p className="mt-3 text-sm font-medium text-white/60">Tailwind</p>
                 </div>
               </div>
-              
+
               {/* TypeScript */}
               <div className="flex items-center justify-center rounded-lg border border-white/10 bg-black/50 p-8 transition-all hover:border-amber-400/30 hover:bg-black/70">
                 <div className="text-center">
@@ -154,7 +153,7 @@ const LandingPage = () => {
                   <p className="mt-3 text-sm font-medium text-white/60">TypeScript</p>
                 </div>
               </div>
-              
+
               {/* Prisma */}
               <div className="flex items-center justify-center rounded-lg border border-white/10 bg-black/50 p-8 transition-all hover:border-amber-400/30 hover:bg-black/70">
                 <div className="text-center">
@@ -166,7 +165,7 @@ const LandingPage = () => {
                   <p className="mt-3 text-sm font-medium text-white/60">Prisma</p>
                 </div>
               </div>
-              
+
               {/* Stripe */}
               <div className="flex items-center justify-center rounded-lg border border-white/10 bg-black/50 p-8 transition-all hover:border-amber-400/30 hover:bg-black/70">
                 <div className="text-center">
@@ -190,9 +189,9 @@ const LandingPage = () => {
               <h2 className="text-4xl font-semibold leading-snug tracking-tighter text-white md:text-5xl">
                 {t('landing.features.title')}
               </h2>
-              <div className="mx-auto mt-4 h-1 w-20 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full"></div>
+              <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500"></div>
             </div>
-            
+
             <div className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {/* Authentication */}
               <FeatureCard
@@ -204,7 +203,7 @@ const LandingPage = () => {
                 title={t('landing.features.authentication.title')}
                 description={t('landing.features.authentication.description')}
               />
-              
+
               {/* Database */}
               <FeatureCard
                 icon={
@@ -215,7 +214,7 @@ const LandingPage = () => {
                 title={t('landing.features.database.title')}
                 description={t('landing.features.database.description')}
               />
-              
+
               {/* Background Jobs */}
               <FeatureCard
                 icon={
@@ -226,7 +225,7 @@ const LandingPage = () => {
                 title={t('landing.features.backgroundJobs.title')}
                 description={t('landing.features.backgroundJobs.description')}
               />
-              
+
               {/* SEO */}
               <FeatureCard
                 icon={
@@ -237,7 +236,7 @@ const LandingPage = () => {
                 title={t('landing.features.seo.title')}
                 description={t('landing.features.seo.description')}
               />
-              
+
               {/* Emails */}
               <FeatureCard
                 icon={
@@ -248,7 +247,7 @@ const LandingPage = () => {
                 title={t('landing.features.emails.title')}
                 description={t('landing.features.emails.description')}
               />
-              
+
               {/* Payments */}
               <FeatureCard
                 icon={
@@ -259,7 +258,7 @@ const LandingPage = () => {
                 title={t('landing.features.payments.title')}
                 description={t('landing.features.payments.description')}
               />
-              
+
               {/* AI */}
               <FeatureCard
                 icon={
@@ -270,7 +269,7 @@ const LandingPage = () => {
                 title={t('landing.features.ai.title')}
                 description={t('landing.features.ai.description')}
               />
-              
+
               {/* Components */}
               <FeatureCard
                 icon={
@@ -281,7 +280,7 @@ const LandingPage = () => {
                 title={t('landing.features.components.title')}
                 description={t('landing.features.components.description')}
               />
-              
+
               {/* Vercel */}
               <FeatureCard
                 icon={
@@ -292,7 +291,7 @@ const LandingPage = () => {
                 title={t('landing.features.vercel.title')}
                 description={t('landing.features.vercel.description')}
               />
-              
+
               {/* MDX Blog */}
               <FeatureCard
                 icon={
@@ -303,7 +302,7 @@ const LandingPage = () => {
                 title={t('landing.features.mdxBlog.title')}
                 description={t('landing.features.mdxBlog.description')}
               />
-              
+
               {/* Admin */}
               <FeatureCard
                 icon={
@@ -315,7 +314,7 @@ const LandingPage = () => {
                 title={t('landing.features.admin.title')}
                 description={t('landing.features.admin.description')}
               />
-              
+
               {/* Feedback */}
               <FeatureCard
                 icon={
@@ -342,12 +341,12 @@ const LandingPage = () => {
               </p>
             </div>
           </div>
-          
+
           {/* Marquee Container */}
           <div className="relative mt-16">
             <div className="absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-black to-transparent" />
             <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-black to-transparent" />
-            
+
             {/* First Row - Moving Right */}
             <div className="mb-8 flex animate-marquee-right gap-6">
               <TestimonialCard
@@ -388,7 +387,7 @@ const LandingPage = () => {
                 rating={5}
               />
             </div>
-            
+
             {/* Second Row - Moving Left */}
             <div className="flex animate-marquee-left gap-6">
               <TestimonialCard
@@ -443,8 +442,8 @@ const LandingPage = () => {
                 {t('landing.pricing.subtitle')}
               </p>
             </div>
-            
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12 max-w-5xl mx-auto">
+
+            <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
               <PricingCard
                 title={t('landing.pricing.hobby.title')}
                 price={t('landing.pricing.hobby.price')}
@@ -459,7 +458,7 @@ const LandingPage = () => {
                 cta={t('landing.pricing.hobby.cta')}
                 onCtaClick={handleGetStarted}
               />
-              
+
               <PricingCard
                 title={t('landing.pricing.pro.title')}
                 price={t('landing.pricing.pro.price')}
@@ -494,7 +493,7 @@ const LandingPage = () => {
                 {t('landing.faq.subtitle')}
               </p>
             </div>
-            
+
             <div className="mt-16">
               <FAQAccordion
                 items={[
@@ -529,30 +528,30 @@ const LandingPage = () => {
           {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#1C1C1C] to-black"></div>
           <div className="absolute inset-0">
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               <div className="h-96 w-96 rounded-full bg-amber-400/5 blur-3xl"></div>
             </div>
           </div>
-          
+
           <div className="relative mx-auto max-w-5xl text-center">
             {/* 严格按照 DESIGN.md 的 H2 规格 */}
             <h2 className="text-4xl font-semibold leading-snug tracking-tighter text-white md:text-5xl lg:text-6xl">
               {t('landing.cta.title')}
             </h2>
-            
+
             {/* 严格按照 DESIGN.md 的段落规格 */}
             <p className="mx-auto mt-8 max-w-3xl text-xl font-normal leading-relaxed text-[#AFAFAF]">
               {t('landing.cta.subtitle')}
             </p>
-            
+
             <div className="mt-12 flex flex-col justify-center gap-6 sm:flex-row">
-              <button className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-yellow-500 text-black px-8 py-4 rounded-md text-lg font-semibold hover:shadow-[0_0_20px_rgba(251,191,36,0.4)] transition-all duration-200 hover:scale-105" onClick={handleGetStarted}>
+              <button className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-8 py-4 text-lg font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]" onClick={handleGetStarted}>
                 {t('landing.cta.startBuilding')}
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
-              <button className="text-white/90 hover:text-white transition-colors duration-200 px-8 py-4 text-lg font-medium" onClick={handleSignIn}>
+              <button className="px-8 py-4 text-lg font-medium text-white/90 transition-colors duration-200 hover:text-white" onClick={handleSignIn}>
                 {t('landing.cta.signIn')}
               </button>
             </div>
