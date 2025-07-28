@@ -39,7 +39,7 @@ const LandingPage = () => {
         {/* Header overlays for visual effects */}
         <div className="absolute inset-0 bg-gradient-to-r from-amber-400/5 via-transparent to-yellow-500/5"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
-        
+
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-4">
             {/* Logo section */}
@@ -192,7 +192,7 @@ const LandingPage = () => {
                   <span className="relative inline-flex items-center">
                     <span className="absolute inset-0 animate-pulse rounded bg-white/10 blur-md"></span>
                     <span className="relative animate-gradient bg-gradient-to-r from-amber-400 via-white to-amber-400 bg-[length:200%_100%] bg-clip-text font-semibold text-transparent">
-                      Cursor AI
+                      Claude Code
                     </span>
                   </span>
                 </p>
@@ -203,8 +203,8 @@ const LandingPage = () => {
                     {/* Enhanced Avatar Stack - More compact */}
                     <div className="relative flex -space-x-4">
                       {teamAvatars.slice(0, 5).map((member, index) => (
-                        <div 
-                          key={member.name} 
+                        <div
+                          key={member.name}
                           className="relative transition-all hover:z-10 hover:scale-110"
                           style={{ zIndex: teamAvatars.length - index }}
                         >

@@ -18,7 +18,7 @@ const translation = {
   plansCommon: {
     title: '为您的 AI 之旅提供动力的定价套餐',
     freeTrialTipPrefix: '注册即可',
-    freeTrialTip: '免费试用 200 个 OpenAI 消息额度',
+    freeTrialTip: '立即试用 200 个 OpenAI 消息额度',
     freeTrialTipSuffix: '。无需信用卡',
     yearlyTip: '支付 10 个月，享受 1 年！',
     mostPopular: '最受欢迎',
@@ -31,14 +31,14 @@ const translation = {
     month: '月',
     year: '年',
     save: '节省',
-    free: '免费',
+    free: '立即',
     annualBilling: '按年计费',
     comparePlanAndFeatures: '对比套餐 & 功能特性',
     priceTip: '每个团队空间/',
     currentPlan: '当前计划',
     contractSales: '联系销售',
     contractOwner: '联系团队管理员',
-    startForFree: '免费开始',
+    startForFree: '立即开始',
     getStarted: '立即开始',
     contactSales: '联系销售',
     talkToSales: '联系销售',
@@ -105,8 +105,8 @@ const translation = {
   plans: {
     sandbox: {
       name: 'Sandbox',
-      for: '核心能力的免费试用',
-      description: '核心功能免费试用',
+      for: '核心能力的立即试用',
+      description: '核心功能立即试用',
     },
     professional: {
       name: 'Professional',
@@ -122,9 +122,9 @@ const translation = {
       name: 'Community',
       for: '适用于个人用户、小型团队或非商业项目',
       description: '适用于个人用户、小型团队或非商业项目',
-      price: '免费',
+      price: '立即',
       btnText: '开始使用',
-      includesTitle: '免费功能：',
+      includesTitle: '立即功能：',
       features: [
         '所有核心功能均在公共存储库下发布',
         '单一工作空间',

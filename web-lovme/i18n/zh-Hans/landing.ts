@@ -17,7 +17,7 @@ const translation = {
     subtitleHighlight: '全球首个 AI 优化的',
     subtitleRest: '平台，用于构建具有可视化工作流、RAG系统和多模型支持的LLM应用程序。',
     description: 'Neurora Tech 提供企业级平台，用于开发具有可视化工作流、RAG系统和多模型支持的LLM应用程序。',
-    getStartedFree: '免费开始',
+    getStartedFree: '立即开始',
     viewFeatures: '查看功能',
     signIn: '登录',
     builtWith: '使用您熟悉的技术栈构建，由',
@@ -144,10 +144,10 @@ const translation = {
     },
   },
   pricing: {
-    title: '免费开始，然后一次付费',
+    title: '立即开始，然后一次付费',
     subtitle: '选择最适合您的计划',
     hobby: {
-      title: '免费版',
+      title: '立即版',
       price: '¥0',
       period: '',
       description: '非常适合试用我们的平台',
@@ -157,7 +157,7 @@ const translation = {
         3: '社区支持',
         4: '基础组件',
       },
-      cta: '免费开始',
+      cta: '立即开始',
     },
     pro: {
       title: '专业版',
@@ -194,7 +194,7 @@ const translation = {
       },
       4: {
         question: '更新是如何工作的？',
-        answer: '您将获得所有更新的终身访问权限。当我们发布新功能或改进时，您将免费获得它们。',
+        answer: '您将获得所有更新的终身访问权限。当我们发布新功能或改进时，您将立即获得它们。',
       },
       5: {
         question: '我能获得什么样的支持？',
@@ -205,7 +205,7 @@ const translation = {
   cta: {
     title: '准备好构建您的AI应用程序了吗？',
     subtitle: '加入数千名开发者和企业，共同构建AI的未来',
-    startBuilding: '免费开始构建',
+    startBuilding: '立即开始构建',
     signIn: '登录',
   },
   footer: {

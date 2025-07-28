@@ -23,7 +23,7 @@ const translation = {
   jinaReader: {
     configJinaReader: '配置 Jina Reader',
     apiKeyPlaceholder: '从 jina.ai 获取 API Key',
-    getApiKeyLinkText: '从 jina.ai 获取您的免费 API Key',
+    getApiKeyLinkText: '从 jina.ai 获取您的立即 API Key',
   },
   stepOne: {
     filePreview: '文件预览',
@@ -70,7 +70,7 @@ const translation = {
       fireCrawlNotConfigured: 'Firecrawl 未配置',
       fireCrawlNotConfiguredDescription: '请配置 Firecrawl 的 API 密钥以使用它。',
       jinaReaderNotConfigured: 'Jina Reader 未配置',
-      jinaReaderNotConfiguredDescription: '请配置 Jina Reader 的免费 API 密钥以访问它。',
+      jinaReaderNotConfiguredDescription: '请配置 Jina Reader 的立即 API 密钥以访问它。',
       waterCrawlNotConfigured: 'Watercrawl 未配置',
       waterCrawlNotConfiguredDescription: '请配置 Watercrawl 的 API 密钥以使用它。',
       configure: '配置',
