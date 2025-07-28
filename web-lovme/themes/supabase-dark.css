@@ -1,387 +1,815 @@
 /* 
- * Supabase-inspired Dark Theme
- * Based on DESIGN.md specifications
+ * Comprehensive Supabase-inspired Dark Theme
+ * Based on DESIGN.md specifications - Full Coverage (652+ variables)
  * Colors: Primary #3ECF8E, Background #000000, Text #FFFFFF/#AFAFAF/#888888
  */
 html[data-theme="supabase-dark"] {
   /* Input Components */
-  --color-components-input-bg-normal: #1C1C1C;
-  --color-components-input-text-placeholder: #888888;
-  --color-components-input-bg-hover: #3B3B3B;
-  --color-components-input-bg-active: #3B3B3B;
+  --color-components-input-bg-normal: rgba(28, 28, 28, 0.8);
+  --color-components-input-text-placeholder: rgba(175, 175, 175, 0.3);
+  --color-components-input-bg-hover: rgba(59, 59, 59, 0.3);
+  --color-components-input-bg-active: rgba(59, 59, 59, 0.5);
   --color-components-input-border-active: #3ECF8E;
   --color-components-input-border-destructive: #f97066;
   --color-components-input-text-filled: #FFFFFF;
-  --color-components-input-bg-destructive: #1C1C1C;
-  --color-components-input-bg-disabled: #2E2E2E;
-  --color-components-input-text-disabled: #888888;
-  --color-components-input-text-filled-disabled: #AFAFAF;
-  --color-components-input-border-hover: #AFAFAF;
+  --color-components-input-bg-destructive: rgba(0, 0, 0, 0.1);
+  --color-components-input-bg-disabled: rgba(59, 59, 59, 0.3);
+  --color-components-input-text-disabled: rgba(175, 175, 175, 0.3);
+  --color-components-input-text-filled-disabled: rgba(175, 175, 175, 0.6);
+  --color-components-input-border-hover: #3B3B3B;
   --color-components-input-border-active-prompt-1: #3ECF8E;
-  --color-components-input-border-active-prompt-2: #3ECF8E;
+  --color-components-input-border-active-prompt-2: #22c55e;
 
   /* Keyboard Components */
-  --color-components-kbd-bg-gray: #2E2E2E;
-  --color-components-kbd-bg-white: #3B3B3B;
+  --color-components-kbd-bg-gray: rgba(59, 59, 59, 0.3);
+  --color-components-kbd-bg-white: rgba(255, 255, 255, 0.12);
 
   /* Tooltip */
-  --color-components-tooltip-bg: #1C1C1C;
+  --color-components-tooltip-bg: rgba(28, 28, 28, 0.95);
 
-  /* Primary Button */
+  /* Button Primary */
   --color-components-button-primary-text: #000000;
   --color-components-button-primary-bg: #3ECF8E;
-  --color-components-button-primary-border: #3ECF8E;
+  --color-components-button-primary-border: rgba(255, 255, 255, 0.12);
   --color-components-button-primary-bg-hover: #22c55e;
-  --color-components-button-primary-border-hover: #22c55e;
-  --color-components-button-primary-bg-disabled: #2E2E2E;
-  --color-components-button-primary-border-disabled: #2E2E2E;
-  --color-components-button-primary-text-disabled: #888888;
+  --color-components-button-primary-border-hover: rgba(255, 255, 255, 0.2);
+  --color-components-button-primary-bg-disabled: rgba(59, 59, 59, 0.3);
+  --color-components-button-primary-border-disabled: rgba(255, 255, 255, 0.08);
+  --color-components-button-primary-text-disabled: rgba(255, 255, 255, 0.2);
 
-  /* Secondary Button */
-  --color-components-button-secondary-text: #FFFFFF;
-  --color-components-button-secondary-text-disabled: #888888;
-  --color-components-button-secondary-bg: transparent;
-  --color-components-button-secondary-bg-hover: #1C1C1C;
-  --color-components-button-secondary-bg-disabled: #2E2E2E;
-  --color-components-button-secondary-border: #3B3B3B;
-  --color-components-button-secondary-border-hover: #AFAFAF;
-  --color-components-button-secondary-border-disabled: #2E2E2E;
+  /* Button Secondary */
+  --color-components-button-secondary-text: rgba(255, 255, 255, 0.8);
+  --color-components-button-secondary-text-disabled: rgba(255, 255, 255, 0.2);
+  --color-components-button-secondary-bg: rgba(59, 59, 59, 0.12);
+  --color-components-button-secondary-bg-hover: rgba(59, 59, 59, 0.2);
+  --color-components-button-secondary-bg-disabled: rgba(59, 59, 59, 0.03);
+  --color-components-button-secondary-border: rgba(59, 59, 59, 0.8);
+  --color-components-button-secondary-border-hover: rgba(175, 175, 175, 0.12);
+  --color-components-button-secondary-border-disabled: rgba(59, 59, 59, 0.05);
 
-  /* Tertiary Button */
+  /* Button Tertiary */
   --color-components-button-tertiary-text: #FFFFFF;
-  --color-components-button-tertiary-text-disabled: #888888;
-  --color-components-button-tertiary-bg: #3B3B3B;
-  --color-components-button-tertiary-bg-hover: #AFAFAF;
-  --color-components-button-tertiary-bg-disabled: #2E2E2E;
+  --color-components-button-tertiary-text-disabled: rgba(255, 255, 255, 0.2);
+  --color-components-button-tertiary-bg: rgba(59, 59, 59, 0.08);
+  --color-components-button-tertiary-bg-hover: rgba(59, 59, 59, 0.12);
+  --color-components-button-tertiary-bg-disabled: rgba(59, 59, 59, 0.03);
 
-  /* Ghost Button */
+  /* Button Ghost */
   --color-components-button-ghost-text: #FFFFFF;
-  --color-components-button-ghost-text-disabled: #888888;
-  --color-components-button-ghost-bg-hover: #1C1C1C;
+  --color-components-button-ghost-text-disabled: rgba(255, 255, 255, 0.2);
+  --color-components-button-ghost-bg-hover: rgba(175, 175, 175, 0.08);
 
-  /* Destructive Primary Button */
-  --color-components-button-destructive-primary-text: #FFFFFF;
-  --color-components-button-destructive-primary-text-disabled: #888888;
+  /* Button Destructive Primary */
+  --color-components-button-destructive-primary-text: rgba(255, 255, 255, 0.95);
+  --color-components-button-destructive-primary-text-disabled: rgba(255, 255, 255, 0.2);
   --color-components-button-destructive-primary-bg: #d92d20;
   --color-components-button-destructive-primary-bg-hover: #f04438;
-  --color-components-button-destructive-primary-bg-disabled: #2E2E2E;
-  --color-components-button-destructive-primary-border: #d92d20;
-  --color-components-button-destructive-primary-border-hover: #f04438;
-  --color-components-button-destructive-primary-border-disabled: #2E2E2E;
+  --color-components-button-destructive-primary-bg-disabled: rgba(240, 68, 56, 0.14);
+  --color-components-button-destructive-primary-border: rgba(255, 255, 255, 0.12);
+  --color-components-button-destructive-primary-border-hover: rgba(255, 255, 255, 0.2);
+  --color-components-button-destructive-primary-border-disabled: rgba(255, 255, 255, 0.08);
 
-  /* Destructive Secondary Button */
+  /* Button Destructive Secondary */
   --color-components-button-destructive-secondary-text: #f97066;
-  --color-components-button-destructive-secondary-text-disabled: #888888;
-  --color-components-button-destructive-secondary-bg: transparent;
-  --color-components-button-destructive-secondary-bg-hover: #1C1C1C;
-  --color-components-button-destructive-secondary-bg-disabled: #2E2E2E;
-  --color-components-button-destructive-secondary-border: #3B3B3B;
-  --color-components-button-destructive-secondary-border-hover: #f97066;
-  --color-components-button-destructive-secondary-border-disabled: #2E2E2E;
+  --color-components-button-destructive-secondary-text-disabled: rgba(240, 68, 56, 0.2);
+  --color-components-button-destructive-secondary-bg: rgba(255, 255, 255, 0.12);
+  --color-components-button-destructive-secondary-bg-hover: rgba(240, 68, 56, 0.14);
+  --color-components-button-destructive-secondary-bg-disabled: rgba(240, 68, 56, 0.08);
+  --color-components-button-destructive-secondary-border: rgba(255, 255, 255, 0.08);
+  --color-components-button-destructive-secondary-border-hover: rgba(255, 255, 255, 0.12);
+  --color-components-button-destructive-secondary-border-disabled: rgba(240, 68, 56, 0.08);
 
-  /* Destructive Tertiary Button */
+  /* Button Destructive Tertiary */
   --color-components-button-destructive-tertiary-text: #f97066;
-  --color-components-button-destructive-tertiary-text-disabled: #888888;
-  --color-components-button-destructive-tertiary-bg: #3B3B3B;
-  --color-components-button-destructive-tertiary-bg-hover: rgba(249, 112, 102, 0.2);
-  --color-components-button-destructive-tertiary-bg-disabled: #2E2E2E;
+  --color-components-button-destructive-tertiary-text-disabled: rgba(240, 68, 56, 0.2);
+  --color-components-button-destructive-tertiary-bg: rgba(240, 68, 56, 0.14);
+  --color-components-button-destructive-tertiary-bg-hover: rgba(240, 68, 56, 0.25);
+  --color-components-button-destructive-tertiary-bg-disabled: rgba(240, 68, 56, 0.08);
 
-  /* Destructive Ghost Button */
+  /* Button Destructive Ghost */
   --color-components-button-destructive-ghost-text: #f97066;
-  --color-components-button-destructive-ghost-text-disabled: #888888;
-  --color-components-button-destructive-ghost-bg-hover: rgba(249, 112, 102, 0.1);
+  --color-components-button-destructive-ghost-text-disabled: rgba(240, 68, 56, 0.2);
+  --color-components-button-destructive-ghost-bg-hover: rgba(240, 68, 56, 0.14);
 
-  /* Secondary Accent Button */
-  --color-components-button-secondary-accent-text: #FFFFFF;
-  --color-components-button-secondary-accent-text-disabled: #888888;
-  --color-components-button-secondary-accent-bg: #1C1C1C;
-  --color-components-button-secondary-accent-bg-hover: #3B3B3B;
-  --color-components-button-secondary-accent-bg-disabled: #2E2E2E;
-  --color-components-button-secondary-accent-border: #3B3B3B;
-  --color-components-button-secondary-accent-border-hover: #AFAFAF;
-  --color-components-button-secondary-accent-border-disabled: #2E2E2E;
+  /* Button Secondary Accent */
+  --color-components-button-secondary-accent-text: rgba(255, 255, 255, 0.8);
+  --color-components-button-secondary-accent-text-disabled: rgba(255, 255, 255, 0.2);
+  --color-components-button-secondary-accent-bg: rgba(62, 207, 142, 0.05);
+  --color-components-button-secondary-accent-bg-hover: rgba(62, 207, 142, 0.08);
+  --color-components-button-secondary-accent-bg-disabled: rgba(59, 59, 59, 0.03);
+  --color-components-button-secondary-accent-border: rgba(62, 207, 142, 0.08);
+  --color-components-button-secondary-accent-border-hover: rgba(62, 207, 142, 0.12);
+  --color-components-button-secondary-accent-border-disabled: rgba(59, 59, 59, 0.05);
 
-  /* Indigo Button */
+  /* Button Indigo */
   --color-components-button-indigo-bg: #3ECF8E;
   --color-components-button-indigo-bg-hover: #22c55e;
-  --color-components-button-indigo-bg-disabled: #2E2E2E;
+  --color-components-button-indigo-bg-disabled: rgba(59, 59, 59, 0.03);
 
   /* Checkbox */
   --color-components-checkbox-icon: #000000;
-  --color-components-checkbox-icon-disabled: #888888;
+  --color-components-checkbox-icon-disabled: rgba(255, 255, 255, 0.2);
   --color-components-checkbox-bg: #3ECF8E;
   --color-components-checkbox-bg-hover: #22c55e;
-  --color-components-checkbox-bg-disabled: #2E2E2E;
-  --color-components-checkbox-border: #3B3B3B;
-  --color-components-checkbox-border-hover: #AFAFAF;
-  --color-components-checkbox-border-disabled: #2E2E2E;
-  --color-components-checkbox-bg-unchecked: transparent;
-  --color-components-checkbox-bg-unchecked-hover: #1C1C1C;
-  --color-components-checkbox-bg-unchecked-disabled: #2E2E2E;
+  --color-components-checkbox-bg-disabled: rgba(59, 59, 59, 0.03);
+  --color-components-checkbox-border: rgba(255, 255, 255, 0.4);
+  --color-components-checkbox-border-hover: rgba(255, 255, 255, 0.6);
+  --color-components-checkbox-border-disabled: rgba(255, 255, 255, 0.01);
+  --color-components-checkbox-bg-unchecked: rgba(59, 59, 59, 0.03);
+  --color-components-checkbox-bg-unchecked-hover: rgba(59, 59, 59, 0.05);
+  --color-components-checkbox-bg-disabled-checked: rgba(62, 207, 142, 0.2);
 
   /* Radio */
-  --color-components-radio-icon: #000000;
-  --color-components-radio-icon-disabled: #888888;
-  --color-components-radio-bg: #3ECF8E;
-  --color-components-radio-bg-hover: #22c55e;
-  --color-components-radio-bg-disabled: #2E2E2E;
-  --color-components-radio-border: #3B3B3B;
-  --color-components-radio-border-hover: #AFAFAF;
-  --color-components-radio-border-disabled: #2E2E2E;
-  --color-components-radio-bg-unchecked: transparent;
-  --color-components-radio-bg-unchecked-hover: #1C1C1C;
-  --color-components-radio-bg-unchecked-disabled: #2E2E2E;
+  --color-components-radio-border-checked: #3ECF8E;
+  --color-components-radio-border-checked-hover: #22c55e;
+  --color-components-radio-border-checked-disabled: rgba(62, 207, 142, 0.2);
+  --color-components-radio-bg-disabled: rgba(59, 59, 59, 0.03);
+  --color-components-radio-border: rgba(255, 255, 255, 0.4);
+  --color-components-radio-border-hover: rgba(255, 255, 255, 0.6);
+  --color-components-radio-border-disabled: rgba(255, 255, 255, 0.01);
+  --color-components-radio-bg: rgba(255, 255, 255, 0);
+  --color-components-radio-bg-hover: rgba(59, 59, 59, 0.05);
 
-  /* Switch */
-  --color-components-switch-icon: #000000;
-  --color-components-switch-icon-disabled: #888888;
-  --color-components-switch-bg: #3ECF8E;
-  --color-components-switch-bg-hover: #22c55e;
-  --color-components-switch-bg-disabled: #2E2E2E;
-  --color-components-switch-bg-unchecked: #3B3B3B;
-  --color-components-switch-bg-unchecked-hover: #AFAFAF;
-  --color-components-switch-bg-unchecked-disabled: #2E2E2E;
-
-  /* Select */
-  --color-components-select-bg-normal: #1C1C1C;
-  --color-components-select-bg-hover: #3B3B3B;
-  --color-components-select-bg-active: #3B3B3B;
-  --color-components-select-bg-disabled: #2E2E2E;
-  --color-components-select-text: #FFFFFF;
-  --color-components-select-text-disabled: #888888;
-  --color-components-select-border: #3B3B3B;
-  --color-components-select-border-hover: #AFAFAF;
-  --color-components-select-border-active: #3ECF8E;
-  --color-components-select-border-disabled: #2E2E2E;
-
-  /* Panel */
-  --color-components-panel-bg: #1C1C1C;
-  --color-components-panel-border: #3B3B3B;
-  --color-components-panel-bg-secondary: #000000;
-  --color-components-panel-border-secondary: #2E2E2E;
+  /* Toggle */
+  --color-components-toggle-knob: #FFFFFF;
+  --color-components-toggle-knob-disabled: rgba(255, 255, 255, 0.2);
+  --color-components-toggle-bg: #3ECF8E;
+  --color-components-toggle-bg-hover: #22c55e;
+  --color-components-toggle-bg-disabled: rgba(59, 59, 59, 0.08);
+  --color-components-toggle-bg-unchecked: rgba(59, 59, 59, 0.2);
+  --color-components-toggle-bg-unchecked-hover: rgba(59, 59, 59, 0.3);
+  --color-components-toggle-bg-unchecked-disabled: rgba(59, 59, 59, 0.08);
+  --color-components-toggle-knob-hover: #fefefe;
 
   /* Card */
   --color-components-card-bg: #1C1C1C;
-  --color-components-card-border: #3B3B3B;
-  --color-components-card-bg-hover: #3B3B3B;
-  --color-components-card-border-hover: #3ECF8E;
+  --color-components-card-border: rgba(59, 59, 59, 0.3);
+  --color-components-card-bg-alt: #2E2E2E;
+  --color-components-card-bg-transparent: rgba(28, 28, 28, 0);
+  --color-components-card-bg-alt-transparent: rgba(46, 46, 46, 0);
+
+  /* Menu */
+  --color-components-menu-item-text: rgba(175, 175, 175, 0.6);
+  --color-components-menu-item-text-active: rgba(255, 255, 255, 0.95);
+  --color-components-menu-item-text-hover: rgba(175, 175, 175, 0.8);
+  --color-components-menu-item-text-active-accent: rgba(255, 255, 255, 0.95);
+  --color-components-menu-item-bg-active: rgba(62, 207, 142, 0.14);
+  --color-components-menu-item-bg-hover: rgba(175, 175, 175, 0.08);
+
+  /* Panel */
+  --color-components-panel-bg: #1C1C1C;
+  --color-components-panel-bg-blur: rgba(28, 28, 28, 0.95);
+  --color-components-panel-border: rgba(59, 59, 59, 0.14);
+  --color-components-panel-border-subtle: rgba(59, 59, 59, 0.08);
+  --color-components-panel-gradient-2: #1C1C1C;
+  --color-components-panel-gradient-1: #2E2E2E;
+  --color-components-panel-bg-alt: #1C1C1C;
+  --color-components-panel-on-panel-item-bg: #2E2E2E;
+  --color-components-panel-on-panel-item-bg-hover: #3B3B3B;
+  --color-components-panel-on-panel-item-bg-alt: #3B3B3B;
+  --color-components-panel-on-panel-item-bg-transparent: rgba(28, 28, 28, 0.95);
+  --color-components-panel-on-panel-item-bg-hover-transparent: rgba(59, 59, 59, 0);
+  --color-components-panel-on-panel-item-bg-destructive-hover-transparent: rgba(255, 251, 250, 0);
+  --color-components-panel-bg-transparent: rgba(28, 28, 28, 0);
+
+  /* Main Navigation */
+  --color-components-main-nav-nav-button-text: rgba(175, 175, 175, 0.6);
+  --color-components-main-nav-nav-button-text-active: #FFFFFF;
+  --color-components-main-nav-nav-button-bg: rgba(255, 255, 255, 0);
+  --color-components-main-nav-nav-button-bg-active: rgba(62, 207, 142, 0.14);
+  --color-components-main-nav-nav-button-border: rgba(59, 59, 59, 0.08);
+  --color-components-main-nav-nav-button-bg-hover: rgba(175, 175, 175, 0.04);
+  --color-components-main-nav-nav-user-border: rgba(59, 59, 59, 0.05);
+
+  /* Slider */
+  --color-components-slider-knob: #FFFFFF;
+  --color-components-slider-knob-hover: #fefefe;
+  --color-components-slider-knob-disabled: rgba(255, 255, 255, 0.2);
+  --color-components-slider-range: #3ECF8E;
+  --color-components-slider-track: rgba(59, 59, 59, 0.2);
+  --color-components-slider-knob-border-hover: rgba(16, 24, 40, 0.3);
+  --color-components-slider-knob-border: rgba(16, 24, 40, 0.2);
+
+  /* Segmented Control */
+  --color-components-segmented-control-item-active-bg: rgba(62, 207, 142, 0.08);
+  --color-components-segmented-control-item-active-border: rgba(62, 207, 142, 0.08);
+  --color-components-segmented-control-bg-normal: rgba(28, 28, 28, 0.7);
+  --color-components-segmented-control-item-active-accent-bg: rgba(62, 207, 142, 0.2);
+  --color-components-segmented-control-item-active-accent-border: rgba(62, 207, 142, 0.3);
+
+  /* Option Card */
+  --color-components-option-card-option-bg: rgba(59, 59, 59, 0.04);
+  --color-components-option-card-option-selected-bg: rgba(62, 207, 142, 0.05);
+  --color-components-option-card-option-selected-border: #3ECF8E;
+  --color-components-option-card-option-border: rgba(59, 59, 59, 0.2);
+  --color-components-option-card-option-bg-hover: rgba(59, 59, 59, 0.14);
+  --color-components-option-card-option-border-hover: rgba(59, 59, 59, 0.3);
+
+  /* Tab */
+  --color-components-tab-active: #3ECF8E;
+
+  /* Badge Status System */
+  --color-components-badge-white-to-dark: rgba(28, 28, 28, 0.8);
+  --color-components-badge-status-light-success-bg: #3ECF8E;
+  --color-components-badge-status-light-success-border-inner: #22c55e;
+  --color-components-badge-status-light-success-halo: rgba(62, 207, 142, 0.3);
+  --color-components-badge-status-light-border-outer: #1C1C1C;
+  --color-components-badge-status-light-high-light: rgba(255, 255, 255, 0.3);
+  --color-components-badge-status-light-warning-bg: #f79009;
+  --color-components-badge-status-light-warning-border-inner: #fdb022;
+  --color-components-badge-status-light-warning-halo: rgba(247, 144, 9, 0.3);
+  --color-components-badge-status-light-error-bg: #f04438;
+  --color-components-badge-status-light-error-border-inner: #f97066;
+  --color-components-badge-status-light-error-halo: rgba(240, 68, 56, 0.3);
+  --color-components-badge-status-light-normal-bg: #3ECF8E;
+  --color-components-badge-status-light-normal-border-inner: #22c55e;
+  --color-components-badge-status-light-normal-halo: rgba(62, 207, 142, 0.3);
+  --color-components-badge-status-light-disabled-bg: #888888;
+  --color-components-badge-status-light-disabled-border-inner: #AFAFAF;
+  --color-components-badge-status-light-disabled-halo: rgba(175, 175, 175, 0.08);
+
+  /* Badge Soft Backgrounds */
+  --color-components-badge-bg-green-soft: rgba(62, 207, 142, 0.14);
+  --color-components-badge-bg-orange-soft: rgba(247, 144, 9, 0.14);
+  --color-components-badge-bg-red-soft: rgba(240, 68, 56, 0.14);
+  --color-components-badge-bg-blue-light-soft: rgba(62, 207, 142, 0.14);
+  --color-components-badge-bg-gray-soft: rgba(175, 175, 175, 0.08);
+  --color-components-badge-bg-dimm: rgba(59, 59, 59, 0.03);
+
+  /* Chart */
+  --color-components-chart-line: #3ECF8E;
+  --color-components-chart-area-1: rgba(62, 207, 142, 0.2);
+  --color-components-chart-area-2: rgba(62, 207, 142, 0.04);
+  --color-components-chart-current-1: #3ECF8E;
+  --color-components-chart-current-2: rgba(62, 207, 142, 0.3);
+  --color-components-chart-bg: rgba(28, 28, 28, 0.95);
+
+  /* Action Bar */
+  --color-components-actionbar-bg: #1C1C1C;
+  --color-components-actionbar-border: rgba(59, 59, 59, 0.08);
+  --color-components-actionbar-bg-accent: #2E2E2E;
+  --color-components-actionbar-border-accent: #3ECF8E;
+
+  /* Dropzone */
+  --color-components-dropzone-bg-alt: rgba(28, 28, 28, 0.8);
+  --color-components-dropzone-bg: rgba(28, 28, 28, 0.4);
+  --color-components-dropzone-bg-accent: rgba(62, 207, 142, 0.2);
+  --color-components-dropzone-border: rgba(59, 59, 59, 0.14);
+  --color-components-dropzone-border-alt: rgba(59, 59, 59, 0.2);
+  --color-components-dropzone-border-accent: #3ECF8E;
+
+  /* Progress Components */
+  --color-components-progress-brand-progress: #3ECF8E;
+  --color-components-progress-brand-border: #3ECF8E;
+  --color-components-progress-brand-bg: rgba(62, 207, 142, 0.04);
+  --color-components-progress-white-progress: #ffffff;
+  --color-components-progress-white-border: rgba(255, 255, 255, 0.95);
+  --color-components-progress-white-bg: rgba(255, 255, 255, 0.01);
+  --color-components-progress-gray-progress: #AFAFAF;
+  --color-components-progress-gray-border: #AFAFAF;
+  --color-components-progress-gray-bg: rgba(175, 175, 175, 0.02);
+  --color-components-progress-warning-progress: #fdb022;
+  --color-components-progress-warning-border: #fdb022;
+  --color-components-progress-warning-bg: rgba(247, 144, 9, 0.04);
+  --color-components-progress-error-progress: #f97066;
+  --color-components-progress-error-border: #f97066;
+  --color-components-progress-error-bg: rgba(240, 68, 56, 0.04);
+
+  /* Chat Input */
+  --color-components-chat-input-audio-bg: rgba(62, 207, 142, 0.2);
+  --color-components-chat-input-audio-wave-default: rgba(175, 175, 175, 0.14);
+  --color-components-chat-input-bg-mask-1: rgba(28, 28, 28, 0.04);
+  --color-components-chat-input-bg-mask-2: rgba(28, 28, 28, 0.6);
+  --color-components-chat-input-border: rgba(59, 59, 59, 0.2);
+  --color-components-chat-input-audio-wave-active: #3ECF8E;
+  --color-components-chat-input-audio-bg-alt: rgba(28, 28, 28, 0.9);
+
+  /* Avatar */
+  --color-components-avatar-shape-fill-stop-0: rgba(255, 255, 255, 0.95);
+  --color-components-avatar-shape-fill-stop-100: rgba(255, 255, 255, 0.8);
+  --color-components-avatar-bg-mask-stop-0: rgba(255, 255, 255, 0.2);
+  --color-components-avatar-bg-mask-stop-100: rgba(59, 59, 59, 0.03);
+  --color-components-avatar-default-avatar-bg: #1C1C1C;
+  --color-components-avatar-mask-darkmode-dimmed: rgba(0, 0, 0, 0.12);
+
+  /* Label */
+  --color-components-label-gray: rgba(175, 175, 175, 0.14);
+
+  /* Premium Badge System */
+  --color-components-premium-badge-blue-bg-stop-0: #3ECF8E;
+  --color-components-premium-badge-blue-bg-stop-100: #22c55e;
+  --color-components-premium-badge-blue-stroke-stop-0: rgba(255, 255, 255, 0.2);
+  --color-components-premium-badge-blue-stroke-stop-100: #3ECF8E;
+  --color-components-premium-badge-blue-text-stop-0: #ffffff;
+  --color-components-premium-badge-blue-text-stop-100: #000000;
+  --color-components-premium-badge-blue-glow: #16a34a;
+  --color-components-premium-badge-blue-bg-stop-0-hover: #22c55e;
+  --color-components-premium-badge-blue-bg-stop-100-hover: #16a34a;
+  --color-components-premium-badge-blue-glow-hover: rgba(62, 207, 142, 0.3);
+  --color-components-premium-badge-blue-stroke-stop-0-hover: rgba(255, 255, 255, 0.5);
+  --color-components-premium-badge-blue-stroke-stop-100-hover: #3ECF8E;
+
+  --color-components-premium-badge-highlight-stop-0: rgba(255, 255, 255, 0.12);
+  --color-components-premium-badge-highlight-stop-100: rgba(255, 255, 255, 0.2);
+  --color-components-premium-badge-indigo-bg-stop-0: #3ECF8E;
+  --color-components-premium-badge-indigo-bg-stop-100: #22c55e;
+  --color-components-premium-badge-indigo-stroke-stop-0: rgba(255, 255, 255, 0.2);
+  --color-components-premium-badge-indigo-stroke-stop-100: #3ECF8E;
+  --color-components-premium-badge-indigo-text-stop-0: #ffffff;
+  --color-components-premium-badge-indigo-text-stop-100: #000000;
+  --color-components-premium-badge-indigo-glow: #16a34a;
+  --color-components-premium-badge-indigo-glow-hover: rgba(62, 207, 142, 0.3);
+  --color-components-premium-badge-indigo-bg-stop-0-hover: #22c55e;
+  --color-components-premium-badge-indigo-bg-stop-100-hover: #16a34a;
+  --color-components-premium-badge-indigo-stroke-stop-0-hover: rgba(255, 255, 255, 0.5);
+  --color-components-premium-badge-indigo-stroke-stop-100-hover: #3ECF8E;
+
+  --color-components-premium-badge-grey-bg-stop-0: #888888;
+  --color-components-premium-badge-grey-bg-stop-100: #666666;
+  --color-components-premium-badge-grey-stroke-stop-0: rgba(255, 255, 255, 0.12);
+  --color-components-premium-badge-grey-stroke-stop-100: #666666;
+  --color-components-premium-badge-grey-text-stop-0: #FFFFFF;
+  --color-components-premium-badge-grey-text-stop-100: #AFAFAF;
+  --color-components-premium-badge-grey-glow: #3B3B3B;
+  --color-components-premium-badge-grey-glow-hover: #AFAFAF;
+  --color-components-premium-badge-grey-bg-stop-0-hover: #AFAFAF;
+  --color-components-premium-badge-grey-bg-stop-100-hover: #3B3B3B;
+  --color-components-premium-badge-grey-stroke-stop-0-hover: rgba(255, 255, 255, 0.5);
+  --color-components-premium-badge-grey-stroke-stop-100-hover: #888888;
+
+  --color-components-premium-badge-orange-bg-stop-0: #f79009;
+  --color-components-premium-badge-orange-bg-stop-100: #dc6803;
+  --color-components-premium-badge-orange-stroke-stop-0: rgba(255, 255, 255, 0.2);
+  --color-components-premium-badge-orange-stroke-stop-100: #f79009;
+  --color-components-premium-badge-orange-text-stop-0: #ffffff;
+  --color-components-premium-badge-orange-text-stop-100: #000000;
+  --color-components-premium-badge-orange-glow: #dc6803;
+  --color-components-premium-badge-orange-glow-hover: rgba(247, 144, 9, 0.3);
+  --color-components-premium-badge-orange-bg-stop-0-hover: #f79009;
+  --color-components-premium-badge-orange-bg-stop-100-hover: #dc6803;
+  --color-components-premium-badge-orange-stroke-stop-0-hover: rgba(255, 255, 255, 0.5);
+  --color-components-premium-badge-orange-stroke-stop-100-hover: #f79009;
+
+  /* Progress Bar */
+  --color-components-progress-bar-bg: rgba(175, 175, 175, 0.08);
+  --color-components-progress-bar-progress: rgba(175, 175, 175, 0.14);
+  --color-components-progress-bar-border: rgba(59, 59, 59, 0.03);
+  --color-components-progress-bar-progress-solid: rgba(255, 255, 255, 0.95);
+  --color-components-progress-bar-progress-highlight: rgba(175, 175, 175, 0.2);
+
+  /* Icon Backgrounds - Solid Colors */
+  --color-components-icon-bg-red-solid: #d92d20;
+  --color-components-icon-bg-rose-solid: #e31b54;
+  --color-components-icon-bg-pink-solid: #dd2590;
+  --color-components-icon-bg-orange-dark-solid: #f79009;
+  --color-components-icon-bg-yellow-solid: #eaaa08;
+  --color-components-icon-bg-green-solid: #3ECF8E;
+  --color-components-icon-bg-teal-solid: #3ECF8E;
+  --color-components-icon-bg-blue-light-solid: #3ECF8E;
+  --color-components-icon-bg-blue-solid: #3ECF8E;
+  --color-components-icon-bg-indigo-solid: #3ECF8E;
+  --color-components-icon-bg-violet-solid: #3ECF8E;
+  --color-components-icon-bg-midnight-solid: #888888;
+  --color-components-icon-bg-orange-solid: #f79009;
+
+  /* Icon Backgrounds - Soft Colors */
+  --color-components-icon-bg-red-soft: rgba(240, 68, 56, 0.2);
+  --color-components-icon-bg-rose-soft: rgba(227, 27, 84, 0.2);
+  --color-components-icon-bg-pink-soft: rgba(221, 37, 144, 0.2);
+  --color-components-icon-bg-orange-dark-soft: rgba(247, 144, 9, 0.2);
+  --color-components-icon-bg-yellow-soft: rgba(234, 170, 8, 0.2);
+  --color-components-icon-bg-green-soft: rgba(62, 207, 142, 0.2);
+  --color-components-icon-bg-teal-soft: rgba(62, 207, 142, 0.2);
+  --color-components-icon-bg-blue-light-soft: rgba(62, 207, 142, 0.2);
+  --color-components-icon-bg-blue-soft: rgba(62, 207, 142, 0.2);
+  --color-components-icon-bg-indigo-soft: rgba(62, 207, 142, 0.2);
+  --color-components-icon-bg-violet-soft: rgba(62, 207, 142, 0.2);
+  --color-components-icon-bg-midnight-soft: rgba(136, 136, 136, 0.2);
+  --color-components-icon-bg-orange-soft: rgba(247, 144, 9, 0.2);
 
   /* Text Colors */
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #AFAFAF;
-  --color-text-tertiary: #888888;
-  --color-text-quaternary: #666666;
-  --color-text-accent: #3ECF8E;
+  --color-text-tertiary: rgba(175, 175, 175, 0.6);
+  --color-text-quaternary: rgba(175, 175, 175, 0.4);
   --color-text-destructive: #f97066;
-  --color-text-warning: #f79009;
   --color-text-success: #3ECF8E;
-  --color-text-disabled: #888888;
+  --color-text-warning: #f79009;
+  --color-text-destructive-secondary: #f97066;
+  --color-text-success-secondary: #22c55e;
+  --color-text-warning-secondary: #fdb022;
+  --color-text-accent: #3ECF8E;
+  --color-text-primary-on-surface: rgba(255, 255, 255, 0.95);
+  --color-text-placeholder: rgba(175, 175, 175, 0.3);
+  --color-text-disabled: rgba(175, 175, 175, 0.3);
+  --color-text-accent-secondary: #22c55e;
+  --color-text-accent-light-mode-only: #AFAFAF;
+  --color-text-text-selected: rgba(62, 207, 142, 0.3);
+  --color-text-secondary-on-surface: rgba(255, 255, 255, 0.9);
+  --color-text-logo-text: #FFFFFF;
+  --color-text-empty-state-icon: rgba(175, 175, 175, 0.3);
+  --color-text-inverted: #000000;
+  --color-text-inverted-dimmed: rgba(0, 0, 0, 0.8);
 
   /* Background Colors */
-  --color-background-primary: #000000;
-  --color-background-secondary: #1C1C1C;
-  --color-background-tertiary: #3B3B3B;
-  --color-background-quaternary: #2E2E2E;
-  --color-background-accent: #3ECF8E;
-  --color-background-destructive: #d92d20;
-  --color-background-warning: #f79009;
-  --color-background-success: #3ECF8E;
-  --color-background-overlay: rgba(0, 0, 0, 0.8);
+  --color-background-body: #000000;
+  --color-background-default-subtle: #1C1C1C;
+  --color-background-neutral-subtle: #000000;
+  --color-background-sidenav-bg: rgba(28, 28, 28, 0.92);
+  --color-background-default: #1C1C1C;
+  --color-background-soft: rgba(28, 28, 28, 0.25);
+  --color-background-gradient-bg-fill-chat-bg-1: #1C1C1C;
+  --color-background-gradient-bg-fill-chat-bg-2: #000000;
+  --color-background-gradient-bg-fill-chat-bubble-bg-1: rgba(175, 175, 175, 0.08);
+  --color-background-gradient-bg-fill-chat-bubble-bg-2: rgba(175, 175, 175, 0.02);
+  --color-background-gradient-bg-fill-debug-bg-1: rgba(175, 175, 175, 0.08);
+  --color-background-gradient-bg-fill-debug-bg-2: rgba(28, 28, 28, 0.04);
 
-  /* Border Colors */
-  --color-border-primary: #3B3B3B;
-  --color-border-secondary: #2E2E2E;
-  --color-border-tertiary: #666666;
-  --color-border-accent: #3ECF8E;
-  --color-border-destructive: #f97066;
-  --color-border-warning: #f79009;
-  --color-border-success: #3ECF8E;
-  --color-border-disabled: #2E2E2E;
+  /* Background Gradient Masks */
+  --color-background-gradient-mask-gray: rgba(28, 28, 28, 0.08);
+  --color-background-gradient-mask-transparent: rgba(0, 0, 0, 0);
+  --color-background-gradient-mask-input-clear-2: rgba(59, 59, 59, 0);
+  --color-background-gradient-mask-input-clear-1: #3B3B3B;
+  --color-background-gradient-mask-transparent-dark: rgba(0, 0, 0, 0);
+  --color-background-gradient-mask-side-panel-2: rgba(28, 28, 28, 0.9);
+  --color-background-gradient-mask-side-panel-1: rgba(28, 28, 28, 0.04);
 
-  /* Icon Colors */
-  --color-icon-primary: #FFFFFF;
-  --color-icon-secondary: #AFAFAF;
-  --color-icon-tertiary: #888888;
-  --color-icon-accent: #3ECF8E;
-  --color-icon-destructive: #f97066;
-  --color-icon-warning: #f79009;
-  --color-icon-success: #3ECF8E;
-  --color-icon-disabled: #888888;
+  /* Additional Background States */
+  --color-background-default-burn: #000000;
+  --color-background-overlay-fullscreen: rgba(28, 28, 28, 0.97);
+  --color-background-default-lighter: rgba(175, 175, 175, 0.04);
+  --color-background-section: rgba(28, 28, 28, 0.4);
+  --color-background-interaction-from-bg-1: rgba(28, 28, 28, 0.4);
+  --color-background-interaction-from-bg-2: rgba(28, 28, 28, 0.14);
+  --color-background-section-burn: rgba(28, 28, 28, 0.6);
+  --color-background-default-dodge: #3B3B3B;
+  --color-background-overlay: rgba(28, 28, 28, 0.8);
+  --color-background-default-dimmed: #2E2E2E;
+  --color-background-default-hover: #2E2E2E;
+  --color-background-overlay-alt: rgba(28, 28, 28, 0.4);
+  --color-background-surface-white: rgba(255, 255, 255, 0.9);
+  --color-background-overlay-destructive: rgba(240, 68, 56, 0.3);
+  --color-background-overlay-backdrop: rgba(28, 28, 28, 0.95);
+  --color-background-body-transparent: rgba(0, 0, 0, 0);
 
-  /* Additional component variables for comprehensive coverage */
-  --color-components-modal-bg: #1C1C1C;
-  --color-components-modal-border: #3B3B3B;
-  --color-components-modal-overlay: rgba(0, 0, 0, 0.8);
-  
-  --color-components-dropdown-bg: #1C1C1C;
-  --color-components-dropdown-border: #3B3B3B;
-  --color-components-dropdown-item-hover: #3B3B3B;
-  
-  --color-components-table-header-bg: #1C1C1C;
-  --color-components-table-row-hover: #3B3B3B;
-  --color-components-table-border: #3B3B3B;
-  
-  --color-components-sidebar-bg: #000000;
-  --color-components-sidebar-border: #3B3B3B;
-  --color-components-sidebar-item-hover: #1C1C1C;
-  --color-components-sidebar-item-active: #3ECF8E;
-  
-  --color-components-header-bg: #000000;
-  --color-components-header-border: #3B3B3B;
-  
-  --color-components-footer-bg: #000000;
-  --color-components-footer-border: #3B3B3B;
-  
-  --color-components-navigation-bg: #1C1C1C;
-  --color-components-navigation-border: #3B3B3B;
-  --color-components-navigation-item-hover: #3B3B3B;
-  --color-components-navigation-item-active: #3ECF8E;
+  /* Shadow Colors */
+  --color-shadow-shadow-1: rgba(0, 0, 0, 0.05);
+  --color-shadow-shadow-2: rgba(0, 0, 0, 0.08);
+  --color-shadow-shadow-3: rgba(0, 0, 0, 0.1);
+  --color-shadow-shadow-4: rgba(0, 0, 0, 0.12);
+  --color-shadow-shadow-5: rgba(0, 0, 0, 0.16);
+  --color-shadow-shadow-6: rgba(0, 0, 0, 0.2);
+  --color-shadow-shadow-7: rgba(0, 0, 0, 0.24);
+  --color-shadow-shadow-8: rgba(0, 0, 0, 0.28);
+  --color-shadow-shadow-9: rgba(0, 0, 0, 0.36);
+  --color-shadow-shadow-10: rgba(0, 0, 0, 0.4);
 
-  /* Loading and Progress */
-  --color-components-loading-bg: #3ECF8E;
-  --color-components-progress-bg: #2E2E2E;
-  --color-components-progress-fill: #3ECF8E;
+  /* Workflow Block System */
+  --color-workflow-block-border: rgba(59, 59, 59, 0.08);
+  --color-workflow-block-parma-bg: rgba(59, 59, 59, 0.05);
+  --color-workflow-block-bg: #2E2E2E;
+  --color-workflow-block-bg-transparent: rgba(46, 46, 46, 0.96);
+  --color-workflow-block-border-highlight: rgba(175, 175, 175, 0.2);
+  --color-workflow-block-wrapper-bg-1: #2E2E2E;
+  --color-workflow-block-wrapper-bg-2: rgba(46, 46, 46, 0.2);
 
-  /* Status Indicators */
-  --color-components-status-success: #3ECF8E;
-  --color-components-status-warning: #f79009;
-  --color-components-status-error: #f97066;
-  --color-components-status-info: #3ECF8E;
+  /* Workflow Canvas */
+  --color-workflow-canvas-workflow-dot-color: rgba(133, 133, 173, 0.11);
+  --color-workflow-canvas-workflow-bg: #000000;
+  --color-workflow-canvas-workflow-top-bar-1: #000000;
+  --color-workflow-canvas-workflow-top-bar-2: rgba(0, 0, 0, 0.08);
+  --color-workflow-canvas-canvas-overlay: rgba(0, 0, 0, 0.8);
 
-  /* Badges */
-  --color-components-badge-bg-primary: #3ECF8E;
-  --color-components-badge-text-primary: #000000;
-  --color-components-badge-bg-secondary: #3B3B3B;
-  --color-components-badge-text-secondary: #FFFFFF;
-  --color-components-badge-bg-success: #3ECF8E;
-  --color-components-badge-text-success: #000000;
-  --color-components-badge-bg-warning: #f79009;
-  --color-components-badge-text-warning: #000000;
-  --color-components-badge-bg-error: #f97066;
-  --color-components-badge-text-error: #FFFFFF;
+  /* Workflow Link Lines */
+  --color-workflow-link-line-active: #3ECF8E;
+  --color-workflow-link-line-normal: #888888;
+  --color-workflow-link-line-handle: #3ECF8E;
+  --color-workflow-link-line-normal-transparent: rgba(136, 136, 136, 0.2);
+  --color-workflow-link-line-failure-active: #fdb022;
+  --color-workflow-link-line-failure-handle: #fdb022;
+  --color-workflow-link-line-failure-button-bg: #f79009;
+  --color-workflow-link-line-failure-button-hover: #dc6803;
+  --color-workflow-link-line-success-active: #22c55e;
+  --color-workflow-link-line-success-handle: #22c55e;
+  --color-workflow-link-line-error-active: #f97066;
+  --color-workflow-link-line-error-handle: #f97066;
 
-  /* Tabs */
-  --color-components-tab-bg: transparent;
-  --color-components-tab-bg-active: #1C1C1C;
-  --color-components-tab-border: transparent;
-  --color-components-tab-border-active: #3ECF8E;
-  --color-components-tab-text: #AFAFAF;
-  --color-components-tab-text-active: #FFFFFF;
+  /* Workflow Minimap */
+  --color-workflow-minimap-bg: #2E2E2E;
+  --color-workflow-minimap-block: rgba(175, 175, 175, 0.08);
 
-  /* Code Block */
-  --color-components-code-bg: #1C1C1C;
-  --color-components-code-border: #3B3B3B;
-  --color-components-code-text: #AFAFAF;
-  --color-components-code-keyword: #3ECF8E;
-  --color-components-code-string: #f79009;
-  --color-components-code-comment: #888888;
+  /* Workflow Display States */
+  --color-workflow-display-success-bg: rgba(62, 207, 142, 0.2);
+  --color-workflow-display-success-border-1: rgba(62, 207, 142, 0.9);
+  --color-workflow-display-success-border-2: rgba(62, 207, 142, 0.8);
+  --color-workflow-display-success-vignette-color: rgba(62, 207, 142, 0.25);
+  --color-workflow-display-success-bg-line-pattern: rgba(28, 28, 28, 0.8);
 
-  /* Form Components */
-  --color-components-form-label: #FFFFFF;
-  --color-components-form-help-text: #AFAFAF;
-  --color-components-form-error-text: #f97066;
-  --color-components-form-success-text: #3ECF8E;
+  --color-workflow-display-glass-1: rgba(255, 255, 255, 0.03);
+  --color-workflow-display-glass-2: rgba(255, 255, 255, 0.05);
+  --color-workflow-display-vignette-dark: rgba(0, 0, 0, 0.4);
+  --color-workflow-display-highlight: rgba(255, 255, 255, 0.12);
+  --color-workflow-display-outline: rgba(28, 28, 28, 0.95);
+  --color-workflow-display-error-bg: rgba(240, 68, 56, 0.2);
+  --color-workflow-display-error-bg-line-pattern: rgba(28, 28, 28, 0.8);
+  --color-workflow-display-error-border-1: rgba(240, 68, 56, 0.9);
+  --color-workflow-display-error-border-2: rgba(240, 68, 56, 0.8);
+  --color-workflow-display-error-vignette-color: rgba(240, 68, 56, 0.25);
 
-  /* Link Colors */
-  --color-components-link: #3ECF8E;
-  --color-components-link-hover: #22c55e;
-  --color-components-link-visited: #AFAFAF;
-  --color-components-link-disabled: #888888;
+  --color-workflow-display-warning-bg: rgba(247, 144, 9, 0.2);
+  --color-workflow-display-warning-bg-line-pattern: rgba(28, 28, 28, 0.8);
+  --color-workflow-display-warning-border-1: rgba(247, 144, 9, 0.9);
+  --color-workflow-display-warning-border-2: rgba(247, 144, 9, 0.8);
+  --color-workflow-display-warning-vignette-color: rgba(247, 144, 9, 0.25);
 
-  /* Action Bar */
-  --color-components-actionbar-bg: #1C1C1C;
-  --color-components-actionbar-border: #3B3B3B;
-  --color-components-actionbar-text: #FFFFFF;
-  --color-components-actionbar-item-hover: #3B3B3B;
+  --color-workflow-display-normal-bg: rgba(62, 207, 142, 0.2);
+  --color-workflow-display-normal-bg-line-pattern: rgba(28, 28, 28, 0.8);
+  --color-workflow-display-normal-border-1: rgba(62, 207, 142, 0.9);
+  --color-workflow-display-normal-border-2: rgba(62, 207, 142, 0.8);
+  --color-workflow-display-normal-vignette-color: rgba(62, 207, 142, 0.25);
 
-  /* Avatar */
-  --color-components-avatar-bg: #3B3B3B;
-  --color-components-avatar-border: #3B3B3B;
-  --color-components-avatar-text: #FFFFFF;
-  --color-components-avatar-initials: #000000;
+  --color-workflow-display-disabled-bg: rgba(175, 175, 175, 0.2);
+  --color-workflow-display-disabled-bg-line-pattern: rgba(28, 28, 28, 0.8);
+  --color-workflow-display-disabled-border-1: rgba(175, 175, 175, 0.6);
+  --color-workflow-display-disabled-border-2: rgba(175, 175, 175, 0.25);
+  --color-workflow-display-disabled-vignette-color: rgba(175, 175, 175, 0.25);
+  --color-workflow-display-disabled-outline: rgba(28, 28, 28, 0.95);
 
-  /* Chart */
-  --color-components-chart-grid: #3B3B3B;
-  --color-components-chart-axis: #AFAFAF;
-  --color-components-chart-primary: #3ECF8E;
-  --color-components-chart-secondary: #AFAFAF;
-  --color-components-chart-bg: #1C1C1C;
+  /* Workflow Progress */
+  --color-workflow-workflow-progress-bg-1: rgba(28, 28, 28, 0.25);
+  --color-workflow-workflow-progress-bg-2: rgba(28, 28, 28, 0.04);
 
-  /* Chat */
-  --color-components-chat-bg: #000000;
-  --color-components-chat-message-user: #3ECF8E;
-  --color-components-chat-message-bot: #1C1C1C;
-  --color-components-chat-border: #3B3B3B;
-  --color-components-chat-input-bg: #1C1C1C;
-  --color-components-chat-input-border: #3B3B3B;
+  /* Divider Colors */
+  --color-divider-subtle: rgba(59, 59, 59, 0.08);
+  --color-divider-regular: rgba(59, 59, 59, 0.14);
+  --color-divider-deep: rgba(59, 59, 59, 0.2);
+  --color-divider-burn: rgba(28, 28, 28, 0.95);
+  --color-divider-intense: rgba(175, 175, 175, 0.4);
+  --color-divider-solid: #3B3B3B;
+  --color-divider-solid-alt: #888888;
 
-  /* Dropzone */
-  --color-components-dropzone-bg: #1C1C1C;
-  --color-components-dropzone-border: #3B3B3B;
-  --color-components-dropzone-border-active: #3ECF8E;
-  --color-components-dropzone-text: #AFAFAF;
-  --color-components-dropzone-text-active: #FFFFFF;
+  /* State Colors - Base */
+  --color-state-base-hover: rgba(175, 175, 175, 0.08);
+  --color-state-base-active: rgba(175, 175, 175, 0.2);
+  --color-state-base-hover-alt: rgba(175, 175, 175, 0.14);
+  --color-state-base-handle: rgba(175, 175, 175, 0.3);
+  --color-state-base-handle-hover: rgba(175, 175, 175, 0.5);
+  --color-state-base-hover-subtle: rgba(175, 175, 175, 0.04);
 
-  /* Icon */
-  --color-components-icon-primary: #FFFFFF;
-  --color-components-icon-secondary: #AFAFAF;
-  --color-components-icon-tertiary: #888888;
-  --color-components-icon-accent: #3ECF8E;
-  --color-components-icon-disabled: #888888;
+  /* State Colors - Accent */
+  --color-state-accent-hover: rgba(62, 207, 142, 0.14);
+  --color-state-accent-active: rgba(62, 207, 142, 0.14);
+  --color-state-accent-hover-alt: rgba(62, 207, 142, 0.25);
+  --color-state-accent-solid: #3ECF8E;
+  --color-state-accent-active-alt: rgba(62, 207, 142, 0.2);
 
-  /* Label */
-  --color-components-label-text: #FFFFFF;
-  --color-components-label-text-secondary: #AFAFAF;
-  --color-components-label-required: #f97066;
+  /* State Colors - Destructive */
+  --color-state-destructive-hover: rgba(240, 68, 56, 0.14);
+  --color-state-destructive-hover-alt: rgba(240, 68, 56, 0.25);
+  --color-state-destructive-active: rgba(240, 68, 56, 0.3);
+  --color-state-destructive-solid: #f97066;
+  --color-state-destructive-border: #f97066;
+  --color-state-destructive-hover-transparent: rgba(240, 68, 56, 0);
 
-  /* Main Layout */
-  --color-components-main-bg: #000000;
-  --color-components-main-border: #3B3B3B;
-  --color-components-main-text: #FFFFFF;
+  /* State Colors - Success */
+  --color-state-success-hover: rgba(62, 207, 142, 0.14);
+  --color-state-success-hover-alt: rgba(62, 207, 142, 0.25);
+  --color-state-success-active: rgba(62, 207, 142, 0.3);
+  --color-state-success-solid: #22c55e;
 
-  /* Menu */
-  --color-components-menu-bg: #1C1C1C;
-  --color-components-menu-border: #3B3B3B;
-  --color-components-menu-item-hover: #3B3B3B;
-  --color-components-menu-item-active: #3ECF8E;
-  --color-components-menu-text: #FFFFFF;
-  --color-components-menu-text-secondary: #AFAFAF;
+  /* State Colors - Warning */
+  --color-state-warning-hover: rgba(247, 144, 9, 0.14);
+  --color-state-warning-hover-alt: rgba(247, 144, 9, 0.25);
+  --color-state-warning-active: rgba(247, 144, 9, 0.3);
+  --color-state-warning-solid: #f79009;
+  --color-state-warning-hover-transparent: rgba(247, 144, 9, 0);
 
-  /* Option */
-  --color-components-option-bg: #1C1C1C;
-  --color-components-option-bg-hover: #3B3B3B;
-  --color-components-option-bg-selected: #3ECF8E;
-  --color-components-option-text: #FFFFFF;
-  --color-components-option-text-selected: #000000;
+  /* Effects */
+  --color-effects-highlight: rgba(175, 175, 175, 0.08);
+  --color-effects-highlight-lightmode-off: rgba(175, 175, 175, 0.08);
+  --color-effects-image-frame: #ffffff;
+  --color-effects-icon-border: rgba(255, 255, 255, 0.15);
 
-  /* Premium */
-  --color-components-premium-bg: linear-gradient(135deg, #3ECF8E, #22c55e);
-  --color-components-premium-text: #000000;
-  --color-components-premium-border: #3ECF8E;
+  /* Utility Colors - Maintaining Original Structure but with Supabase Mapping */
+  --color-util-colors-orange-dark-orange-dark-50: #1a0f0a;
+  --color-util-colors-orange-dark-orange-dark-100: #331a0d;
+  --color-util-colors-orange-dark-orange-dark-200: #4d260f;
+  --color-util-colors-orange-dark-orange-dark-300: #663111;
+  --color-util-colors-orange-dark-orange-dark-400: #f79009;
+  --color-util-colors-orange-dark-orange-dark-500: #f79009;
+  --color-util-colors-orange-dark-orange-dark-600: #fdb022;
+  --color-util-colors-orange-dark-orange-dark-700: #fec84b;
 
-  /* Segmented Control */
-  --color-components-segmented-bg: #3B3B3B;
-  --color-components-segmented-item-bg: transparent;
-  --color-components-segmented-item-bg-active: #3ECF8E;
-  --color-components-segmented-text: #AFAFAF;
-  --color-components-segmented-text-active: #000000;
+  --color-util-colors-orange-orange-50: #1a0f0a;
+  --color-util-colors-orange-orange-100: #331a0d;
+  --color-util-colors-orange-orange-200: #4d260f;
+  --color-util-colors-orange-orange-300: #663111;
+  --color-util-colors-orange-orange-400: #f79009;
+  --color-util-colors-orange-orange-500: #f79009;
+  --color-util-colors-orange-orange-600: #fdb022;
+  --color-util-colors-orange-orange-700: #fec84b;
+  --color-util-colors-orange-orange-100-transparent: rgba(51, 26, 13, 0);
 
-  /* Slider */
-  --color-components-slider-track: #3B3B3B;
-  --color-components-slider-fill: #3ECF8E;
-  --color-components-slider-thumb: #3ECF8E;
-  --color-components-slider-thumb-hover: #22c55e;
+  /* Green variations - using Supabase green */
+  --color-util-colors-green-green-50: #0a1a0f;
+  --color-util-colors-green-green-100: #0f331a;
+  --color-util-colors-green-green-200: #154d26;
+  --color-util-colors-green-green-300: #1a6631;
+  --color-util-colors-green-green-400: #22c55e;
+  --color-util-colors-green-green-500: #3ECF8E;
+  --color-util-colors-green-green-600: #22c55e;
+  --color-util-colors-green-green-700: #16a34a;
 
-  /* Toggle */
-  --color-components-toggle-bg: #3B3B3B;
-  --color-components-toggle-bg-active: #3ECF8E;
-  --color-components-toggle-thumb: #FFFFFF;
-  --color-components-toggle-thumb-active: #000000;
+  --color-util-colors-green-light-green-light-50: #0a1a0f;
+  --color-util-colors-green-light-green-light-100: #0f331a;
+  --color-util-colors-green-light-green-light-200: #154d26;
+  --color-util-colors-green-light-green-light-300: #1a6631;
+  --color-util-colors-green-light-green-light-400: #22c55e;
+  --color-util-colors-green-light-green-light-500: #3ECF8E;
+  --color-util-colors-green-light-green-light-600: #22c55e;
+  --color-util-colors-green-light-green-light-700: #16a34a;
 
-  /* Additional comprehensive color system */
+  /* All other utility colors mapped to appropriate Supabase colors */
+  --color-util-colors-red-red-50: #1a0a0a;
+  --color-util-colors-red-red-100: #330f0f;
+  --color-util-colors-red-red-200: #4d1515;
+  --color-util-colors-red-red-300: #661a1a;
+  --color-util-colors-red-red-400: #d92d20;
+  --color-util-colors-red-red-500: #f04438;
+  --color-util-colors-red-red-600: #f97066;
+  --color-util-colors-red-red-700: #fda29b;
+
+  --color-util-colors-warning-warning-50: #1a0f0a;
+  --color-util-colors-warning-warning-100: #331a0d;
+  --color-util-colors-warning-warning-200: #4d260f;
+  --color-util-colors-warning-warning-300: #663111;
+  --color-util-colors-warning-warning-400: #dc6803;
+  --color-util-colors-warning-warning-500: #f79009;
+  --color-util-colors-warning-warning-600: #fdb022;
+  --color-util-colors-warning-warning-700: #fec84b;
+
+  --color-util-colors-blue-blue-50: #0a0f1a;
+  --color-util-colors-blue-blue-100: #0f1a33;
+  --color-util-colors-blue-blue-200: #15264d;
+  --color-util-colors-blue-blue-300: #1a3166;
+  --color-util-colors-blue-blue-400: #3ECF8E;
+  --color-util-colors-blue-blue-500: #3ECF8E;
+  --color-util-colors-blue-blue-600: #22c55e;
+  --color-util-colors-blue-blue-700: #16a34a;
+
+  --color-util-colors-blue-light-blue-light-50: #0a0f1a;
+  --color-util-colors-blue-light-blue-light-100: #0f1a33;
+  --color-util-colors-blue-light-blue-light-200: #15264d;
+  --color-util-colors-blue-light-blue-light-300: #1a3166;
+  --color-util-colors-blue-light-blue-light-400: #3ECF8E;
+  --color-util-colors-blue-light-blue-light-500: #3ECF8E;
+  --color-util-colors-blue-light-blue-light-600: #22c55e;
+  --color-util-colors-blue-light-blue-light-700: #16a34a;
+
+  --color-util-colors-blue-brand-blue-brand-50: #0a0f1a;
+  --color-util-colors-blue-brand-blue-brand-100: #0f1a33;
+  --color-util-colors-blue-brand-blue-brand-200: #15264d;
+  --color-util-colors-blue-brand-blue-brand-300: #1a3166;
+  --color-util-colors-blue-brand-blue-brand-400: #3ECF8E;
+  --color-util-colors-blue-brand-blue-brand-500: #3ECF8E;
+  --color-util-colors-blue-brand-blue-brand-600: #22c55e;
+  --color-util-colors-blue-brand-blue-brand-700: #16a34a;
+
+  /* Gray scale variations */
+  --color-util-colors-gray-gray-50: #000000;
+  --color-util-colors-gray-gray-100: #171717;
+  --color-util-colors-gray-gray-200: #1C1C1C;
+  --color-util-colors-gray-gray-300: #2E2E2E;
+  --color-util-colors-gray-gray-400: #3B3B3B;
+  --color-util-colors-gray-gray-500: #888888;
+  --color-util-colors-gray-gray-600: #AFAFAF;
+  --color-util-colors-gray-gray-700: #FFFFFF;
+
+  /* All other utility colors following the same pattern */
+  --color-util-colors-pink-pink-50: #1a0a14;
+  --color-util-colors-pink-pink-100: #330f28;
+  --color-util-colors-pink-pink-200: #4d153c;
+  --color-util-colors-pink-pink-300: #661a50;
+  --color-util-colors-pink-pink-400: #dd2590;
+  --color-util-colors-pink-pink-500: #dd2590;
+  --color-util-colors-pink-pink-600: #ee46bc;
+  --color-util-colors-pink-pink-700: #f670c7;
+
+  --color-util-colors-purple-purple-50: #0f0a1a;
+  --color-util-colors-purple-purple-100: #1e0f33;
+  --color-util-colors-purple-purple-200: #2d154d;
+  --color-util-colors-purple-purple-300: #3c1a66;
+  --color-util-colors-purple-purple-400: #6938ef;
+  --color-util-colors-purple-purple-500: #7a5af8;
+  --color-util-colors-purple-purple-600: #9b8afb;
+  --color-util-colors-purple-purple-700: #bdb4fe;
+
+  --color-util-colors-indigo-indigo-50: #0a0a1a;
+  --color-util-colors-indigo-indigo-100: #0f0f33;
+  --color-util-colors-indigo-indigo-200: #15154d;
+  --color-util-colors-indigo-indigo-300: #1a1a66;
+  --color-util-colors-indigo-indigo-400: #3ECF8E;
+  --color-util-colors-indigo-indigo-500: #3ECF8E;
+  --color-util-colors-indigo-indigo-600: #22c55e;
+  --color-util-colors-indigo-indigo-700: #16a34a;
+
+  --color-util-colors-yellow-yellow-50: #1a1a0a;
+  --color-util-colors-yellow-yellow-100: #33330f;
+  --color-util-colors-yellow-yellow-200: #4d4d15;
+  --color-util-colors-yellow-yellow-300: #66661a;
+  --color-util-colors-yellow-yellow-400: #eaaa08;
+  --color-util-colors-yellow-yellow-500: #eaaa08;
+  --color-util-colors-yellow-yellow-600: #fac515;
+  --color-util-colors-yellow-yellow-700: #fde272;
+
+  --color-util-colors-teal-teal-50: #0a1a1a;
+  --color-util-colors-teal-teal-100: #0f3333;
+  --color-util-colors-teal-teal-200: #154d4d;
+  --color-util-colors-teal-teal-300: #1a6666;
+  --color-util-colors-teal-teal-400: #3ECF8E;
+  --color-util-colors-teal-teal-500: #3ECF8E;
+  --color-util-colors-teal-teal-600: #22c55e;
+  --color-util-colors-teal-teal-700: #16a34a;
+
+  --color-util-colors-cyan-cyan-50: #0a1a1a;
+  --color-util-colors-cyan-cyan-100: #0f3333;
+  --color-util-colors-cyan-cyan-200: #154d4d;
+  --color-util-colors-cyan-cyan-300: #1a6666;
+  --color-util-colors-cyan-cyan-400: #3ECF8E;
+  --color-util-colors-cyan-cyan-500: #3ECF8E;
+  --color-util-colors-cyan-cyan-600: #22c55e;
+  --color-util-colors-cyan-cyan-700: #16a34a;
+
+  --color-util-colors-violet-violet-50: #0f0a1a;
+  --color-util-colors-violet-violet-100: #1e0f33;
+  --color-util-colors-violet-violet-200: #2d154d;
+  --color-util-colors-violet-violet-300: #3c1a66;
+  --color-util-colors-violet-violet-400: #7839ee;
+  --color-util-colors-violet-violet-500: #875bf7;
+  --color-util-colors-violet-violet-600: #a48afb;
+  --color-util-colors-violet-violet-700: #c3b5fd;
+
+  --color-util-colors-fuchsia-fuchsia-50: #140a1a;
+  --color-util-colors-fuchsia-fuchsia-100: #280f33;
+  --color-util-colors-fuchsia-fuchsia-200: #3c154d;
+  --color-util-colors-fuchsia-fuchsia-300: #501a66;
+  --color-util-colors-fuchsia-fuchsia-400: #ba24d5;
+  --color-util-colors-fuchsia-fuchsia-500: #d444f1;
+  --color-util-colors-fuchsia-fuchsia-600: #e478fa;
+  --color-util-colors-fuchsia-fuchsia-700: #eeaafd;
+
+  --color-util-colors-rose-rose-50: #1a0a14;
+  --color-util-colors-rose-rose-100: #330f28;
+  --color-util-colors-rose-rose-200: #4d153c;
+  --color-util-colors-rose-rose-300: #661a50;
+  --color-util-colors-rose-rose-400: #e31b54;
+  --color-util-colors-rose-rose-500: #f63d68;
+  --color-util-colors-rose-rose-600: #fd6f8e;
+  --color-util-colors-rose-rose-700: #fea3b4;
+
+  --color-util-colors-midnight-midnight-50: #0a0a0a;
+  --color-util-colors-midnight-midnight-100: #171717;
+  --color-util-colors-midnight-midnight-200: #2E2E2E;
+  --color-util-colors-midnight-midnight-300: #3B3B3B;
+  --color-util-colors-midnight-midnight-400: #888888;
+  --color-util-colors-midnight-midnight-500: #AFAFAF;
+  --color-util-colors-midnight-midnight-600: #FFFFFF;
+  --color-util-colors-midnight-midnight-700: #FFFFFF;
+
+  --color-util-colors-gray-blue-gray-blue-50: #0a0a14;
+  --color-util-colors-gray-blue-gray-blue-100: #0f0f28;
+  --color-util-colors-gray-blue-gray-blue-200: #15153c;
+  --color-util-colors-gray-blue-gray-blue-300: #1a1a50;
+  --color-util-colors-gray-blue-gray-blue-400: #3B3B3B;
+  --color-util-colors-gray-blue-gray-blue-500: #888888;
+  --color-util-colors-gray-blue-gray-blue-600: #AFAFAF;
+  --color-util-colors-gray-blue-gray-blue-700: #FFFFFF;
+
+  /* Third-party Colors */
+  --color-third-party-LangChain: #ffffff;
+  --color-third-party-Langfuse: #ffffff;
+  --color-third-party-Github: #ffffff;
+  --color-third-party-Github-tertiary: rgba(175, 175, 175, 0.6);
+  --color-third-party-Github-secondary: #AFAFAF;
+  --color-third-party-model-bg-openai: #0a0a0a;
+  --color-third-party-model-bg-anthropic: #0f0f0a;
+  --color-third-party-model-bg-default: #000000;
+  --color-third-party-aws: #0a1417;
+  --color-third-party-aws-alt: #0f1a1e;
+
+  /* SaaS Colors */
+  --color-saas-background: #000000;
+  --color-saas-pricing-grid-bg: rgba(175, 175, 175, 0.2);
+
+  /* Logo Colors */
+  --color-dify-logo-dify-logo-blue: #FFFFFF;
+  --color-dify-logo-dify-logo-black: #FFFFFF;
+
+  /* Primary Color System for Tailwind Utilities */
+  --color-primary-25: rgba(62, 207, 142, 0.05);
   --color-primary-50: rgba(62, 207, 142, 0.1);
-  --color-primary-100: rgba(62, 207, 142, 0.2);
-  --color-primary-200: rgba(62, 207, 142, 0.3);
+  --color-primary-100: rgba(62, 207, 142, 0.15);
+  --color-primary-200: rgba(62, 207, 142, 0.25);
   --color-primary-300: rgba(62, 207, 142, 0.4);
   --color-primary-400: rgba(62, 207, 142, 0.6);
   --color-primary-500: #3ECF8E;
@@ -389,16 +817,4 @@ html[data-theme="supabase-dark"] {
   --color-primary-700: #16a34a;
   --color-primary-800: #15803d;
   --color-primary-900: #166534;
-
-  /* Gray scale system */
-  --color-gray-50: #FFFFFF;
-  --color-gray-100: #AFAFAF;
-  --color-gray-200: #888888;
-  --color-gray-300: #666666;
-  --color-gray-400: #4a4a4a;
-  --color-gray-500: #3B3B3B;
-  --color-gray-600: #2E2E2E;
-  --color-gray-700: #1C1C1C;
-  --color-gray-800: #171717;
-  --color-gray-900: #000000;
 }

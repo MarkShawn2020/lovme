@@ -15,19 +15,19 @@ const config = {
         'border-subtle': '#3B3B3B',
         'border-muted': '#2E2E2E',
 
-        // Original primary color system (preserving compatibility)
+        // Primary color system using CSS variables for theme support
         'primary': {
-          25: '#f5f8ff',
-          50: '#eff4ff',
-          100: '#d1e0ff',
-          200: '#b2ccff',
-          300: '#84adff',
-          400: '#528bff',
-          500: '#2970ff',
-          600: '#155eef',
-          700: '#004eeb',
-          800: '#0040c1',
-          900: '#00359e',
+          25: 'var(--color-primary-25)',
+          50: 'var(--color-primary-50)',
+          100: 'var(--color-primary-100)',
+          200: 'var(--color-primary-200)',
+          300: 'var(--color-primary-300)',
+          400: 'var(--color-primary-400)',
+          500: 'var(--color-primary-500)',
+          600: 'var(--color-primary-600)',
+          700: 'var(--color-primary-700)',
+          800: 'var(--color-primary-800)',
+          900: 'var(--color-primary-900)',
         },
         'gray': {
           25: '#fcfcfd',
