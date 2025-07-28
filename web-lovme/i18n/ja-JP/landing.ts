@@ -3,6 +3,10 @@ const translation = {
     title: 'Neurora Tech',
     signIn: 'サインイン',
     getStarted: '始める',
+    pricing: '料金',
+    features: '機能',
+    docs: 'ドキュメント',
+    vibeCoding: 'Vibe Coding',
   },
   hero: {
     title: '強力なAIアプリケーションを構築',

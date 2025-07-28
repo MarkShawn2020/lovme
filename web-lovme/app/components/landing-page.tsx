@@ -35,20 +35,57 @@ const LandingPage = () => {
   return (
     <div className="bg-background-body">
       {/* Header with Glass Morphism */}
-      <header className="glass-enabled sticky top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur-md backdrop-saturate-150">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between py-6">
+      <header className="header-container glass-enabled sticky top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur-md backdrop-saturate-150">
+        {/* Header overlays for visual effects */}
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-400/5 via-transparent to-yellow-500/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
+        
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between py-4">
+            {/* Logo section */}
             <div className="flex items-center">
               <NeuroraLogo size="large" className="mr-3" />
-              <span className="text-xl font-semibold text-white">
-                {t('landing.header.title')}
-              </span>
+              <a className="flex items-center" href="/">
+                <span className="text-xl font-bold text-white/90">LovMe</span>
+              </a>
+              <a className="ml-3" href="#pricing">
+                <div className="relative overflow-hidden rounded-full bg-gradient-to-r from-amber-500/20 to-yellow-500/20 backdrop-blur-sm border border-amber-400/30 px-3 py-1 transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:border-amber-300/50">
+                  <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 animate-pulse"></div>
+                  <span className="relative text-xs font-bold text-amber-300">80% OFF</span>
+                </div>
+              </a>
             </div>
+
+            {/* Navigation section */}
+            <nav className="hidden md:flex items-center space-x-6">
+              <a className="text-white/70 hover:text-white transition-colors font-medium flex items-center gap-2" href="/vibe-coding">
+                {t('landing.header.vibeCoding')}
+                <div className="inline-flex items-center rounded-full border border-amber-400/30 px-2.5 py-0.5 text-xs font-semibold bg-amber-400/10 text-amber-300">
+                  New
+                </div>
+              </a>
+              <a className="text-white/70 hover:text-white transition-colors font-medium" href="#features">
+                {t('landing.header.features')}
+              </a>
+              <a className="text-white/70 hover:text-white transition-colors font-medium" href="#pricing">
+                {t('landing.header.pricing')}
+              </a>
+              <a className="text-white/70 hover:text-white transition-colors font-medium" href="/docs" target="_blank">
+                {t('landing.header.docs')}
+              </a>
+            </nav>
+
+            {/* CTA section */}
             <div className="flex items-center space-x-4">
-              <button className="px-4 py-2 font-medium text-white/90 transition-colors duration-200 hover:text-white" onClick={handleSignIn}>
+              <a className="hidden sm:flex items-center gap-1 text-white/70 hover:text-white transition-colors" href="https://x.com/lovme" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+              <button className="px-4 py-2 font-medium text-white/70 hover:text-white transition-colors" onClick={handleSignIn}>
                 {t('landing.header.signIn')}
               </button>
-              <button className="rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-8 py-3 font-semibold text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]" onClick={handleGetStarted}>
+              <button className="rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-6 py-2.5 font-semibold text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:scale-105" onClick={handleGetStarted}>
                 {t('landing.header.getStarted')}
               </button>
             </div>
@@ -755,7 +792,7 @@ const LandingPage = () => {
           <div className="flex flex-col items-center justify-between space-y-8 md:flex-row md:space-y-0">
             <div className="flex items-center">
               <NeuroraLogo size="medium" style="monochromeWhite" className="mr-3" />
-              <span className="text-lg font-semibold text-white">{t('landing.header.title')}</span>
+              <span className="text-lg font-semibold text-white">LovMe</span>
             </div>
             <div className="text-sm font-medium text-[#888888]">
               {t('landing.footer.copyright', { year: new Date().getFullYear() })}

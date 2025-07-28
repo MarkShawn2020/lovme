@@ -3,6 +3,10 @@ const translation = {
     title: 'Neurora Tech',
     signIn: 'Iniciar Sesión',
     getStarted: 'Comenzar',
+    pricing: 'Precios',
+    features: 'Características',
+    docs: 'Documentación',
+    vibeCoding: 'Vibe Coding',
   },
   hero: {
     title: 'Construye Aplicaciones de IA Potentes',

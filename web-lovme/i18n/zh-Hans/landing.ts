@@ -3,6 +3,10 @@ const translation = {
     title: 'Neurora Tech',
     signIn: '登录',
     getStarted: '开始使用',
+    pricing: '定价',
+    features: '功能',
+    docs: '文档',
+    vibeCoding: '氛围编程',
   },
   hero: {
     title: '构建强大的AI应用程序',
