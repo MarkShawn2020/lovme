@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import cn from '@/utils/classnames'
 import NeuroraLogo from '@/app/components/base/logo/neurora-logo'
+import Avatar from '@/app/components/base/avatar'
 import FeatureCard from '@/app/components/base/feature-card'
 import TestimonialCard from '@/app/components/base/testimonial-card'
 import PricingCard from '@/app/components/base/pricing-card'
@@ -20,6 +21,16 @@ const LandingPage = () => {
   const handleSignIn = () => {
     router.push('/signin')
   }
+
+  // Team member avatars
+  const teamAvatars = [
+    { name: 'Mark', avatar: '/avatars/mark.jpg' },
+    { name: 'Rocky', avatar: '/avatars/rocky.jpg' },
+    { name: 'Dongyang', avatar: '/avatars/dongyang.jpg' },
+    { name: 'Laixinlu', avatar: '/avatars/laixinlu.jpg' },
+    { name: 'Chenchunyu', avatar: '/avatars/chenchunyu.jpg' },
+    { name: 'Stain', avatar: '/avatars/stain.jpg' },
+  ]
 
   return (
     <div className="bg-background-body">
@@ -152,12 +163,23 @@ const LandingPage = () => {
                 {/* Enhanced Social Proof */}
                 <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
                   <div className="flex items-center gap-4">
-                    {/* Enhanced Avatar Stack */}
-                    <div className="relative flex -space-x-3">
-                      {[1, 2, 3, 4].map(i => (
-                        <div key={i} className="relative h-12 w-12 rounded-full border-2 border-black bg-gradient-to-br from-amber-400 to-yellow-500 shadow-[0_0_15px_rgba(251,191,36,0.3)] transition-all hover:z-10 hover:scale-110" />
+                    {/* Enhanced Avatar Stack - More compact */}
+                    <div className="relative flex -space-x-4">
+                      {teamAvatars.slice(0, 5).map((member, index) => (
+                        <div 
+                          key={member.name} 
+                          className="relative transition-all hover:z-10 hover:scale-110"
+                          style={{ zIndex: teamAvatars.length - index }}
+                        >
+                          <Avatar
+                            name={member.name}
+                            avatar={member.avatar}
+                            size={40}
+                            className="border-2 border-black/80 shadow-[0_0_20px_rgba(251,191,36,0.4)] ring-2 ring-amber-400/20"
+                          />
+                        </div>
                       ))}
-                      <div className="relative flex h-12 w-12 items-center justify-center rounded-full border-2 border-amber-400/30 bg-black/80 text-sm font-bold text-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.2)] backdrop-blur-sm">
+                      <div className="relative z-0 flex h-10 w-10 items-center justify-center rounded-full border-2 border-amber-400/40 bg-gradient-to-br from-amber-400/20 to-yellow-500/20 text-xs font-bold text-amber-400 shadow-[0_0_20px_rgba(251,191,36,0.3)] backdrop-blur-sm">
                         +{t('landing.hero.userCount')}
                       </div>
                     </div>
