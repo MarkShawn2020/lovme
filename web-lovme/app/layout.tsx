@@ -53,7 +53,7 @@ const LocaleLayout = async ({
   return (
     <html lang={locale ?? 'en'} className="h-full" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#FFFFFF" />
+        <meta name="theme-color" content="#000000" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -63,7 +63,7 @@ const LocaleLayout = async ({
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
       <body
-        className="color-scheme h-full select-auto"
+        className="color-scheme h-full select-auto bg-bg-dark font-sans text-text-secondary"
         {...datasetMap}
       >
         <BrowserInitializer>
@@ -71,7 +71,8 @@ const LocaleLayout = async ({
             <TanstackQueryInitializer>
               <ThemeProvider
                 attribute='data-theme'
-                defaultTheme='system'
+                defaultTheme='supabase-dark'
+                themes={['light', 'dark', 'supabase-dark', 'system']}
                 enableSystem
                 disableTransitionOnChange
               >

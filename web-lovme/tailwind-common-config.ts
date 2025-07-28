@@ -5,20 +5,18 @@ const config = {
     typography: require('./typography'),
     extend: {
       colors: {
-        gray: {
-          25: '#fcfcfd',
-          50: '#f9fafb',
-          100: '#f2f4f7',
-          200: '#eaecf0',
-          300: '#d0d5dd',
-          400: '#98a2b3',
-          500: '#667085',
-          700: '#475467',
-          600: '#344054',
-          800: '#1d2939',
-          900: '#101828',
-        },
-        primary: {
+        // DESIGN.md inspired colors (new additions)
+        'dark-surface': '#1C1C1C',
+        'dark-accent': '#3B3B3B',
+        'text-primary': '#FFFFFF',
+        'text-secondary': '#AFAFAF',
+        'text-tertiary': '#888888',
+        'bg-dark': '#000000',
+        'border-subtle': '#3B3B3B',
+        'border-muted': '#2E2E2E',
+
+        // Original primary color system (preserving compatibility)
+        'primary': {
           25: '#f5f8ff',
           50: '#eff4ff',
           100: '#d1e0ff',
@@ -31,24 +29,37 @@ const config = {
           800: '#0040c1',
           900: '#00359e',
         },
-        blue: {
+        'gray': {
+          25: '#fcfcfd',
+          50: '#f9fafb',
+          100: '#f2f4f7',
+          200: '#eaecf0',
+          300: '#d0d5dd',
+          400: '#98a2b3',
+          500: '#667085',
+          700: '#475467',
+          600: '#344054',
+          800: '#1d2939',
+          900: '#101828',
+        },
+        'blue': {
           500: '#E1EFFE',
         },
-        green: {
+        'green': {
           50: '#F3FAF7',
           100: '#DEF7EC',
           800: '#03543F',
 
         },
-        yellow: {
+        'yellow': {
           100: '#FDF6B2',
           800: '#723B13',
         },
-        purple: {
+        'purple': {
           50: '#F6F5FF',
           200: '#DCD7FE',
         },
-        indigo: {
+        'indigo': {
           25: '#F5F8FF',
           50: '#EEF4FF',
           100: '#E0EAFF',
@@ -58,6 +69,25 @@ const config = {
           800: '#2D31A6',
         },
         ...tailwindThemeVarDefine,
+      },
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+      },
+      spacing: {
+        'base': '1rem', // 16px
+        'sm': '0.5rem', // 8px
+        'xs': '0.25rem', // 4px
+        'lg': '1.5rem', // 24px
+        'xl': '2rem', // 32px
+        '2xl': '2.5rem', // 40px
+        '3xl': '3rem', // 48px
+      },
+      borderRadius: {
+        sm: '0.25rem', // 4px
+        md: '0.5rem', // 8px
+        lg: '0.75rem', // 12px
+        xl: '1rem', // 16px
+        full: '9999px',
       },
       screens: {
         'mobile': '100px',
@@ -69,11 +99,14 @@ const config = {
         '2k': '2560px',
       },
       boxShadow: {
+        // DESIGN.md inspired shadows
+        'dark-border': '0 0 0 1px #333, 0 0 20px -5px #000',
+        'dark-elevated': '0 0 0 1px #171717, 0 10px 30px -10px #000',
+        'primary-glow': '0 0 20px -5px #3ECF8E',
+
+        // Existing shadows (preserving for compatibility)
         'xs': '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
-        'sm': '0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10)',
         'sm-no-bottom': '0px -1px 2px 0px rgba(16, 24, 40, 0.06), 0px -1px 3px 0px rgba(16, 24, 40, 0.10)',
-        'md': '0px 2px 4px -2px rgba(16, 24, 40, 0.06), 0px 4px 8px -2px rgba(16, 24, 40, 0.10)',
-        'lg': '0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08)',
         'xl': '0px 8px 8px -4px rgba(16, 24, 40, 0.03), 0px 20px 24px -4px rgba(16, 24, 40, 0.08)',
         '2xl': '0px 24px 48px -12px rgba(16, 24, 40, 0.18)',
         '3xl': '0px 32px 64px -12px rgba(16, 24, 40, 0.14)',

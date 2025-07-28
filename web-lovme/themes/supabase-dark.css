@@ -1,0 +1,404 @@
+/* 
+ * Supabase-inspired Dark Theme
+ * Based on DESIGN.md specifications
+ * Colors: Primary #3ECF8E, Background #000000, Text #FFFFFF/#AFAFAF/#888888
+ */
+html[data-theme="supabase-dark"] {
+  /* Input Components */
+  --color-components-input-bg-normal: #1C1C1C;
+  --color-components-input-text-placeholder: #888888;
+  --color-components-input-bg-hover: #3B3B3B;
+  --color-components-input-bg-active: #3B3B3B;
+  --color-components-input-border-active: #3ECF8E;
+  --color-components-input-border-destructive: #f97066;
+  --color-components-input-text-filled: #FFFFFF;
+  --color-components-input-bg-destructive: #1C1C1C;
+  --color-components-input-bg-disabled: #2E2E2E;
+  --color-components-input-text-disabled: #888888;
+  --color-components-input-text-filled-disabled: #AFAFAF;
+  --color-components-input-border-hover: #AFAFAF;
+  --color-components-input-border-active-prompt-1: #3ECF8E;
+  --color-components-input-border-active-prompt-2: #3ECF8E;
+
+  /* Keyboard Components */
+  --color-components-kbd-bg-gray: #2E2E2E;
+  --color-components-kbd-bg-white: #3B3B3B;
+
+  /* Tooltip */
+  --color-components-tooltip-bg: #1C1C1C;
+
+  /* Primary Button */
+  --color-components-button-primary-text: #000000;
+  --color-components-button-primary-bg: #3ECF8E;
+  --color-components-button-primary-border: #3ECF8E;
+  --color-components-button-primary-bg-hover: #22c55e;
+  --color-components-button-primary-border-hover: #22c55e;
+  --color-components-button-primary-bg-disabled: #2E2E2E;
+  --color-components-button-primary-border-disabled: #2E2E2E;
+  --color-components-button-primary-text-disabled: #888888;
+
+  /* Secondary Button */
+  --color-components-button-secondary-text: #FFFFFF;
+  --color-components-button-secondary-text-disabled: #888888;
+  --color-components-button-secondary-bg: transparent;
+  --color-components-button-secondary-bg-hover: #1C1C1C;
+  --color-components-button-secondary-bg-disabled: #2E2E2E;
+  --color-components-button-secondary-border: #3B3B3B;
+  --color-components-button-secondary-border-hover: #AFAFAF;
+  --color-components-button-secondary-border-disabled: #2E2E2E;
+
+  /* Tertiary Button */
+  --color-components-button-tertiary-text: #FFFFFF;
+  --color-components-button-tertiary-text-disabled: #888888;
+  --color-components-button-tertiary-bg: #3B3B3B;
+  --color-components-button-tertiary-bg-hover: #AFAFAF;
+  --color-components-button-tertiary-bg-disabled: #2E2E2E;
+
+  /* Ghost Button */
+  --color-components-button-ghost-text: #FFFFFF;
+  --color-components-button-ghost-text-disabled: #888888;
+  --color-components-button-ghost-bg-hover: #1C1C1C;
+
+  /* Destructive Primary Button */
+  --color-components-button-destructive-primary-text: #FFFFFF;
+  --color-components-button-destructive-primary-text-disabled: #888888;
+  --color-components-button-destructive-primary-bg: #d92d20;
+  --color-components-button-destructive-primary-bg-hover: #f04438;
+  --color-components-button-destructive-primary-bg-disabled: #2E2E2E;
+  --color-components-button-destructive-primary-border: #d92d20;
+  --color-components-button-destructive-primary-border-hover: #f04438;
+  --color-components-button-destructive-primary-border-disabled: #2E2E2E;
+
+  /* Destructive Secondary Button */
+  --color-components-button-destructive-secondary-text: #f97066;
+  --color-components-button-destructive-secondary-text-disabled: #888888;
+  --color-components-button-destructive-secondary-bg: transparent;
+  --color-components-button-destructive-secondary-bg-hover: #1C1C1C;
+  --color-components-button-destructive-secondary-bg-disabled: #2E2E2E;
+  --color-components-button-destructive-secondary-border: #3B3B3B;
+  --color-components-button-destructive-secondary-border-hover: #f97066;
+  --color-components-button-destructive-secondary-border-disabled: #2E2E2E;
+
+  /* Destructive Tertiary Button */
+  --color-components-button-destructive-tertiary-text: #f97066;
+  --color-components-button-destructive-tertiary-text-disabled: #888888;
+  --color-components-button-destructive-tertiary-bg: #3B3B3B;
+  --color-components-button-destructive-tertiary-bg-hover: rgba(249, 112, 102, 0.2);
+  --color-components-button-destructive-tertiary-bg-disabled: #2E2E2E;
+
+  /* Destructive Ghost Button */
+  --color-components-button-destructive-ghost-text: #f97066;
+  --color-components-button-destructive-ghost-text-disabled: #888888;
+  --color-components-button-destructive-ghost-bg-hover: rgba(249, 112, 102, 0.1);
+
+  /* Secondary Accent Button */
+  --color-components-button-secondary-accent-text: #FFFFFF;
+  --color-components-button-secondary-accent-text-disabled: #888888;
+  --color-components-button-secondary-accent-bg: #1C1C1C;
+  --color-components-button-secondary-accent-bg-hover: #3B3B3B;
+  --color-components-button-secondary-accent-bg-disabled: #2E2E2E;
+  --color-components-button-secondary-accent-border: #3B3B3B;
+  --color-components-button-secondary-accent-border-hover: #AFAFAF;
+  --color-components-button-secondary-accent-border-disabled: #2E2E2E;
+
+  /* Indigo Button */
+  --color-components-button-indigo-bg: #3ECF8E;
+  --color-components-button-indigo-bg-hover: #22c55e;
+  --color-components-button-indigo-bg-disabled: #2E2E2E;
+
+  /* Checkbox */
+  --color-components-checkbox-icon: #000000;
+  --color-components-checkbox-icon-disabled: #888888;
+  --color-components-checkbox-bg: #3ECF8E;
+  --color-components-checkbox-bg-hover: #22c55e;
+  --color-components-checkbox-bg-disabled: #2E2E2E;
+  --color-components-checkbox-border: #3B3B3B;
+  --color-components-checkbox-border-hover: #AFAFAF;
+  --color-components-checkbox-border-disabled: #2E2E2E;
+  --color-components-checkbox-bg-unchecked: transparent;
+  --color-components-checkbox-bg-unchecked-hover: #1C1C1C;
+  --color-components-checkbox-bg-unchecked-disabled: #2E2E2E;
+
+  /* Radio */
+  --color-components-radio-icon: #000000;
+  --color-components-radio-icon-disabled: #888888;
+  --color-components-radio-bg: #3ECF8E;
+  --color-components-radio-bg-hover: #22c55e;
+  --color-components-radio-bg-disabled: #2E2E2E;
+  --color-components-radio-border: #3B3B3B;
+  --color-components-radio-border-hover: #AFAFAF;
+  --color-components-radio-border-disabled: #2E2E2E;
+  --color-components-radio-bg-unchecked: transparent;
+  --color-components-radio-bg-unchecked-hover: #1C1C1C;
+  --color-components-radio-bg-unchecked-disabled: #2E2E2E;
+
+  /* Switch */
+  --color-components-switch-icon: #000000;
+  --color-components-switch-icon-disabled: #888888;
+  --color-components-switch-bg: #3ECF8E;
+  --color-components-switch-bg-hover: #22c55e;
+  --color-components-switch-bg-disabled: #2E2E2E;
+  --color-components-switch-bg-unchecked: #3B3B3B;
+  --color-components-switch-bg-unchecked-hover: #AFAFAF;
+  --color-components-switch-bg-unchecked-disabled: #2E2E2E;
+
+  /* Select */
+  --color-components-select-bg-normal: #1C1C1C;
+  --color-components-select-bg-hover: #3B3B3B;
+  --color-components-select-bg-active: #3B3B3B;
+  --color-components-select-bg-disabled: #2E2E2E;
+  --color-components-select-text: #FFFFFF;
+  --color-components-select-text-disabled: #888888;
+  --color-components-select-border: #3B3B3B;
+  --color-components-select-border-hover: #AFAFAF;
+  --color-components-select-border-active: #3ECF8E;
+  --color-components-select-border-disabled: #2E2E2E;
+
+  /* Panel */
+  --color-components-panel-bg: #1C1C1C;
+  --color-components-panel-border: #3B3B3B;
+  --color-components-panel-bg-secondary: #000000;
+  --color-components-panel-border-secondary: #2E2E2E;
+
+  /* Card */
+  --color-components-card-bg: #1C1C1C;
+  --color-components-card-border: #3B3B3B;
+  --color-components-card-bg-hover: #3B3B3B;
+  --color-components-card-border-hover: #3ECF8E;
+
+  /* Text Colors */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #AFAFAF;
+  --color-text-tertiary: #888888;
+  --color-text-quaternary: #666666;
+  --color-text-accent: #3ECF8E;
+  --color-text-destructive: #f97066;
+  --color-text-warning: #f79009;
+  --color-text-success: #3ECF8E;
+  --color-text-disabled: #888888;
+
+  /* Background Colors */
+  --color-background-primary: #000000;
+  --color-background-secondary: #1C1C1C;
+  --color-background-tertiary: #3B3B3B;
+  --color-background-quaternary: #2E2E2E;
+  --color-background-accent: #3ECF8E;
+  --color-background-destructive: #d92d20;
+  --color-background-warning: #f79009;
+  --color-background-success: #3ECF8E;
+  --color-background-overlay: rgba(0, 0, 0, 0.8);
+
+  /* Border Colors */
+  --color-border-primary: #3B3B3B;
+  --color-border-secondary: #2E2E2E;
+  --color-border-tertiary: #666666;
+  --color-border-accent: #3ECF8E;
+  --color-border-destructive: #f97066;
+  --color-border-warning: #f79009;
+  --color-border-success: #3ECF8E;
+  --color-border-disabled: #2E2E2E;
+
+  /* Icon Colors */
+  --color-icon-primary: #FFFFFF;
+  --color-icon-secondary: #AFAFAF;
+  --color-icon-tertiary: #888888;
+  --color-icon-accent: #3ECF8E;
+  --color-icon-destructive: #f97066;
+  --color-icon-warning: #f79009;
+  --color-icon-success: #3ECF8E;
+  --color-icon-disabled: #888888;
+
+  /* Additional component variables for comprehensive coverage */
+  --color-components-modal-bg: #1C1C1C;
+  --color-components-modal-border: #3B3B3B;
+  --color-components-modal-overlay: rgba(0, 0, 0, 0.8);
+  
+  --color-components-dropdown-bg: #1C1C1C;
+  --color-components-dropdown-border: #3B3B3B;
+  --color-components-dropdown-item-hover: #3B3B3B;
+  
+  --color-components-table-header-bg: #1C1C1C;
+  --color-components-table-row-hover: #3B3B3B;
+  --color-components-table-border: #3B3B3B;
+  
+  --color-components-sidebar-bg: #000000;
+  --color-components-sidebar-border: #3B3B3B;
+  --color-components-sidebar-item-hover: #1C1C1C;
+  --color-components-sidebar-item-active: #3ECF8E;
+  
+  --color-components-header-bg: #000000;
+  --color-components-header-border: #3B3B3B;
+  
+  --color-components-footer-bg: #000000;
+  --color-components-footer-border: #3B3B3B;
+  
+  --color-components-navigation-bg: #1C1C1C;
+  --color-components-navigation-border: #3B3B3B;
+  --color-components-navigation-item-hover: #3B3B3B;
+  --color-components-navigation-item-active: #3ECF8E;
+
+  /* Loading and Progress */
+  --color-components-loading-bg: #3ECF8E;
+  --color-components-progress-bg: #2E2E2E;
+  --color-components-progress-fill: #3ECF8E;
+
+  /* Status Indicators */
+  --color-components-status-success: #3ECF8E;
+  --color-components-status-warning: #f79009;
+  --color-components-status-error: #f97066;
+  --color-components-status-info: #3ECF8E;
+
+  /* Badges */
+  --color-components-badge-bg-primary: #3ECF8E;
+  --color-components-badge-text-primary: #000000;
+  --color-components-badge-bg-secondary: #3B3B3B;
+  --color-components-badge-text-secondary: #FFFFFF;
+  --color-components-badge-bg-success: #3ECF8E;
+  --color-components-badge-text-success: #000000;
+  --color-components-badge-bg-warning: #f79009;
+  --color-components-badge-text-warning: #000000;
+  --color-components-badge-bg-error: #f97066;
+  --color-components-badge-text-error: #FFFFFF;
+
+  /* Tabs */
+  --color-components-tab-bg: transparent;
+  --color-components-tab-bg-active: #1C1C1C;
+  --color-components-tab-border: transparent;
+  --color-components-tab-border-active: #3ECF8E;
+  --color-components-tab-text: #AFAFAF;
+  --color-components-tab-text-active: #FFFFFF;
+
+  /* Code Block */
+  --color-components-code-bg: #1C1C1C;
+  --color-components-code-border: #3B3B3B;
+  --color-components-code-text: #AFAFAF;
+  --color-components-code-keyword: #3ECF8E;
+  --color-components-code-string: #f79009;
+  --color-components-code-comment: #888888;
+
+  /* Form Components */
+  --color-components-form-label: #FFFFFF;
+  --color-components-form-help-text: #AFAFAF;
+  --color-components-form-error-text: #f97066;
+  --color-components-form-success-text: #3ECF8E;
+
+  /* Link Colors */
+  --color-components-link: #3ECF8E;
+  --color-components-link-hover: #22c55e;
+  --color-components-link-visited: #AFAFAF;
+  --color-components-link-disabled: #888888;
+
+  /* Action Bar */
+  --color-components-actionbar-bg: #1C1C1C;
+  --color-components-actionbar-border: #3B3B3B;
+  --color-components-actionbar-text: #FFFFFF;
+  --color-components-actionbar-item-hover: #3B3B3B;
+
+  /* Avatar */
+  --color-components-avatar-bg: #3B3B3B;
+  --color-components-avatar-border: #3B3B3B;
+  --color-components-avatar-text: #FFFFFF;
+  --color-components-avatar-initials: #000000;
+
+  /* Chart */
+  --color-components-chart-grid: #3B3B3B;
+  --color-components-chart-axis: #AFAFAF;
+  --color-components-chart-primary: #3ECF8E;
+  --color-components-chart-secondary: #AFAFAF;
+  --color-components-chart-bg: #1C1C1C;
+
+  /* Chat */
+  --color-components-chat-bg: #000000;
+  --color-components-chat-message-user: #3ECF8E;
+  --color-components-chat-message-bot: #1C1C1C;
+  --color-components-chat-border: #3B3B3B;
+  --color-components-chat-input-bg: #1C1C1C;
+  --color-components-chat-input-border: #3B3B3B;
+
+  /* Dropzone */
+  --color-components-dropzone-bg: #1C1C1C;
+  --color-components-dropzone-border: #3B3B3B;
+  --color-components-dropzone-border-active: #3ECF8E;
+  --color-components-dropzone-text: #AFAFAF;
+  --color-components-dropzone-text-active: #FFFFFF;
+
+  /* Icon */
+  --color-components-icon-primary: #FFFFFF;
+  --color-components-icon-secondary: #AFAFAF;
+  --color-components-icon-tertiary: #888888;
+  --color-components-icon-accent: #3ECF8E;
+  --color-components-icon-disabled: #888888;
+
+  /* Label */
+  --color-components-label-text: #FFFFFF;
+  --color-components-label-text-secondary: #AFAFAF;
+  --color-components-label-required: #f97066;
+
+  /* Main Layout */
+  --color-components-main-bg: #000000;
+  --color-components-main-border: #3B3B3B;
+  --color-components-main-text: #FFFFFF;
+
+  /* Menu */
+  --color-components-menu-bg: #1C1C1C;
+  --color-components-menu-border: #3B3B3B;
+  --color-components-menu-item-hover: #3B3B3B;
+  --color-components-menu-item-active: #3ECF8E;
+  --color-components-menu-text: #FFFFFF;
+  --color-components-menu-text-secondary: #AFAFAF;
+
+  /* Option */
+  --color-components-option-bg: #1C1C1C;
+  --color-components-option-bg-hover: #3B3B3B;
+  --color-components-option-bg-selected: #3ECF8E;
+  --color-components-option-text: #FFFFFF;
+  --color-components-option-text-selected: #000000;
+
+  /* Premium */
+  --color-components-premium-bg: linear-gradient(135deg, #3ECF8E, #22c55e);
+  --color-components-premium-text: #000000;
+  --color-components-premium-border: #3ECF8E;
+
+  /* Segmented Control */
+  --color-components-segmented-bg: #3B3B3B;
+  --color-components-segmented-item-bg: transparent;
+  --color-components-segmented-item-bg-active: #3ECF8E;
+  --color-components-segmented-text: #AFAFAF;
+  --color-components-segmented-text-active: #000000;
+
+  /* Slider */
+  --color-components-slider-track: #3B3B3B;
+  --color-components-slider-fill: #3ECF8E;
+  --color-components-slider-thumb: #3ECF8E;
+  --color-components-slider-thumb-hover: #22c55e;
+
+  /* Toggle */
+  --color-components-toggle-bg: #3B3B3B;
+  --color-components-toggle-bg-active: #3ECF8E;
+  --color-components-toggle-thumb: #FFFFFF;
+  --color-components-toggle-thumb-active: #000000;
+
+  /* Additional comprehensive color system */
+  --color-primary-50: rgba(62, 207, 142, 0.1);
+  --color-primary-100: rgba(62, 207, 142, 0.2);
+  --color-primary-200: rgba(62, 207, 142, 0.3);
+  --color-primary-300: rgba(62, 207, 142, 0.4);
+  --color-primary-400: rgba(62, 207, 142, 0.6);
+  --color-primary-500: #3ECF8E;
+  --color-primary-600: #22c55e;
+  --color-primary-700: #16a34a;
+  --color-primary-800: #15803d;
+  --color-primary-900: #166534;
+
+  /* Gray scale system */
+  --color-gray-50: #FFFFFF;
+  --color-gray-100: #AFAFAF;
+  --color-gray-200: #888888;
+  --color-gray-300: #666666;
+  --color-gray-400: #4a4a4a;
+  --color-gray-500: #3B3B3B;
+  --color-gray-600: #2E2E2E;
+  --color-gray-700: #1C1C1C;
+  --color-gray-800: #171717;
+  --color-gray-900: #000000;
+}
