@@ -64,13 +64,13 @@ const PluginItem: FC<Props> = ({
     return [PluginSource.github, PluginSource.marketplace].includes(source) ? author : ''
   }, [source, author])
 
-  const { langGeniusVersionInfo } = useAppContext()
+  const { companyVersionInfo } = useAppContext()
 
   const isDifyVersionCompatible = useMemo(() => {
-    if (!langGeniusVersionInfo.current_version)
+    if (!companyVersionInfo.current_version)
       return true
-    return gte(langGeniusVersionInfo.current_version, declarationMeta.minimum_dify_version ?? '0.0.0')
-  }, [declarationMeta.minimum_dify_version, langGeniusVersionInfo.current_version])
+    return gte(companyVersionInfo.current_version, declarationMeta.minimum_dify_version ?? '0.0.0')
+  }, [declarationMeta.minimum_dify_version, companyVersionInfo.current_version])
 
   const isDeprecated = useMemo(() => {
     return status === 'deleted' && !!deprecated_reason

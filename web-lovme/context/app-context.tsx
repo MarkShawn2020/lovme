@@ -4,8 +4,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import useSWR from 'swr'
 import { createContext, useContext, useContextSelector } from 'use-context-selector'
 import type { FC, ReactNode } from 'react'
-import { fetchCurrentWorkspace, fetchNeuroraVersion, fetchUserProfile } from '@/service/common'
-import type { ICurrentWorkspace, NeuroraVersionResponse, UserProfileResponse } from '@/models/common'
+import { fetchCurrentWorkspace, fetchCompanyVersion, fetchUserProfile } from '@/service/common'
+import type { ICurrentWorkspace, CompanyVersionResponse, UserProfileResponse } from '@/models/common'
 import MaintenanceNotice from '@/app/components/header/maintenance-notice'
 import { noop } from 'lodash-es'
 
@@ -18,7 +18,7 @@ export type AppContextValue = {
   isCurrentWorkspaceEditor: boolean
   isCurrentWorkspaceDatasetOperator: boolean
   mutateCurrentWorkspace: VoidFunction
-  neuroraVersionInfo: NeuroraVersionResponse
+  companyVersionInfo: CompanyVersionResponse
   useSelector: typeof useSelector
   isLoadingCurrentWorkspace: boolean
 }
@@ -32,7 +32,7 @@ const userProfilePlaceholder = {
     is_password_set: false,
   }
 
-const initialNeuroraVersionInfo = {
+const initialCompanyVersionInfo = {
   current_env: '',
   current_version: '',
   latest_version: '',
@@ -61,7 +61,7 @@ const AppContext = createContext<AppContextValue>({
   isCurrentWorkspaceDatasetOperator: false,
   mutateUserProfile: noop,
   mutateCurrentWorkspace: noop,
-  neuroraVersionInfo: initialNeuroraVersionInfo,
+  companyVersionInfo: initialCompanyVersionInfo,
   useSelector,
   isLoadingCurrentWorkspace: false,
 })
@@ -79,7 +79,7 @@ export const AppContextProvider: FC<AppContextProviderProps> = ({ children }) =>
   const { data: currentWorkspaceResponse, mutate: mutateCurrentWorkspace, isLoading: isLoadingCurrentWorkspace } = useSWR({ url: '/workspaces/current', params: {} }, fetchCurrentWorkspace)
 
   const [userProfile, setUserProfile] = useState<UserProfileResponse>(userProfilePlaceholder)
-  const [neuroraVersionInfo, setNeuroraVersionInfo] = useState<NeuroraVersionResponse>(initialNeuroraVersionInfo)
+  const [companyVersionInfo, setCompanyVersionInfo] = useState<CompanyVersionResponse>(initialCompanyVersionInfo)
   const [currentWorkspace, setCurrentWorkspace] = useState<ICurrentWorkspace>(initialWorkspaceInfo)
   const isCurrentWorkspaceManager = useMemo(() => ['owner', 'admin'].includes(currentWorkspace.role), [currentWorkspace.role])
   const isCurrentWorkspaceOwner = useMemo(() => currentWorkspace.role === 'owner', [currentWorkspace.role])
@@ -91,8 +91,8 @@ export const AppContextProvider: FC<AppContextProviderProps> = ({ children }) =>
       setUserProfile(result)
       const current_version = userProfileResponse.headers.get('x-version')
       const current_env = process.env.NODE_ENV === 'development' ? 'DEVELOPMENT' : userProfileResponse.headers.get('x-env')
-      const versionData = await fetchNeuroraVersion({ url: '/version', params: { current_version } })
-      setNeuroraVersionInfo({ ...versionData, current_version, latest_version: versionData.version, current_env })
+      const versionData = await fetchCompanyVersion({ url: '/version', params: { current_version } })
+      setCompanyVersionInfo({ ...versionData, current_version, latest_version: versionData.version, current_env })
     }
   }, [userProfileResponse])
 
@@ -109,7 +109,7 @@ export const AppContextProvider: FC<AppContextProviderProps> = ({ children }) =>
     <AppContext.Provider value={{
       userProfile,
       mutateUserProfile,
-      neuroraVersionInfo,
+      companyVersionInfo,
       useSelector,
       currentWorkspace,
       isCurrentWorkspaceManager,

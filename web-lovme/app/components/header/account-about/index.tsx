@@ -5,23 +5,23 @@ import dayjs from 'dayjs'
 import { RiCloseLine } from '@remixicon/react'
 import Modal from '@/app/components/base/modal'
 import Button from '@/app/components/base/button'
-import type { NeuroraVersionResponse } from '@/models/common'
+import type { CompanyVersionResponse } from '@/models/common'
 import { IS_CE_EDITION } from '@/config'
 import NeuroraLogo from '@/app/components/base/logo/neurora-logo'
 import { noop } from 'lodash-es'
 import { useGlobalPublicStore } from '@/context/global-public-context'
 
 type IAccountSettingProps = {
-  neuroraVersionInfo: NeuroraVersionResponse
+  companyVersionInfo: CompanyVersionResponse
   onCancel: () => void
 }
 
 export default function AccountAbout({
-  neuroraVersionInfo,
+  companyVersionInfo,
   onCancel,
 }: IAccountSettingProps) {
   const { t } = useTranslation()
-  const isLatest = neuroraVersionInfo.current_version === neuroraVersionInfo.latest_version
+  const isLatest = companyVersionInfo.current_version === companyVersionInfo.latest_version
   const systemFeatures = useGlobalPublicStore(s => s.systemFeatures)
 
   return (
@@ -43,7 +43,7 @@ export default function AccountAbout({
             />
             : <NeuroraLogo size='large' className='mx-auto' />}
 
-          <div className='text-center text-xs font-normal text-text-tertiary'>Version {neuroraVersionInfo?.current_version}</div>
+          <div className='text-center text-xs font-normal text-text-tertiary'>Version {companyVersionInfo?.current_version}</div>
           <div className='flex flex-col items-center gap-2 text-center text-xs font-normal text-text-secondary'>
             <div>© {dayjs().year()} Neurora Tech, Contributors.</div>
             <div className='text-text-accent'>
@@ -63,8 +63,8 @@ export default function AccountAbout({
           <div className='text-xs font-medium text-text-tertiary'>
             {
               isLatest
-                ? t('common.about.latestAvailable', { version: neuroraVersionInfo.latest_version })
-                : t('common.about.nowAvailable', { version: neuroraVersionInfo.latest_version })
+                ? t('common.about.latestAvailable', { version: companyVersionInfo.latest_version })
+                : t('common.about.nowAvailable', { version: companyVersionInfo.latest_version })
             }
           </div>
           <div className='flex items-center'>
@@ -80,7 +80,7 @@ export default function AccountAbout({
               !isLatest && !IS_CE_EDITION && (
                 <Button variant='primary' size='small'>
                   <Link
-                    href={neuroraVersionInfo.release_notes}
+                    href={companyVersionInfo.release_notes}
                     target='_blank' rel='noopener noreferrer'
                   >
                     {t('common.about.updateNow')}

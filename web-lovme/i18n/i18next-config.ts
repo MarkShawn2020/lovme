@@ -16,6 +16,7 @@ const requireSilent = async (lang: string, namespace: string) => {
 }
 
 const NAMESPACES = [
+  'ai-assistant',
   'app-annotation',
   'app-api',
   'app-debug',

@@ -13,7 +13,7 @@ import type {
   InvitationResponse,
   Member,
   ModerateResponse,
-  NeuroraVersionResponse,
+  CompanyVersionResponse,
   OauthResponse,
   PluginProvider,
   Provider,
@@ -88,8 +88,8 @@ export const logout: Fetcher<CommonResponse, { url: string; params: Record<strin
   return get<CommonResponse>(url, params)
 }
 
-export const fetchNeuroraVersion: Fetcher<NeuroraVersionResponse, { url: string; params: Record<string, any> }> = ({ url, params }) => {
-  return get<NeuroraVersionResponse>(url, { params })
+export const fetchCompanyVersion: Fetcher<CompanyVersionResponse, { url: string; params: Record<string, any> }> = ({ url, params }) => {
+  return get<CompanyVersionResponse>(url, { params })
 }
 
 export const oauth: Fetcher<OauthResponse, { url: string; params: Record<string, any> }> = ({ url, params }) => {

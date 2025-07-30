@@ -40,7 +40,7 @@ export type UserProfileOriginResponse = {
   headers: any
 }
 
-export type NeuroraVersionResponse = {
+export type CompanyVersionResponse = {
   current_version: string
   latest_version: string
   version: string
