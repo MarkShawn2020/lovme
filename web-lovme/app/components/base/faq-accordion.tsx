@@ -25,16 +25,16 @@ const FAQAccordion: FC<FAQAccordionProps> = ({ items }) => {
       {items.map((item, index) => (
         <div
           key={index}
-          className="rounded-lg border border-white/10 bg-black/50 transition-all hover:border-white/20"
+          className="rounded-lg border border-divider-regular bg-components-card-bg transition-all hover:border-divider-deep"
         >
           <button
             onClick={() => toggleItem(index)}
             className="flex w-full items-center justify-between p-6 text-left"
           >
-            <span className="pr-4 text-lg font-medium text-white">{item.question}</span>
+            <span className="pr-4 text-lg font-medium text-text-primary">{item.question}</span>
             <svg
               className={cn(
-                'h-5 w-5 shrink-0 text-white/60 transition-transform duration-200',
+                'h-5 w-5 shrink-0 text-text-tertiary transition-transform duration-200',
                 openIndex === index && 'rotate-180',
               )}
               fill="none"
@@ -51,8 +51,8 @@ const FAQAccordion: FC<FAQAccordionProps> = ({ items }) => {
               openIndex === index ? 'max-h-96' : 'max-h-0',
             )}
           >
-            <div className="border-t border-white/10 px-6 py-4">
-              <p className="leading-relaxed text-white/80">{item.answer}</p>
+            <div className="border-t border-divider-regular px-6 py-4">
+              <p className="leading-relaxed text-text-secondary">{item.answer}</p>
             </div>
           </div>
         </div>

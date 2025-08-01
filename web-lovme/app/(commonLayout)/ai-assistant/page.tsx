@@ -13,11 +13,11 @@ import { RiMagicLine } from '@remixicon/react'
 const AIAssistantPage = () => {
   const { t } = useTranslation()
   const [selectedDatasets, setSelectedDatasets] = useState<string[]>([])
-  
+
   // Fetch datasets using SWR
   const { data: datasetsData } = useSWR(
     ['datasets', 1, 100],
-    () => fetchDatasets({ url: 'datasets', params: { page: 1, limit: 100 } })
+    () => fetchDatasets({ url: 'datasets', params: { page: 1, limit: 100 } }),
   )
 
   return (
@@ -61,7 +61,7 @@ const AIAssistantPage = () => {
                 </p>
               </div>
             </div>
-            
+
             <Button
               variant="secondary"
               size="small"

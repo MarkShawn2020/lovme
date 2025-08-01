@@ -23,7 +23,7 @@ const translation = {
     input_placeholder_disabled: 'Select knowledge sources to start chatting',
     sources_label: 'Sources:',
     relevance_score: 'relevance: {{score}}%',
-    no_info_found: "I don't have information about that in the selected knowledge bases",
+    no_info_found: 'I don\'t have information about that in the selected knowledge bases',
   },
   knowledge_item: {
     docs: '{{count}} docs',

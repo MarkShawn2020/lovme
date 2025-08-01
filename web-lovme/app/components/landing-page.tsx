@@ -36,7 +36,7 @@ const LandingPage = () => {
   return (
     <div className="bg-background-body">
       {/* Header with Glass Morphism */}
-      <header className={cn("header-container sticky top-0 z-50 border-b border-divider-regular bg-components-panel-bg/80", styles['glass-enabled'])}>
+      <header className={cn('header-container sticky top-0 z-50 border-b border-divider-regular bg-components-panel-bg/80', styles['glass-enabled'])}>
         {/* Header overlays for visual effects */}
         <div className="absolute inset-0 bg-gradient-to-r from-amber-400/5 via-transparent to-yellow-500/5"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-components-panel-bg/5 to-transparent"></div>
@@ -123,7 +123,7 @@ const LandingPage = () => {
                 <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
                   <span className="inline-block text-text-primary">{t('landing.hero.titlePrefix')}</span>
                   <div className="relative inline-block">
-                    <span className={cn("relative z-10 inline-block animate-gradient bg-[length:200%_100%] bg-clip-text text-transparent", styles['gradient-text'])}>
+                    <span className={cn('relative z-10 inline-block animate-gradient bg-[length:200%_100%] bg-clip-text text-transparent', styles['gradient-text'])}>
                       {t('landing.hero.titleHighlight')}
                     </span>
                     {/* Glow effect behind text */}
@@ -151,7 +151,7 @@ const LandingPage = () => {
                 </p>
 
                 {/* Enhanced DevHunt Badge with glow effect */}
-                <div className={cn("mt-8 inline-flex w-fit items-center gap-3 rounded-xl border px-5 py-3 backdrop-blur-sm transition-all hover:scale-105", styles['product-badge'])}>
+                <div className={cn('mt-8 inline-flex w-fit items-center gap-3 rounded-xl border px-5 py-3 backdrop-blur-sm transition-all hover:scale-105', styles['product-badge'])}>
                   <div className="relative flex h-14 w-14 items-center justify-center">
                     <div className="absolute inset-0 animate-pulse rounded-lg bg-gradient-to-br from-amber-400 to-yellow-500 blur-sm"></div>
                     <div className="relative flex h-full w-full items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-yellow-500">
@@ -167,7 +167,7 @@ const LandingPage = () => {
                 {/* Enhanced CTA Buttons */}
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
                   <button
-                    className={cn("group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 px-10 py-4 text-base font-bold text-black transition-all hover:scale-105", styles['primary-cta'])}
+                    className={cn('group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 px-10 py-4 text-base font-bold text-black transition-all hover:scale-105', styles['primary-cta'])}
                     onClick={handleGetStarted}
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-600 opacity-0 transition-opacity group-hover:opacity-100"></div>
@@ -192,7 +192,7 @@ const LandingPage = () => {
                   {t('landing.hero.builtWith')}
                   <span className="relative inline-flex items-center">
                     <span className="absolute inset-0 animate-pulse rounded bg-white/10 blur-md"></span>
-                    <span className={cn("relative animate-gradient bg-[length:200%_100%] bg-clip-text font-semibold text-transparent", styles['gradient-text'])}>
+                    <span className={cn('relative animate-gradient bg-[length:200%_100%] bg-clip-text font-semibold text-transparent', styles['gradient-text'])}>
                       Claude Code
                     </span>
                   </span>
@@ -424,7 +424,7 @@ const LandingPage = () => {
               {/* Authentication */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 }
@@ -435,7 +435,7 @@ const LandingPage = () => {
               {/* Database */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
                   </svg>
                 }
@@ -446,7 +446,7 @@ const LandingPage = () => {
               {/* Background Jobs */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 }
@@ -457,7 +457,7 @@ const LandingPage = () => {
               {/* SEO */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 }
@@ -468,7 +468,7 @@ const LandingPage = () => {
               {/* Emails */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 }
@@ -479,7 +479,7 @@ const LandingPage = () => {
               {/* Payments */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                   </svg>
                 }
@@ -490,7 +490,7 @@ const LandingPage = () => {
               {/* AI */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 }
@@ -501,7 +501,7 @@ const LandingPage = () => {
               {/* Components */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                   </svg>
                 }
@@ -512,7 +512,7 @@ const LandingPage = () => {
               {/* Vercel */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 }
@@ -523,7 +523,7 @@ const LandingPage = () => {
               {/* MDX Blog */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                   </svg>
                 }
@@ -534,7 +534,7 @@ const LandingPage = () => {
               {/* Admin */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -546,7 +546,7 @@ const LandingPage = () => {
               {/* Feedback */}
               <FeatureCard
                 icon={
-                  <svg className={cn("h-8 w-8", styles['feature-icon'])} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={cn('h-8 w-8', styles['feature-icon'])} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                 }
@@ -572,8 +572,8 @@ const LandingPage = () => {
 
           {/* Marquee Container */}
           <div className="relative mt-16">
-            <div className={cn("absolute left-0 top-0 z-10 h-full w-32", styles['marquee-mask-left'])} />
-            <div className={cn("absolute right-0 top-0 z-10 h-full w-32", styles['marquee-mask-right'])} />
+            <div className={cn('absolute left-0 top-0 z-10 h-full w-32', styles['marquee-mask-left'])} />
+            <div className={cn('absolute right-0 top-0 z-10 h-full w-32', styles['marquee-mask-right'])} />
 
             {/* First Row - Moving Right */}
             <div className="mb-8 flex animate-marquee-right gap-6">

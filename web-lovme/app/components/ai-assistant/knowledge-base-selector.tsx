@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import cn from '@/utils/classnames'
-import { RiCheckboxLine, RiCheckboxBlankLine, RiDatabase2Line, RiSearchLine } from '@remixicon/react'
+import { RiCheckboxBlankLine, RiCheckboxLine, RiDatabase2Line, RiSearchLine } from '@remixicon/react'
 import type { DataSet } from '@/models/datasets'
 
 type KnowledgeBaseSelectorProps = {
@@ -17,24 +17,22 @@ const KnowledgeBaseSelector = ({ datasets, selectedDatasets, onSelectionChange }
   const [searchQuery, setSearchQuery] = useState('')
 
   const filteredDatasets = datasets.filter(dataset =>
-    dataset.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    dataset.description?.toLowerCase().includes(searchQuery.toLowerCase())
+    dataset.name.toLowerCase().includes(searchQuery.toLowerCase())
+    || dataset.description?.toLowerCase().includes(searchQuery.toLowerCase()),
   )
 
   const handleToggle = (datasetId: string) => {
-    if (selectedDatasets.includes(datasetId)) {
+    if (selectedDatasets.includes(datasetId))
       onSelectionChange(selectedDatasets.filter(id => id !== datasetId))
-    } else {
+     else
       onSelectionChange([...selectedDatasets, datasetId])
-    }
   }
 
   const handleSelectAll = () => {
-    if (selectedDatasets.length === filteredDatasets.length) {
+    if (selectedDatasets.length === filteredDatasets.length)
       onSelectionChange([])
-    } else {
+     else
       onSelectionChange(filteredDatasets.map(d => d.id))
-    }
   }
 
   return (
@@ -45,7 +43,7 @@ const KnowledgeBaseSelector = ({ datasets, selectedDatasets, onSelectionChange }
         <input
           type="text"
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={e => setSearchQuery(e.target.value)}
           placeholder={t('aiAssistant.sidebar.search_placeholder')}
           className="w-full pl-9 pr-3 py-2 rounded-lg border border-divider-subtle bg-background-default text-sm text-text-primary placeholder-text-quaternary focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
         />
@@ -74,15 +72,15 @@ const KnowledgeBaseSelector = ({ datasets, selectedDatasets, onSelectionChange }
             <p className="text-sm text-text-tertiary">{t('aiAssistant.sidebar.no_knowledge_bases')}</p>
           </div>
         ) : (
-          filteredDatasets.map((dataset) => (
+          filteredDatasets.map(dataset => (
             <button
               key={dataset.id}
               onClick={() => handleToggle(dataset.id)}
               className={cn(
-                "flex items-start gap-3 w-full p-3 rounded-lg transition-colors text-left",
+                'flex items-start gap-3 w-full p-3 rounded-lg transition-colors text-left',
                 selectedDatasets.includes(dataset.id)
-                  ? "bg-primary-subtle"
-                  : "hover:bg-background-secondary"
+                  ? 'bg-primary-subtle'
+                  : 'hover:bg-background-secondary',
               )}
             >
               {selectedDatasets.includes(dataset.id) ? (
@@ -90,7 +88,7 @@ const KnowledgeBaseSelector = ({ datasets, selectedDatasets, onSelectionChange }
               ) : (
                 <RiCheckboxBlankLine className="w-4 h-4 text-text-quaternary mt-0.5 flex-shrink-0" />
               )}
-              
+
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   <div
@@ -103,13 +101,13 @@ const KnowledgeBaseSelector = ({ datasets, selectedDatasets, onSelectionChange }
                     {dataset.name}
                   </h4>
                 </div>
-                
+
                 {dataset.description && (
                   <p className="text-xs text-text-tertiary line-clamp-2">
                     {dataset.description}
                   </p>
                 )}
-                
+
                 <div className="flex items-center gap-3 mt-2 text-xs text-text-quaternary">
                   <span>{t('aiAssistant.knowledge_item.docs', { count: dataset.document_count })}</span>
                   <span>•</span>

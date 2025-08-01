@@ -53,7 +53,7 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
           <div>
             <h2 className="text-lg font-medium text-text-primary">{t('aiAssistant.title')}</h2>
             <p className="text-sm text-text-tertiary">
-              {selectedDatasets.length > 0 
+              {selectedDatasets.length > 0
                 ? t(`aiAssistant.chat.header_subtitle_${selectedDatasets.length > 1 ? 'multiple' : 'single'}`, { count: selectedDatasets.length })
                 : t('aiAssistant.chat.select_sources_prompt')}
             </p>
@@ -88,12 +88,12 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
           )}
 
           <div className="space-y-6">
-            {messages.map((message) => (
+            {messages.map(message => (
               <div
                 key={message.id}
                 className={cn(
                   'flex gap-4',
-                  message.role === 'user' ? 'justify-end' : 'justify-start'
+                  message.role === 'user' ? 'justify-end' : 'justify-start',
                 )}
               >
                 {message.role === 'assistant' && (
@@ -105,13 +105,13 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
                     className="flex-shrink-0"
                   />
                 )}
-                
+
                 <div
                   className={cn(
                     'rounded-2xl px-4 py-3 max-w-[80%]',
                     message.role === 'user'
                       ? 'bg-primary text-white'
-                      : 'bg-background-secondary'
+                      : 'bg-background-secondary',
                   )}
                 >
                   {message.role === 'user' ? (
@@ -119,7 +119,7 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
                   ) : (
                     <Markdown content={message.content} />
                   )}
-                  
+
                   {/* Show sources if available */}
                   {message.role === 'assistant' && message.annotations?.length > 0 && (
                     <div className="mt-3 pt-3 border-t border-divider-subtle">
@@ -127,7 +127,7 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
                       <div className="space-y-1">
                         {message.annotations.map((annotation: any, index: number) => (
                           <div key={index} className="text-xs text-text-tertiary">
-                            • {annotation.documentName || 'Document'} 
+                            • {annotation.documentName || 'Document'}
                             {annotation.score && (
                               <span className="ml-1 text-text-quaternary">
                                 ({t('aiAssistant.chat.relevance_score', { score: (annotation.score * 100).toFixed(0) })})
@@ -150,7 +150,7 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
                 )}
               </div>
             ))}
-            
+
             {isLoading && (
               <div className="flex gap-4">
                 <AppIcon
@@ -166,7 +166,7 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
               </div>
             )}
           </div>
-          
+
           <div ref={messagesEndRef} />
         </div>
       </div>
@@ -186,23 +186,23 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
               }
               disabled={selectedDatasets.length === 0}
               className={cn(
-                "w-full px-4 py-3 pr-12 rounded-xl border",
-                "bg-background-default text-text-primary placeholder-text-quaternary",
-                "focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent",
-                "disabled:opacity-50 disabled:cursor-not-allowed",
-                selectedDatasets.length === 0 ? "border-divider-subtle" : "border-divider-regular"
+                'w-full px-4 py-3 pr-12 rounded-xl border',
+                'bg-background-default text-text-primary placeholder-text-quaternary',
+                'focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent',
+                'disabled:opacity-50 disabled:cursor-not-allowed',
+                selectedDatasets.length === 0 ? 'border-divider-subtle' : 'border-divider-regular',
               )}
             />
             <button
               type="submit"
               disabled={!input.trim() || selectedDatasets.length === 0 || isLoading}
               className={cn(
-                "absolute right-2 top-1/2 -translate-y-1/2",
-                "w-8 h-8 rounded-lg flex items-center justify-center",
-                "transition-colors duration-200",
+                'absolute right-2 top-1/2 -translate-y-1/2',
+                'w-8 h-8 rounded-lg flex items-center justify-center',
+                'transition-colors duration-200',
                 input.trim() && selectedDatasets.length > 0 && !isLoading
-                  ? "bg-primary text-white hover:bg-primary-dark"
-                  : "bg-background-secondary text-text-quaternary cursor-not-allowed"
+                  ? 'bg-primary text-white hover:bg-primary-dark'
+                  : 'bg-background-secondary text-text-quaternary cursor-not-allowed',
               )}
             >
               <RiSendPlaneFill className="w-4 h-4" />

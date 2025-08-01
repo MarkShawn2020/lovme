@@ -33,7 +33,7 @@ const PricingCard: FC<PricingCardProps> = ({
       'relative flex flex-col rounded-2xl border p-8 transition-all',
       isPopular
         ? 'border-amber-400/50 bg-gradient-to-b from-amber-400/5 to-transparent shadow-[0_0_30px_-5px_rgba(251,191,36,0.3)]'
-        : 'border-white/10 bg-black/50 hover:border-white/20',
+        : 'border-divider-regular bg-components-card-bg hover:border-divider-deep',
     )}>
       {isPopular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -52,17 +52,17 @@ const PricingCard: FC<PricingCardProps> = ({
       )}
 
       <div className="mb-8">
-        <h3 className="text-2xl font-semibold text-white">{title}</h3>
-        <p className="mt-2 text-white/60">{description}</p>
+        <h3 className="text-2xl font-semibold text-text-primary">{title}</h3>
+        <p className="mt-2 text-text-tertiary">{description}</p>
       </div>
 
       <div className="mb-8">
         <div className="flex items-baseline gap-2">
-          <span className="text-5xl font-bold text-white">{price}</span>
+          <span className="text-5xl font-bold text-text-primary">{price}</span>
           {originalPrice && (
-            <span className="text-2xl text-white/40 line-through">{originalPrice}</span>
+            <span className="text-2xl text-text-quaternary line-through">{originalPrice}</span>
           )}
-          <span className="text-white/60">{period}</span>
+          <span className="text-text-tertiary">{period}</span>
         </div>
       </div>
 
@@ -72,7 +72,7 @@ const PricingCard: FC<PricingCardProps> = ({
             <svg className="mt-0.5 h-5 w-5 shrink-0 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            <span className="text-white/80">{feature}</span>
+            <span className="text-text-secondary">{feature}</span>
           </li>
         ))}
       </ul>
@@ -83,7 +83,7 @@ const PricingCard: FC<PricingCardProps> = ({
           'w-full rounded-md px-6 py-3 text-center font-semibold transition-all',
           isPopular
             ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-black hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]'
-            : 'border border-white/20 text-white hover:border-white/40 hover:bg-white/5',
+            : 'border border-divider-regular text-text-primary hover:border-divider-deep hover:bg-state-base-hover',
         )}
       >
         {cta}

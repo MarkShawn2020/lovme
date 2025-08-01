@@ -18,7 +18,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   rating = 5,
 }) => {
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-black p-6 transition-all hover:border-white/20">
+    <div className="flex flex-col gap-4 rounded-2xl border border-divider-regular bg-components-card-bg p-6 transition-all hover:border-divider-deep">
       <div className="flex items-center gap-1">
         {Array.from({ length: rating }).map((_, i) => (
           <svg
@@ -32,7 +32,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         ))}
       </div>
 
-      <p className="flex-1 text-base text-[#AFAFAF]">{content}</p>
+      <p className="flex-1 text-base text-text-secondary">{content}</p>
 
       <div className="flex items-center gap-3">
         {avatar && (
@@ -43,8 +43,8 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
           />
         )}
         <div>
-          <p className="font-medium text-white">{author}</p>
-          <p className="text-sm text-white/60">{role}</p>
+          <p className="font-medium text-text-primary">{author}</p>
+          <p className="text-sm text-text-tertiary">{role}</p>
         </div>
       </div>
     </div>
