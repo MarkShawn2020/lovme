@@ -571,90 +571,132 @@ const LandingPage = () => {
           </div>
 
           {/* Marquee Container */}
-          <div className="relative mt-16">
-            <div className={cn('absolute left-0 top-0 z-10 h-full w-32', styles['marquee-mask-left'])} />
-            <div className={cn('absolute right-0 top-0 z-10 h-full w-32', styles['marquee-mask-right'])} />
+          <div className="relative mt-16 overflow-hidden">
+            <div className={cn('absolute left-0 top-0 z-10 h-full w-32 pointer-events-none', styles['marquee-mask-left'])} />
+            <div className={cn('absolute right-0 top-0 z-10 h-full w-32 pointer-events-none', styles['marquee-mask-right'])} />
 
-            {/* First Row - Moving Right */}
-            <div className="mb-8 flex animate-marquee-right gap-6">
-              <TestimonialCard
-                content={t('landing.testimonials.items.1.content')}
-                author={t('landing.testimonials.items.1.author')}
-                role={t('landing.testimonials.items.1.role')}
-                rating={5}
-              />
-              <TestimonialCard
-                content={t('landing.testimonials.items.2.content')}
-                author={t('landing.testimonials.items.2.author')}
-                role={t('landing.testimonials.items.2.role')}
-                rating={5}
-              />
-              <TestimonialCard
-                content={t('landing.testimonials.items.3.content')}
-                author={t('landing.testimonials.items.3.author')}
-                role={t('landing.testimonials.items.3.role')}
-                rating={5}
-              />
-              <TestimonialCard
-                content={t('landing.testimonials.items.4.content')}
-                author={t('landing.testimonials.items.4.author')}
-                role={t('landing.testimonials.items.4.role')}
-                rating={5}
-              />
-              {/* Duplicate for seamless loop */}
-              <TestimonialCard
-                content={t('landing.testimonials.items.1.content')}
-                author={t('landing.testimonials.items.1.author')}
-                role={t('landing.testimonials.items.1.role')}
-                rating={5}
-              />
-              <TestimonialCard
-                content={t('landing.testimonials.items.2.content')}
-                author={t('landing.testimonials.items.2.author')}
-                role={t('landing.testimonials.items.2.role')}
-                rating={5}
-              />
+            {/* First Row - Moving Left */}
+            <div className="relative mb-8 flex">
+              <div className={cn("flex gap-6 flex-shrink-0", styles['animate-marquee-right'])}>
+                <TestimonialCard
+                  content={t('landing.testimonials.items.1.content')}
+                  author={t('landing.testimonials.items.1.author')}
+                  role={t('landing.testimonials.items.1.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.2.content')}
+                  author={t('landing.testimonials.items.2.author')}
+                  role={t('landing.testimonials.items.2.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.3.content')}
+                  author={t('landing.testimonials.items.3.author')}
+                  role={t('landing.testimonials.items.3.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.4.content')}
+                  author={t('landing.testimonials.items.4.author')}
+                  role={t('landing.testimonials.items.4.role')}
+                  rating={5}
+                />
+                {/* Duplicate set for seamless loop */}
+                <TestimonialCard
+                  content={t('landing.testimonials.items.1.content')}
+                  author={t('landing.testimonials.items.1.author')}
+                  role={t('landing.testimonials.items.1.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.2.content')}
+                  author={t('landing.testimonials.items.2.author')}
+                  role={t('landing.testimonials.items.2.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.3.content')}
+                  author={t('landing.testimonials.items.3.author')}
+                  role={t('landing.testimonials.items.3.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.4.content')}
+                  author={t('landing.testimonials.items.4.author')}
+                  role={t('landing.testimonials.items.4.role')}
+                  rating={5}
+                />
+              </div>
             </div>
 
-            {/* Second Row - Moving Left */}
-            <div className="flex animate-marquee-left gap-6">
-              <TestimonialCard
-                content={t('landing.testimonials.items.5.content')}
-                author={t('landing.testimonials.items.5.author')}
-                role={t('landing.testimonials.items.5.role')}
-                rating={5}
-              />
-              <TestimonialCard
-                content={t('landing.testimonials.items.6.content')}
-                author={t('landing.testimonials.items.6.author')}
-                role={t('landing.testimonials.items.6.role')}
-                rating={5}
-              />
-              <TestimonialCard
-                content={t('landing.testimonials.items.7.content')}
-                author={t('landing.testimonials.items.7.author')}
-                role={t('landing.testimonials.items.7.role')}
-                rating={5}
-              />
-              <TestimonialCard
-                content={t('landing.testimonials.items.8.content')}
-                author={t('landing.testimonials.items.8.author')}
-                role={t('landing.testimonials.items.8.role')}
-                rating={5}
-              />
-              {/* Duplicate for seamless loop */}
-              <TestimonialCard
-                content={t('landing.testimonials.items.5.content')}
-                author={t('landing.testimonials.items.5.author')}
-                role={t('landing.testimonials.items.5.role')}
-                rating={5}
-              />
-              <TestimonialCard
-                content={t('landing.testimonials.items.6.content')}
-                author={t('landing.testimonials.items.6.author')}
-                role={t('landing.testimonials.items.6.role')}
-                rating={5}
-              />
+            {/* Second Row - Moving Right (opposite direction) */}
+            <div className="relative flex">
+              <div className={cn("flex gap-6 flex-shrink-0", styles['animate-marquee-left'])}>
+                {/* Extra cards at the beginning to fill the initial -50% transform gap */}
+                <TestimonialCard
+                  content={t('landing.testimonials.items.7.content')}
+                  author={t('landing.testimonials.items.7.author')}
+                  role={t('landing.testimonials.items.7.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.8.content')}
+                  author={t('landing.testimonials.items.8.author')}
+                  role={t('landing.testimonials.items.8.role')}
+                  rating={5}
+                />
+                {/* Regular sequence starts here */}
+                <TestimonialCard
+                  content={t('landing.testimonials.items.5.content')}
+                  author={t('landing.testimonials.items.5.author')}
+                  role={t('landing.testimonials.items.5.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.6.content')}
+                  author={t('landing.testimonials.items.6.author')}
+                  role={t('landing.testimonials.items.6.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.7.content')}
+                  author={t('landing.testimonials.items.7.author')}
+                  role={t('landing.testimonials.items.7.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.8.content')}
+                  author={t('landing.testimonials.items.8.author')}
+                  role={t('landing.testimonials.items.8.role')}
+                  rating={5}
+                />
+                {/* Duplicate set for seamless loop */}
+                <TestimonialCard
+                  content={t('landing.testimonials.items.5.content')}
+                  author={t('landing.testimonials.items.5.author')}
+                  role={t('landing.testimonials.items.5.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.6.content')}
+                  author={t('landing.testimonials.items.6.author')}
+                  role={t('landing.testimonials.items.6.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.7.content')}
+                  author={t('landing.testimonials.items.7.author')}
+                  role={t('landing.testimonials.items.7.role')}
+                  rating={5}
+                />
+                <TestimonialCard
+                  content={t('landing.testimonials.items.8.content')}
+                  author={t('landing.testimonials.items.8.author')}
+                  role={t('landing.testimonials.items.8.role')}
+                  rating={5}
+                />
+              </div>
             </div>
           </div>
         </section>

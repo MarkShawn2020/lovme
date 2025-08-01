@@ -47,13 +47,72 @@ html[data-theme="light"] .primary-cta:hover {
   box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
 }
 
-/* Marquee gradient masks */
+/* Marquee gradient masks - default */
+.marquee-mask-left {
+  background: linear-gradient(90deg, 
+    #000000 0%, 
+    #000000 10%,
+    transparent 100%
+  );
+}
+
+.marquee-mask-right {
+  background: linear-gradient(270deg, 
+    #000000 0%, 
+    #000000 10%,
+    transparent 100%
+  );
+}
+
+/* Light theme marquee masks */
 html[data-theme="light"] .marquee-mask-left {
-  background: linear-gradient(to right, var(--color-background-body), transparent);
+  background: linear-gradient(90deg, 
+    #f2f4f7 0%, 
+    #f2f4f7 10%,
+    transparent 100%
+  );
 }
 
 html[data-theme="light"] .marquee-mask-right {
-  background: linear-gradient(to left, var(--color-background-body), transparent);
+  background: linear-gradient(270deg, 
+    #f2f4f7 0%, 
+    #f2f4f7 10%,
+    transparent 100%
+  );
+}
+
+/* Dark theme marquee masks */
+html[data-theme="dark"] .marquee-mask-left {
+  background: linear-gradient(90deg, 
+    #0a0a0a 0%, 
+    #0a0a0a 10%,
+    transparent 100%
+  );
+}
+
+html[data-theme="dark"] .marquee-mask-right {
+  background: linear-gradient(270deg, 
+    #0a0a0a 0%, 
+    #0a0a0a 10%,
+    transparent 100%
+  );
+}
+
+/* Supabase dark theme marquee masks */
+html[data-theme="supabase-dark"] .marquee-mask-left {
+  background: linear-gradient(90deg, 
+    #0e1521 0%, 
+    #0e1521 10%,
+    transparent 100%
+  );
+}
+
+html[data-theme="supabase-dark"] .marquee-mask-right {
+  background: linear-gradient(270deg, 
+    #0e1521 0%, 
+    #0e1521 10%,
+    transparent 100%
+  );
 }
 
 /* Hero section glows - reduce intensity in light mode */
@@ -124,4 +183,44 @@ html[data-theme="supabase-dark"] .gradient-text {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Marquee animations */
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-right {
+  animation: marquee-left 40s linear infinite;
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.animate-marquee-left {
+  animation: marquee-right 40s linear infinite;
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+/* Ensure testimonial cards have minimum width */
+.animate-marquee-right > *,
+.animate-marquee-left > * {
+  flex-shrink: 0;
+  width: 350px; /* Consistent card width */
 }
