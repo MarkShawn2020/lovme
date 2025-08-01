@@ -1,0 +1,127 @@
+/* Landing Page Custom Styles */
+
+/* Glass morphism effect for both themes */
+.glass-enabled {
+  backdrop-filter: saturate(150%) blur(12px);
+  -webkit-backdrop-filter: saturate(150%) blur(12px);
+}
+
+/* Adaptive badge styling */
+.product-badge {
+  background: linear-gradient(to right, 
+    rgba(251, 191, 36, 0.1), 
+    rgba(251, 191, 36, 0.05)
+  );
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+html[data-theme="light"] .product-badge {
+  background: linear-gradient(to right, 
+    rgba(251, 191, 36, 0.15), 
+    rgba(251, 191, 36, 0.1)
+  );
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+/* Tech card icon colors - adapt to theme */
+html[data-theme="light"] .tech-icon-next {
+  color: #000000;
+}
+
+html[data-theme="dark"] .tech-icon-next,
+html[data-theme="supabase-dark"] .tech-icon-next {
+  color: #ffffff;
+}
+
+/* Gradient text for light mode */
+html[data-theme="light"] .animate-gradient {
+  filter: brightness(0.85);
+}
+
+/* Button shadows for light mode */
+html[data-theme="light"] .primary-cta {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+html[data-theme="light"] .primary-cta:hover {
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+}
+
+/* Marquee gradient masks */
+html[data-theme="light"] .marquee-mask-left {
+  background: linear-gradient(to right, var(--color-background-body), transparent);
+}
+
+html[data-theme="light"] .marquee-mask-right {
+  background: linear-gradient(to left, var(--color-background-body), transparent);
+}
+
+/* Hero section glows - reduce intensity in light mode */
+html[data-theme="light"] .hero-glow {
+  opacity: 0.3;
+}
+
+html[data-theme="dark"] .hero-glow,
+html[data-theme="supabase-dark"] .hero-glow {
+  opacity: 0.5;
+}
+
+/* Tech stack cards hover state */
+.tech-card {
+  transition: all 0.3s ease;
+}
+
+html[data-theme="light"] .tech-card:hover {
+  background-color: rgba(251, 191, 36, 0.05);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+/* Feature card icon colors */
+html[data-theme="light"] .feature-icon {
+  color: #ff8c00; /* Darker orange for better contrast */
+}
+
+html[data-theme="dark"] .feature-icon,
+html[data-theme="supabase-dark"] .feature-icon {
+  color: #ffaa40;
+}
+
+/* Footer links in light mode */
+html[data-theme="light"] .footer-link {
+  color: var(--color-text-tertiary);
+}
+
+html[data-theme="light"] .footer-link:hover {
+  color: var(--color-text-secondary);
+}
+
+/* Avatar rings in light mode */
+html[data-theme="light"] .avatar-ring {
+  ring-color: rgba(251, 191, 36, 0.5);
+}
+
+/* Better contrast for animated text */
+html[data-theme="light"] .gradient-text {
+  background: linear-gradient(
+    to right,
+    #ff6b00,
+    #ffa500,
+    #ff6b00
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html[data-theme="dark"] .gradient-text,
+html[data-theme="supabase-dark"] .gradient-text {
+  background: linear-gradient(
+    to right,
+    #ffaa40,
+    #ffd700,
+    #ffaa40
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
