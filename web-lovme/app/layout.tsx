@@ -63,7 +63,7 @@ const LocaleLayout = async ({
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
       <body
-        className="color-scheme select-auto bg-background-body font-sans text-text-secondary"
+        className="color-scheme h-full select-auto bg-background-body font-sans text-text-secondary"
         {...datasetMap}
       >
         <BrowserInitializer>
