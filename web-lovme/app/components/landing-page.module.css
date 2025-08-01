@@ -224,3 +224,13 @@ html[data-theme="supabase-dark"] .gradient-text {
   flex-shrink: 0;
   width: 350px; /* Consistent card width */
 }
+
+/* Simple float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

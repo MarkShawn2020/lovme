@@ -46,7 +46,7 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
   }, [input, selectedDatasets, handleSubmit])
 
   return (
-    <div className="flex flex-col h-full bg-background-main">
+    <div className="bg-background-main flex h-full flex-col">
       {/* Header */}
       <div className="border-b border-divider-subtle px-6 py-4">
         <div className="flex items-center justify-between">
@@ -63,9 +63,9 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
 
       {/* Messages Area */}
       <div className="flex-1 overflow-y-auto">
-        <div className="max-w-4xl mx-auto px-6 py-6">
+        <div className="mx-auto max-w-4xl px-6 py-6">
           {showWelcome && messages.length === 0 && (
-            <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
+            <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
               <AppIcon
                 size='xl'
                 iconType='emoji'
@@ -73,14 +73,14 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
                 background="#E8E6DC"
                 className="mb-6"
               />
-              <h3 className="text-2xl font-semibold text-text-primary mb-3">
+              <h3 className="mb-3 text-2xl font-semibold text-text-primary">
                 {t('aiAssistant.welcome.title')}
               </h3>
-              <p className="text-text-tertiary max-w-md mb-8">
+              <p className="mb-8 max-w-md text-text-tertiary">
                 {t('aiAssistant.welcome.description')}
               </p>
               {selectedDatasets.length === 0 && (
-                <div className="bg-state-warning-hover rounded-lg px-4 py-3 text-sm text-text-secondary">
+                <div className="rounded-lg bg-state-warning-hover px-4 py-3 text-sm text-text-secondary">
                   {t('aiAssistant.welcome.no_sources_selected')}
                 </div>
               )}
@@ -102,13 +102,13 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
                     iconType='emoji'
                     icon="🤖"
                     background="#E8E6DC"
-                    className="flex-shrink-0"
+                    className="shrink-0"
                   />
                 )}
 
                 <div
                   className={cn(
-                    'rounded-2xl px-4 py-3 max-w-[80%]',
+                    'max-w-[80%] rounded-2xl px-4 py-3',
                     message.role === 'user'
                       ? 'bg-primary text-white'
                       : 'bg-background-secondary',
@@ -122,8 +122,8 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
 
                   {/* Show sources if available */}
                   {message.role === 'assistant' && message.annotations?.length > 0 && (
-                    <div className="mt-3 pt-3 border-t border-divider-subtle">
-                      <p className="text-xs font-medium text-text-tertiary mb-2">{t('aiAssistant.chat.sources_label')}</p>
+                    <div className="mt-3 border-t border-divider-subtle pt-3">
+                      <p className="mb-2 text-xs font-medium text-text-tertiary">{t('aiAssistant.chat.sources_label')}</p>
                       <div className="space-y-1">
                         {message.annotations.map((annotation: any, index: number) => (
                           <div key={index} className="text-xs text-text-tertiary">
@@ -145,7 +145,7 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
                     avatar={userProfile.avatar}
                     name={userProfile.name}
                     size={32}
-                    className="flex-shrink-0"
+                    className="shrink-0"
                   />
                 )}
               </div>
@@ -158,7 +158,7 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
                   iconType='emoji'
                   icon="🤖"
                   background="#E8E6DC"
-                  className="flex-shrink-0"
+                  className="shrink-0"
                 />
                 <div className="bg-background-secondary rounded-2xl px-4 py-3">
                   <Loading type="area" />
@@ -172,8 +172,8 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
       </div>
 
       {/* Input Area */}
-      <div className="border-t border-divider-subtle bg-background-main">
-        <form onSubmit={handleFormSubmit} className="max-w-4xl mx-auto px-6 py-4">
+      <div className="bg-background-main border-t border-divider-subtle">
+        <form onSubmit={handleFormSubmit} className="mx-auto max-w-4xl px-6 py-4">
           <div className="relative">
             <input
               type="text"
@@ -186,10 +186,10 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
               }
               disabled={selectedDatasets.length === 0}
               className={cn(
-                'w-full px-4 py-3 pr-12 rounded-xl border',
-                'bg-background-default text-text-primary placeholder-text-quaternary',
-                'focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent',
-                'disabled:opacity-50 disabled:cursor-not-allowed',
+                'w-full rounded-xl border px-4 py-3 pr-12',
+                'bg-background-default text-text-primary placeholder:text-text-quaternary',
+                'focus:ring-primary focus:border-transparent focus:outline-none focus:ring-2',
+                'disabled:cursor-not-allowed disabled:opacity-50',
                 selectedDatasets.length === 0 ? 'border-divider-subtle' : 'border-divider-regular',
               )}
             />
@@ -198,14 +198,14 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
               disabled={!input.trim() || selectedDatasets.length === 0 || isLoading}
               className={cn(
                 'absolute right-2 top-1/2 -translate-y-1/2',
-                'w-8 h-8 rounded-lg flex items-center justify-center',
+                'flex h-8 w-8 items-center justify-center rounded-lg',
                 'transition-colors duration-200',
                 input.trim() && selectedDatasets.length > 0 && !isLoading
-                  ? 'bg-primary text-white hover:bg-primary-dark'
-                  : 'bg-background-secondary text-text-quaternary cursor-not-allowed',
+                  ? 'bg-primary hover:bg-primary-dark text-white'
+                  : 'bg-background-secondary cursor-not-allowed text-text-quaternary',
               )}
             >
-              <RiSendPlaneFill className="w-4 h-4" />
+              <RiSendPlaneFill className="h-4 w-4" />
             </button>
           </div>
         </form>

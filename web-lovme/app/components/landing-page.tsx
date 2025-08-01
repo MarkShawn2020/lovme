@@ -36,10 +36,10 @@ const LandingPage = () => {
   return (
     <div className="bg-background-body">
       {/* Header with Glass Morphism */}
-      <header className={cn('header-container sticky top-0 z-50 border-b border-divider-regular bg-components-panel-bg/80', styles['glass-enabled'])}>
+      <header className={cn('header-container bg-components-panel-bg/80 sticky top-0 z-50 border-b border-divider-regular', styles['glass-enabled'])}>
         {/* Header overlays for visual effects */}
         <div className="absolute inset-0 bg-gradient-to-r from-amber-400/5 via-transparent to-yellow-500/5"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-components-panel-bg/5 to-transparent"></div>
+        <div className="from-components-panel-bg/5 absolute inset-0 bg-gradient-to-b to-transparent"></div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-4">
@@ -50,43 +50,43 @@ const LandingPage = () => {
                 <span className="text-xl font-bold text-text-primary">LovMe</span>
               </a>
               <a className="ml-3" href="#pricing">
-                <div className="relative overflow-hidden rounded-full bg-gradient-to-r from-amber-500/20 to-yellow-500/20 backdrop-blur-sm border border-amber-400/30 px-3 py-1 transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:border-amber-300/50">
-                  <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 animate-pulse"></div>
+                <div className="relative overflow-hidden rounded-full border border-amber-400/30 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 px-3 py-1 backdrop-blur-sm transition-all duration-300 hover:border-amber-300/50 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]">
+                  <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-amber-500/10 to-yellow-500/10"></div>
                   <span className="relative text-xs font-bold text-amber-300">80% OFF</span>
                 </div>
               </a>
             </div>
 
             {/* Navigation section */}
-            <nav className="hidden md:flex items-center space-x-6">
-              <a className="text-text-secondary hover:text-text-primary transition-colors font-medium flex items-center gap-2" href="/vibe-coding">
+            <nav className="hidden items-center space-x-6 md:flex">
+              <a className="flex items-center gap-2 font-medium text-text-secondary transition-colors hover:text-text-primary" href="/vibe-coding">
                 {t('landing.header.vibeCoding')}
-                <div className="inline-flex items-center rounded-full border border-amber-400/30 px-2.5 py-0.5 text-xs font-semibold bg-amber-400/10 text-amber-300">
+                <div className="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-2.5 py-0.5 text-xs font-semibold text-amber-300">
                   New
                 </div>
               </a>
-              <a className="text-text-secondary hover:text-text-primary transition-colors font-medium" href="#features">
+              <a className="font-medium text-text-secondary transition-colors hover:text-text-primary" href="#features">
                 {t('landing.header.features')}
               </a>
-              <a className="text-text-secondary hover:text-text-primary transition-colors font-medium" href="#pricing">
+              <a className="font-medium text-text-secondary transition-colors hover:text-text-primary" href="#pricing">
                 {t('landing.header.pricing')}
               </a>
-              <a className="text-text-secondary hover:text-text-primary transition-colors font-medium" href="/docs" target="_blank">
+              <a className="font-medium text-text-secondary transition-colors hover:text-text-primary" href="/docs" target="_blank">
                 {t('landing.header.docs')}
               </a>
             </nav>
 
             {/* CTA section */}
             <div className="flex items-center space-x-4">
-              <a className="hidden sm:flex items-center gap-1 text-text-secondary hover:text-text-primary transition-colors" href="https://x.com/lovme" target="_blank">
+              <a className="hidden items-center gap-1 text-text-secondary transition-colors hover:text-text-primary sm:flex" href="https://x.com/lovme" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                 </svg>
               </a>
-              <button className="px-4 py-2 font-medium text-text-secondary hover:text-text-primary transition-colors" onClick={handleSignIn}>
+              <button className="px-4 py-2 font-medium text-text-secondary transition-colors hover:text-text-primary" onClick={handleSignIn}>
                 {t('landing.header.signIn')}
               </button>
-              <button className="rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-6 py-2.5 font-semibold text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:scale-105" onClick={handleGetStarted}>
+              <button className="rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-6 py-2.5 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]" onClick={handleGetStarted}>
                 {t('landing.header.getStarted')}
               </button>
             </div>
@@ -177,7 +177,7 @@ const LandingPage = () => {
                     </svg>
                   </button>
                   <button
-                    className="group inline-flex items-center justify-center gap-2 rounded-xl border border-divider-regular bg-components-panel-bg/20 px-10 py-4 text-base font-semibold text-text-primary backdrop-blur-sm transition-all hover:border-amber-400/50 hover:bg-components-panel-bg/30 hover:shadow-[0_0_20px_rgba(251,191,36,0.2)]"
+                    className="bg-components-panel-bg/20 hover:bg-components-panel-bg/30 group inline-flex items-center justify-center gap-2 rounded-xl border border-divider-regular px-10 py-4 text-base font-semibold text-text-primary backdrop-blur-sm transition-all hover:border-amber-400/50 hover:shadow-[0_0_20px_rgba(251,191,36,0.2)]"
                     onClick={() => router.push('/#features')}
                   >
                     {t('landing.hero.viewFeatures')}
@@ -243,26 +243,24 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              {/* Right side - Enhanced Visual element */}
+              {/* Right side - Visual element */}
               <div className="relative mt-12 hidden lg:col-span-5 lg:mt-0 lg:block">
                 <div className="relative flex h-full items-center justify-center">
-                  {/* Multiple animated gradient orbs */}
-                  <div className="absolute -right-20 top-20 h-64 w-64 animate-pulse rounded-full bg-gradient-to-r from-amber-400/10 to-yellow-500/10 blur-3xl"></div>
-                  <div className="absolute -left-10 bottom-10 h-48 w-48 animate-pulse rounded-full bg-gradient-to-r from-yellow-500/15 to-orange-400/15 blur-2xl" style={{ animationDelay: '1000ms' }}></div>
-                  <div className="absolute right-10 top-1/2 h-32 w-32 animate-pulse rounded-full bg-amber-400/20 blur-xl" style={{ animationDelay: '2000ms' }}></div>
+                  {/* Subtle background glow */}
+                  <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-amber-400/10 to-yellow-500/10 blur-3xl dark:from-amber-400/5 dark:to-yellow-500/5"></div>
 
-                  {/* Enhanced Tech stack floating cards */}
-                  <div className="relative grid grid-cols-3 gap-6 p-4">
+                  {/* Tech stack cards */}
+                  <div className="relative grid grid-cols-3 gap-3 p-4">
                     {[
-                      { name: 'Next.js', color: 'from-white to-gray-300', glow: 'rgba(255,255,255,0.3)' },
-                      { name: 'TypeScript', color: 'from-blue-400 to-blue-600', glow: 'rgba(59,130,246,0.3)' },
-                      { name: 'Tailwind', color: 'from-cyan-400 to-cyan-600', glow: 'rgba(34,211,238,0.3)' },
-                      { name: 'Supabase', color: 'from-emerald-400 to-emerald-600', glow: 'rgba(52,211,153,0.3)' },
-                      { name: 'Stripe', color: 'from-purple-400 to-purple-600', glow: 'rgba(168,85,247,0.3)' },
-                      { name: 'OpenAI', color: 'from-green-400 to-green-600', glow: 'rgba(74,222,128,0.3)' },
-                      { name: 'Vercel', color: 'from-gray-300 to-gray-500', glow: 'rgba(209,213,219,0.3)' },
-                      { name: 'Prisma', color: 'from-indigo-400 to-indigo-600', glow: 'rgba(129,140,248,0.3)' },
-                      { name: 'React', color: 'from-cyan-300 to-cyan-500', glow: 'rgba(103,232,249,0.3)' },
+                      { name: 'Next.js', icon: '▲', color: 'text-black dark:text-white' },
+                      { name: 'TypeScript', icon: 'TS', color: 'text-blue-600 dark:text-blue-400' },
+                      { name: 'Tailwind', icon: '༄', color: 'text-cyan-600 dark:text-cyan-400' },
+                      { name: 'Supabase', icon: '⚡', color: 'text-emerald-600 dark:text-emerald-400' },
+                      { name: 'Stripe', icon: 'S', color: 'text-purple-600 dark:text-purple-400' },
+                      { name: 'OpenAI', icon: '◐', color: 'text-green-600 dark:text-green-400' },
+                      { name: 'Vercel', icon: '▲', color: 'text-black dark:text-white' },
+                      { name: 'Prisma', icon: '◈', color: 'text-indigo-600 dark:text-indigo-400' },
+                      { name: 'React', icon: '⚛', color: 'text-cyan-600 dark:text-cyan-400' },
                     ].map((tech, i) => (
                       <div
                         key={tech.name}
@@ -271,45 +269,45 @@ const LandingPage = () => {
                           animationDelay: `${i * 150}ms`,
                         }}
                       >
-                        {/* Glow effect */}
-                        <div
-                          className="absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100"
-                          style={{ background: tech.glow }}
-                        ></div>
-
                         {/* Card */}
                         <div
-                          className="relative flex h-28 w-28 animate-float cursor-pointer items-center justify-center rounded-2xl border border-divider-regular bg-gradient-to-br from-components-panel-bg/80 to-components-panel-bg/60 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-divider-deep hover:shadow-2xl"
+                          className={cn(
+                            'relative flex h-24 w-24 animate-float cursor-pointer flex-col items-center justify-center gap-1 rounded-xl',
+                            'bg-white dark:bg-gray-900',
+                            'border border-gray-200 dark:border-gray-800',
+                            'transition-all duration-300',
+                            'hover:scale-105 hover:-translate-y-1',
+                            'hover:border-amber-400/50 dark:hover:border-amber-400/40',
+                            'shadow-sm hover:shadow-lg dark:shadow-none dark:hover:shadow-amber-400/10',
+                          )}
                           style={{
-                            animationDuration: `${4 + (i % 3) * 0.8}s`,
+                            animationDuration: `${3 + (i % 3) * 0.5}s`,
                           }}
                         >
-                          {/* Inner gradient */}
-                          <div className={cn('absolute inset-0 rounded-2xl bg-gradient-to-br opacity-10 transition-opacity group-hover:opacity-20', tech.color)}></div>
-
-                          {/* Tech name */}
-                          <span className={cn('relative z-10 bg-gradient-to-br bg-clip-text text-sm font-bold text-transparent', tech.color)}>
-                            {tech.name}
+                          {/* Icon */}
+                          <span className={cn('text-xl font-bold', tech.color)}>
+                            {tech.icon}
                           </span>
 
-                          {/* Corner accent */}
-                          <div className={cn('absolute -right-1 -top-1 h-3 w-3 rounded-full bg-gradient-to-br opacity-60', tech.color)}></div>
+                          {/* Tech name */}
+                          <span className="text-xs font-medium text-gray-600 dark:text-gray-400">
+                            {tech.name}
+                          </span>
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  {/* Floating particles */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    {[...new Array(6)].map((_, i) => (
+                  {/* Minimal floating accents */}
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    {[0, 1, 2].map(i => (
                       <div
                         key={i}
-                        className="absolute h-1 w-1 animate-float rounded-full bg-amber-400/40"
+                        className="absolute h-1 w-1 rounded-full bg-amber-400/30 dark:bg-amber-400/20"
                         style={{
-                          left: `${20 + i * 15}%`,
-                          top: `${10 + i * 12}%`,
-                          animationDelay: `${i * 500}ms`,
-                          animationDuration: `${5 + i}s`,
+                          left: `${30 + i * 20}%`,
+                          top: `${20 + i * 25}%`,
+                          animation: `float ${6 + i * 2}s ease-in-out ${i * 2}s infinite`,
                         }}
                       ></div>
                     ))}
@@ -334,20 +332,21 @@ const LandingPage = () => {
 
             <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
               {/* Next.js */}
-              <div className="flex items-center justify-center rounded-lg border border-divider-regular bg-components-panel-bg/50 p-8 transition-all hover:border-amber-400/30 hover:bg-components-panel-bg/70">
+              <div className="bg-components-panel-bg/50 hover:bg-components-panel-bg/70 flex items-center justify-center rounded-lg border border-divider-regular p-8 transition-all hover:border-amber-400/30">
                 <div className="text-center">
-                  <div className="mx-auto h-12 w-12 text-text-secondary">
-                    <svg viewBox="0 0 180 180" fill="currentColor">
-                      <path d="M0 0h180v180H0z" />
-                      <path fill="#000" d="M47.1 114.5v.1l30.6-44.9v54.7a4.4 4.4 0 108.8 0V55.6a4.4 4.4 0 00-7.5-3.1L48.4 97.4V55.6a4.4 4.4 0 10-8.8 0v68.8a4.4 4.4 0 007.5 3.1v-13zm84.4-59a4.4 4.4 0 00-4.4 4.4v49.5L96.5 52.5a4.4 4.4 0 00-7.5 3.1v68.8a4.4 4.4 0 108.8 0V74.9l30.6 56.9a4.4 4.4 0 007.5-3.1V59.9a4.4 4.4 0 00-4.4-4.4z"/>
-                    </svg>
+                  <div className="mx-auto h-12 w-12">
+                    <img 
+                      src="/assets/nextjs-icon.svg" 
+                      alt="Next.js"
+                      className="h-full w-full dark:invert"
+                    />
                   </div>
-                  <p className="mt-3 text-sm font-medium text-white/60">Next.js</p>
+                  <p className="mt-3 text-sm font-medium text-text-tertiary">Next.js</p>
                 </div>
               </div>
 
               {/* Supabase */}
-              <div className="flex items-center justify-center rounded-lg border border-divider-regular bg-components-panel-bg/50 p-8 transition-all hover:border-amber-400/30 hover:bg-components-panel-bg/70">
+              <div className="bg-components-panel-bg/50 hover:bg-components-panel-bg/70 flex items-center justify-center rounded-lg border border-divider-regular p-8 transition-all hover:border-amber-400/30">
                 <div className="text-center">
                   <div className="mx-auto h-12 w-12 text-[#3ECF8E]">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -359,7 +358,7 @@ const LandingPage = () => {
               </div>
 
               {/* Tailwind CSS */}
-              <div className="flex items-center justify-center rounded-lg border border-divider-regular bg-components-panel-bg/50 p-8 transition-all hover:border-amber-400/30 hover:bg-components-panel-bg/70">
+              <div className="bg-components-panel-bg/50 hover:bg-components-panel-bg/70 flex items-center justify-center rounded-lg border border-divider-regular p-8 transition-all hover:border-amber-400/30">
                 <div className="text-center">
                   <div className="mx-auto h-12 w-12 text-[#38BDF8]">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -371,7 +370,7 @@ const LandingPage = () => {
               </div>
 
               {/* TypeScript */}
-              <div className="flex items-center justify-center rounded-lg border border-divider-regular bg-components-panel-bg/50 p-8 transition-all hover:border-amber-400/30 hover:bg-components-panel-bg/70">
+              <div className="bg-components-panel-bg/50 hover:bg-components-panel-bg/70 flex items-center justify-center rounded-lg border border-divider-regular p-8 transition-all hover:border-amber-400/30">
                 <div className="text-center">
                   <div className="mx-auto h-12 w-12 text-[#3178C6]">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -383,7 +382,7 @@ const LandingPage = () => {
               </div>
 
               {/* Prisma */}
-              <div className="flex items-center justify-center rounded-lg border border-divider-regular bg-components-panel-bg/50 p-8 transition-all hover:border-amber-400/30 hover:bg-components-panel-bg/70">
+              <div className="bg-components-panel-bg/50 hover:bg-components-panel-bg/70 flex items-center justify-center rounded-lg border border-divider-regular p-8 transition-all hover:border-amber-400/30">
                 <div className="text-center">
                   <div className="mx-auto h-12 w-12 text-text-secondary">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -395,7 +394,7 @@ const LandingPage = () => {
               </div>
 
               {/* Stripe */}
-              <div className="flex items-center justify-center rounded-lg border border-divider-regular bg-components-panel-bg/50 p-8 transition-all hover:border-amber-400/30 hover:bg-components-panel-bg/70">
+              <div className="bg-components-panel-bg/50 hover:bg-components-panel-bg/70 flex items-center justify-center rounded-lg border border-divider-regular p-8 transition-all hover:border-amber-400/30">
                 <div className="text-center">
                   <div className="mx-auto h-12 w-12 text-[#635BFF]">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -572,12 +571,12 @@ const LandingPage = () => {
 
           {/* Marquee Container */}
           <div className="relative mt-16 overflow-hidden">
-            <div className={cn('absolute left-0 top-0 z-10 h-full w-32 pointer-events-none', styles['marquee-mask-left'])} />
-            <div className={cn('absolute right-0 top-0 z-10 h-full w-32 pointer-events-none', styles['marquee-mask-right'])} />
+            <div className={cn('pointer-events-none absolute left-0 top-0 z-10 h-full w-32', styles['marquee-mask-left'])} />
+            <div className={cn('pointer-events-none absolute right-0 top-0 z-10 h-full w-32', styles['marquee-mask-right'])} />
 
             {/* First Row - Moving Left */}
             <div className="relative mb-8 flex">
-              <div className={cn("flex gap-6 flex-shrink-0", styles['animate-marquee-right'])}>
+              <div className={cn('flex shrink-0 gap-6', styles['animate-marquee-right'])}>
                 <TestimonialCard
                   content={t('landing.testimonials.items.1.content')}
                   author={t('landing.testimonials.items.1.author')}
@@ -632,7 +631,7 @@ const LandingPage = () => {
 
             {/* Second Row - Moving Right (opposite direction) */}
             <div className="relative flex">
-              <div className={cn("flex gap-6 flex-shrink-0", styles['animate-marquee-left'])}>
+              <div className={cn('flex shrink-0 gap-6', styles['animate-marquee-left'])}>
                 {/* Extra cards at the beginning to fill the initial -50% transform gap */}
                 <TestimonialCard
                   content={t('landing.testimonials.items.7.content')}

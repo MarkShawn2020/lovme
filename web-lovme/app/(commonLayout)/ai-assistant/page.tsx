@@ -21,11 +21,11 @@ const AIAssistantPage = () => {
   )
 
   return (
-    <div className="flex h-full bg-background-main">
+    <div className="bg-background-main flex h-full">
       {/* Sidebar */}
-      <div className="w-80 border-r border-divider-subtle bg-background-main p-6">
+      <div className="bg-background-main w-80 border-r border-divider-subtle p-6">
         <div className="mb-8">
-          <div className="flex items-center gap-3 mb-2">
+          <div className="mb-2 flex items-center gap-3">
             <AppIcon
               size='lg'
               iconType='emoji'
@@ -40,7 +40,7 @@ const AIAssistantPage = () => {
         </div>
 
         <div className="mb-6">
-          <h2 className="text-sm font-medium text-text-secondary mb-3">{t('aiAssistant.sidebar.knowledge_sources')}</h2>
+          <h2 className="mb-3 text-sm font-medium text-text-secondary">{t('aiAssistant.sidebar.knowledge_sources')}</h2>
           <KnowledgeBaseSelector
             datasets={datasetsData?.data || []}
             selectedDatasets={selectedDatasets}
@@ -51,11 +51,11 @@ const AIAssistantPage = () => {
         <div className="border-t border-divider-subtle pt-6">
           <div className="space-y-4">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-lg bg-state-info-hover flex items-center justify-center flex-shrink-0">
-                <RiMagicLine className="w-4 h-4 text-text-accent" />
+              <div className="bg-state-info-hover flex h-8 w-8 shrink-0 items-center justify-center rounded-lg">
+                <RiMagicLine className="h-4 w-4 text-text-accent" />
               </div>
               <div>
-                <h3 className="text-sm font-medium text-text-primary mb-1">{t('aiAssistant.sidebar.rag_powered')}</h3>
+                <h3 className="mb-1 text-sm font-medium text-text-primary">{t('aiAssistant.sidebar.rag_powered')}</h3>
                 <p className="text-xs text-text-tertiary">
                   {t('aiAssistant.sidebar.rag_description')}
                 </p>

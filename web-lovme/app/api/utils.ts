@@ -13,7 +13,7 @@ export async function getServerSideUserInfo(req: NextRequest) {
     // Verify token and get user info
     const response = await fetch(`${API_PREFIX}/workspaces/current/members/me`, {
       headers: {
-        'Authorization': `Bearer ${accessToken}`,
+        Authorization: `Bearer ${accessToken}`,
       },
     })
 
