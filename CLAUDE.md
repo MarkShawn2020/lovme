@@ -14,6 +14,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Linting**: `dev/reformat` - Run ruff linter/formatter, dotenv-linter, and mypy
 - **Type Checking**: `dev/mypy-check` - Run mypy type checking
 
+**Note**: When using `uv` directly with Flask commands, use `python -m flask` instead of just `flask`:
+- Database migration: `uv run python -m flask db upgrade`
+- Run server: `uv run python -m flask run --host 0.0.0.0 --port=5001 --debug`
+
 ### Web (Next.js/React)
 - **Development**: `cd web && pnpm dev` - Start Next.js dev server on port 3000
 - **Build**: `cd web && pnpm build` - Build production application

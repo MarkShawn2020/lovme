@@ -2,9 +2,10 @@
 
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import useSWR from 'swr'
 import AIChat from '@/app/components/ai-assistant/chat'
 import KnowledgeBaseSelector from '@/app/components/ai-assistant/knowledge-base-selector'
-import { useDatasets } from '@/service/datasets'
+import { fetchDatasets } from '@/service/datasets'
 import AppIcon from '@/app/components/base/app-icon'
 import Button from '@/app/components/base/button'
 import { RiMagicLine } from '@remixicon/react'
@@ -12,7 +13,12 @@ import { RiMagicLine } from '@remixicon/react'
 const AIAssistantPage = () => {
   const { t } = useTranslation()
   const [selectedDatasets, setSelectedDatasets] = useState<string[]>([])
-  const { data: datasetsData } = useDatasets({ url: '/datasets', params: { page: 1, limit: 100 } })
+  
+  // Fetch datasets using SWR
+  const { data: datasetsData } = useSWR(
+    ['datasets', 1, 100],
+    () => fetchDatasets({ url: 'datasets', params: { page: 1, limit: 100 } })
+  )
 
   return (
     <div className="flex h-full bg-background-main">
