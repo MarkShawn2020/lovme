@@ -273,6 +273,9 @@ const FileUploader = ({
   const fileChangeHandle = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const files = [...(e.target.files ?? [])] as File[]
     initialUpload(files.filter(isValid))
+    // Reset input value to allow selecting the same file again
+    if (fileUploader.current)
+      fileUploader.current.value = ''
   }, [isValid, initialUpload])
 
   const { theme } = useTheme()
