@@ -22,21 +22,10 @@ const Layout = ({ children }: { children: ReactNode }) => {
               <ModalContextProvider>
                 {/* Full height flex container */}
                 <div className="flex h-screen flex-col overflow-hidden">
-                  {/* Header with Claude design system */}
-                  <header
-                    className={cn(
-                      'flex-shrink-0',
-                      'bg-white/95 backdrop-blur-md',
-                      'border-b border-claude-border-subtle',
-                      'shadow-claude-sm',
-                      'animate-claude-fade-in',
-                      'z-50',
-                    )}
-                  >
-                    <HeaderWrapper>
-                      <Header />
-                    </HeaderWrapper>
-                  </header>
+                  {/* Header wrapper handles its own Claude design styling */}
+                  <HeaderWrapper>
+                    <Header />
+                  </HeaderWrapper>
 
                   {/* Main content area - flex-1 to take remaining space */}
                   <main
