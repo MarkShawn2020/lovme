@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useChat } from '@ai-sdk/react'
 import { useTranslation } from 'react-i18next'
-import AppIcon from '@/app/components/base/app-icon'
 import { Markdown } from '@/app/components/base/markdown'
 import Avatar from '@/app/components/base/avatar'
 import { useAppContext } from '@/context/app-context'
@@ -46,91 +45,92 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
   }, [input, selectedDatasets, handleSubmit])
 
   return (
-    <div className="bg-background-main flex h-full flex-col">
-      {/* Header */}
-      <div className="border-b border-divider-subtle px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-lg font-medium text-text-primary">{t('aiAssistant.title')}</h2>
-            <p className="text-sm text-text-tertiary">
-              {selectedDatasets.length > 0
-                ? t(`aiAssistant.chat.header_subtitle_${selectedDatasets.length > 1 ? 'multiple' : 'single'}`, { count: selectedDatasets.length })
-                : t('aiAssistant.chat.select_sources_prompt')}
-            </p>
+    <div className="flex h-full flex-col bg-claude-bg-main">
+      {/* Header - Aligned with design guide */}
+      <div className="border-b border-claude-border-subtle bg-white px-claude-gutter py-claude-m">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-claude-display-s font-claude-serif font-semibold text-claude-text-main">
+                {t('aiAssistant.title')}
+              </h2>
+              <p className="text-claude-paragraph-m mt-1 text-claude-text-secondary">
+                {selectedDatasets.length > 0
+                  ? t(`aiAssistant.chat.header_subtitle_${selectedDatasets.length > 1 ? 'multiple' : 'single'}`, { count: selectedDatasets.length })
+                  : t('aiAssistant.chat.select_sources_prompt')}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="mx-auto max-w-4xl px-6 py-6">
+      {/* Messages Area - Improved layout */}
+      <div className="flex-1 overflow-y-auto bg-gradient-to-b from-claude-bg-main to-claude-bg-ivory">
+        <div className="mx-auto max-w-7xl px-claude-gutter py-claude-xl">
           {showWelcome && messages.length === 0 && (
-            <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
-              <AppIcon
-                size='xl'
-                iconType='emoji'
-                icon="🤖"
-                background="#E8E6DC"
-                className="mb-6"
-              />
-              <h3 className="mb-3 text-2xl font-semibold text-text-primary">
+            <div className="animate-claude-fade-in flex min-h-[400px] flex-col items-center justify-center text-center">
+              <div className="shadow-claude-md mb-claude-gutter flex h-20 w-20 items-center justify-center rounded-claude-full bg-claude-swatch-cloud-light">
+                <span className="text-4xl">🤖</span>
+              </div>
+              <h3 className="text-claude-display-m mb-claude-s font-claude-serif font-semibold text-claude-text-main">
                 {t('aiAssistant.welcome.title')}
               </h3>
-              <p className="mb-8 max-w-md text-text-tertiary">
+              <p className="text-claude-paragraph-m mb-claude-gutter max-w-md leading-relaxed text-claude-text-secondary">
                 {t('aiAssistant.welcome.description')}
               </p>
               {selectedDatasets.length === 0 && (
-                <div className="rounded-lg bg-state-warning-hover px-4 py-3 text-sm text-text-secondary">
+                <div className="text-claude-detail rounded-claude-md border border-claude-swatch-olive/30 bg-claude-swatch-olive/20 px-claude-m py-claude-s text-claude-text-secondary">
                   {t('aiAssistant.welcome.no_sources_selected')}
                 </div>
               )}
             </div>
           )}
 
-          <div className="space-y-6">
+          <div className="space-y-claude-m">
             {messages.map(message => (
               <div
                 key={message.id}
                 className={cn(
-                  'flex gap-4',
+                  'animate-claude-slide-up flex gap-claude-s',
                   message.role === 'user' ? 'justify-end' : 'justify-start',
                 )}
               >
                 {message.role === 'assistant' && (
-                  <AppIcon
-                    size='md'
-                    iconType='emoji'
-                    icon="🤖"
-                    background="#E8E6DC"
-                    className="shrink-0"
-                  />
+                  <div className="shadow-claude-sm flex h-10 w-10 shrink-0 items-center justify-center rounded-claude-full bg-claude-swatch-cloud-light">
+                    <span className="text-xl">🤖</span>
+                  </div>
                 )}
 
                 <div
                   className={cn(
-                    'max-w-[80%] rounded-2xl px-4 py-3',
+                    'shadow-claude-md max-w-[70%] px-claude-m py-claude-s transition-all duration-claude ease-claude',
                     message.role === 'user'
-                      ? 'bg-primary text-white'
-                      : 'bg-background-secondary',
+                      ? 'hover:shadow-claude-lg rounded-claude-lg bg-claude-primary text-white hover:scale-[1.02]'
+                      : 'hover:shadow-claude-lg rounded-claude-lg border border-claude-border-subtle bg-white',
                   )}
                 >
                   {message.role === 'user' ? (
-                    <p className="whitespace-pre-wrap">{message.content}</p>
+                    <p className="text-claude-paragraph-m whitespace-pre-wrap">{message.content}</p>
                   ) : (
-                    <Markdown content={message.content} />
+                    <div className="prose-claude prose max-w-none">
+                      <Markdown content={message.content} />
+                    </div>
                   )}
 
-                  {/* Show sources if available */}
+                  {/* Sources with improved design */}
                   {message.role === 'assistant' && message.annotations?.length > 0 && (
-                    <div className="mt-3 border-t border-divider-subtle pt-3">
-                      <p className="mb-2 text-xs font-medium text-text-tertiary">{t('aiAssistant.chat.sources_label')}</p>
+                    <div className="mt-claude-s border-t border-claude-border-subtle pt-claude-s">
+                      <p className="text-claude-detail mb-2 font-medium uppercase tracking-wide text-claude-text-secondary">
+                        {t('aiAssistant.chat.sources_label')}
+                      </p>
                       <div className="space-y-1">
                         {message.annotations.map((annotation: any, index: number) => (
-                          <div key={index} className="text-xs text-text-tertiary">
-                            • {annotation.documentName || 'Document'}
+                          <div key={index} className="text-claude-detail flex items-center gap-2 text-claude-text-tertiary">
+                            <span className="h-1 w-1 rounded-full bg-claude-primary"></span>
+                            <span className="font-medium">{annotation.documentName || 'Document'}</span>
                             {annotation.score && (
-                              <span className="ml-1 text-text-quaternary">
-                                ({t('aiAssistant.chat.relevance_score', { score: (annotation.score * 100).toFixed(0) })})
+                              <span className="text-claude-text-quaternary">
+                                ({(annotation.score * 100).toFixed(0)}% match)
                               </span>
                             )}
                           </div>
@@ -144,23 +144,19 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
                   <Avatar
                     avatar={userProfile.avatar}
                     name={userProfile.name}
-                    size={32}
-                    className="shrink-0"
+                    size={40}
+                    className="shadow-claude-sm shrink-0"
                   />
                 )}
               </div>
             ))}
 
             {isLoading && (
-              <div className="flex gap-4">
-                <AppIcon
-                  size='md'
-                  iconType='emoji'
-                  icon="🤖"
-                  background="#E8E6DC"
-                  className="shrink-0"
-                />
-                <div className="bg-background-secondary rounded-2xl px-4 py-3">
+              <div className="animate-claude-fade-in flex gap-claude-s">
+                <div className="shadow-claude-sm flex h-10 w-10 shrink-0 items-center justify-center rounded-claude-full bg-claude-swatch-cloud-light">
+                  <span className="text-xl">🤖</span>
+                </div>
+                <div className="shadow-claude-md rounded-claude-lg border border-claude-border-subtle bg-white px-claude-m py-claude-s">
                   <Loading type="area" />
                 </div>
               </div>
@@ -171,9 +167,9 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
         </div>
       </div>
 
-      {/* Input Area */}
-      <div className="bg-background-main border-t border-divider-subtle">
-        <form onSubmit={handleFormSubmit} className="mx-auto max-w-4xl px-6 py-4">
+      {/* Input Area - Enhanced design */}
+      <div className="shadow-claude-lg border-t border-claude-border-subtle bg-white">
+        <form onSubmit={handleFormSubmit} className="mx-auto max-w-7xl px-claude-gutter py-claude-m">
           <div className="relative">
             <input
               type="text"
@@ -186,28 +182,38 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
               }
               disabled={selectedDatasets.length === 0}
               className={cn(
-                'w-full rounded-xl border px-4 py-3 pr-12',
-                'bg-background-default text-text-primary placeholder:text-text-quaternary',
-                'focus:ring-primary focus:border-transparent focus:outline-none focus:ring-2',
-                'disabled:cursor-not-allowed disabled:opacity-50',
-                selectedDatasets.length === 0 ? 'border-divider-subtle' : 'border-divider-regular',
+                'w-full rounded-claude-lg border-2 px-claude-m py-3 pr-14',
+                'bg-claude-bg-main text-claude-text-main placeholder:text-claude-text-tertiary',
+                'transition-all duration-claude ease-claude',
+                'focus:border-claude-primary focus:outline-none focus:ring-2 focus:ring-claude-primary/30',
+                'disabled:cursor-not-allowed disabled:bg-claude-bg-ivory disabled:opacity-50',
+                selectedDatasets.length === 0
+                  ? 'border-claude-border-subtle'
+                  : 'border-claude-border-subtle hover:border-claude-text-secondary',
               )}
             />
             <button
               type="submit"
               disabled={!input.trim() || selectedDatasets.length === 0 || isLoading}
               className={cn(
-                'absolute right-2 top-1/2 -translate-y-1/2',
-                'flex h-8 w-8 items-center justify-center rounded-lg',
-                'transition-colors duration-200',
+                'absolute right-3 top-1/2 -translate-y-1/2',
+                'flex h-9 w-9 items-center justify-center rounded-claude-md',
+                'transition-all duration-claude ease-claude',
                 input.trim() && selectedDatasets.length > 0 && !isLoading
-                  ? 'bg-primary hover:bg-primary-dark text-white'
-                  : 'bg-background-secondary cursor-not-allowed text-text-quaternary',
+                  ? 'shadow-claude-sm hover:shadow-claude-md bg-claude-primary text-white hover:scale-110 hover:bg-claude-primary-hover'
+                  : 'cursor-not-allowed bg-claude-bg-ivory text-claude-text-quaternary',
               )}
             >
               <RiSendPlaneFill className="h-4 w-4" />
             </button>
           </div>
+
+          {/* Helper text */}
+          {selectedDatasets.length > 0 && (
+            <p className="text-claude-detail mt-2 text-center text-claude-text-tertiary">
+              Press Enter to send • Shift+Enter for new line
+            </p>
+          )}
         </form>
       </div>
     </div>

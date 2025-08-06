@@ -1,10 +1,14 @@
 import tailwindThemeVarDefine from './themes/tailwind-theme-var-define'
+const designSystem = require('./tailwind-design-system')
 
 const config = {
   theme: {
     typography: require('./typography'),
     extend: {
       colors: {
+        // Claude Design System colors
+        ...designSystem.colors,
+        
         // DESIGN.md inspired colors (new additions)
         'dark-surface': '#1C1C1C',
         'dark-accent': '#3B3B3B',
@@ -72,8 +76,13 @@ const config = {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+        ...designSystem.fontFamily,
+      },
+      fontSize: {
+        ...designSystem.fontSize,
       },
       spacing: {
+        ...designSystem.spacing,
         'base': '1rem', // 16px
         'sm': '0.5rem', // 8px
         'xs': '0.25rem', // 4px
@@ -88,6 +97,22 @@ const config = {
         lg: '0.75rem', // 12px
         xl: '1rem', // 16px
         full: '9999px',
+        ...designSystem.borderRadius,
+      },
+      boxShadow: {
+        ...designSystem.boxShadow,
+      },
+      animation: {
+        ...designSystem.animation,
+      },
+      keyframes: {
+        ...designSystem.keyframes,
+      },
+      transitionDuration: {
+        ...designSystem.transitionDuration,
+      },
+      transitionTimingFunction: {
+        ...designSystem.transitionTimingFunction,
       },
       screens: {
         'mobile': '100px',

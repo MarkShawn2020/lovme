@@ -30,7 +30,6 @@ const NeuroraLogo: FC<NeuroraLogoProps> = ({
   className,
 }) => {
   const { theme } = useTheme()
-  console.log({ theme })
 
   const themedStyle = (theme === 'dark' && style === 'default') ? 'monochromeWhite' : style
 
