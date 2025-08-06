@@ -58,14 +58,24 @@ const ListWrapper = ({
       }
       {
         (!isLoading || page > 1) && (
-          <List
-            marketplaceCollections={marketplaceCollectionsFromClient || marketplaceCollections}
-            marketplaceCollectionPluginsMap={marketplaceCollectionPluginsMapFromClient || marketplaceCollectionPluginsMap}
-            plugins={plugins}
-            showInstallButton={showInstallButton}
-            locale={locale}
-            onMoreClick={handleMoreClick}
-          />
+          <>
+            {!plugins?.length && !marketplaceCollections?.length && (
+              <div className='flex flex-col items-center justify-center py-12 text-center'>
+                <div className='text-lg font-medium text-gray-900'>{t('plugin.marketplace.noPluginsAvailable')}</div>
+                <div className='mt-2 text-sm text-gray-500'>
+                  {t('plugin.marketplace.marketplaceNotConfigured') || 'Marketplace service is not configured. Please contact your administrator.'}
+                </div>
+              </div>
+            )}
+            <List
+              marketplaceCollections={marketplaceCollectionsFromClient || marketplaceCollections}
+              marketplaceCollectionPluginsMap={marketplaceCollectionPluginsMapFromClient || marketplaceCollectionPluginsMap}
+              plugins={plugins}
+              showInstallButton={showInstallButton}
+              locale={locale}
+              onMoreClick={handleMoreClick}
+            />
+          </>
         )
       }
     </div>

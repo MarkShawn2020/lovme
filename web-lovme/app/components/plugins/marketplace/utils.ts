@@ -86,14 +86,6 @@ export const getMarketplaceCollectionsAndPlugins = async (query?: CollectionsAnd
   let marketplaceCollections = [] as MarketplaceCollection[]
   let marketplaceCollectionPluginsMap = {} as Record<string, Plugin[]>
   
-  // Skip marketplace calls if not configured
-  if (!MARKETPLACE_API_PREFIX) {
-    return {
-      marketplaceCollections,
-      marketplaceCollectionPluginsMap,
-    }
-  }
-  
   try {
     let marketplaceUrl = `${MARKETPLACE_API_PREFIX}/collections?page=1&page_size=100`
     if (query?.condition)

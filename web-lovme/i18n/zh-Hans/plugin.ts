@@ -252,6 +252,8 @@ const translation = {
     difyMarketplace: 'LovMe 市场',
     moreFrom: '更多来自市场',
     noPluginFound: '未找到插件',
+    noPluginsAvailable: '暂无可用插件',
+    marketplaceNotConfigured: '市场服务未配置。请联系您的管理员。',
     pluginsResult: '{{num}} 个插件结果',
     sortBy: '排序方式',
     sortOption: {

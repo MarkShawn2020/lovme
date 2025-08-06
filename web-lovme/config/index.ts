@@ -34,8 +34,8 @@ const getStringConfig = (envVar: string | undefined, dataAttrKey: DatasetAttr, d
 
 export const API_PREFIX = getStringConfig(process.env.NEXT_PUBLIC_API_PREFIX, DatasetAttr.DATA_API_PREFIX, 'http://localhost:5001/console/api')
 export const PUBLIC_API_PREFIX = getStringConfig(process.env.NEXT_PUBLIC_PUBLIC_API_PREFIX, DatasetAttr.DATA_PUBLIC_API_PREFIX, 'http://localhost:5001/api')
-export const MARKETPLACE_API_PREFIX = getStringConfig(process.env.NEXT_PUBLIC_MARKETPLACE_API_PREFIX, DatasetAttr.DATA_MARKETPLACE_API_PREFIX, '')
-export const MARKETPLACE_URL_PREFIX = getStringConfig(process.env.NEXT_PUBLIC_MARKETPLACE_URL_PREFIX, DatasetAttr.DATA_MARKETPLACE_URL_PREFIX, '')
+export const MARKETPLACE_API_PREFIX = getStringConfig(process.env.NEXT_PUBLIC_MARKETPLACE_API_PREFIX, DatasetAttr.DATA_MARKETPLACE_API_PREFIX, 'https://marketplace.dify.ai/api/v1')
+export const MARKETPLACE_URL_PREFIX = getStringConfig(process.env.NEXT_PUBLIC_MARKETPLACE_URL_PREFIX, DatasetAttr.DATA_MARKETPLACE_URL_PREFIX, 'https://marketplace.dify.ai')
 
 const EDITION = getStringConfig(process.env.NEXT_PUBLIC_EDITION, DatasetAttr.DATA_PUBLIC_EDITION, 'SELF_HOSTED')
 

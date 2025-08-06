@@ -252,6 +252,8 @@ const translation = {
     difyMarketplace: 'LovMe Marketplace',
     moreFrom: 'More from Marketplace',
     noPluginFound: 'No plugin found',
+    noPluginsAvailable: 'No plugins available',
+    marketplaceNotConfigured: 'Marketplace service is not configured. Please contact your administrator.',
     pluginsResult: '{{num}} results',
     sortBy: 'Sort by',
     sortOption: {

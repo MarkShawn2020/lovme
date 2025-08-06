@@ -71,12 +71,6 @@ export const useMarketplacePlugins = () => {
     setPrevPlugins(undefined)
   }, [reset])
   const handleUpdatePlugins = useCallback((pluginsSearchParams: PluginsSearchParams) => {
-    // Skip if marketplace is not configured
-    if (!MARKETPLACE_API_PREFIX) {
-      setPrevPlugins([])
-      return
-    }
-    
     mutateAsync(pluginsSearchParams).then((res) => {
       const currentPage = pluginsSearchParams.page || 1
       const resPlugins = res.data.bundles || res.data.plugins
