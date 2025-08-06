@@ -21,9 +21,9 @@ const AIAssistantPage = () => {
   )
 
   return (
-    <div className="bg-background-main flex h-full">
+    <div className="flex h-full overflow-hidden">
       {/* Sidebar */}
-      <div className="bg-background-main w-80 border-r border-divider-subtle p-6">
+      <div className="w-80 flex-shrink-0 overflow-y-auto border-r border-divider-subtle bg-background-main p-6">
         <div className="mb-8">
           <div className="mb-2 flex items-center gap-3">
             <AppIcon
@@ -75,7 +75,7 @@ const AIAssistantPage = () => {
       </div>
 
       {/* Main Chat Area */}
-      <div className="flex-1">
+      <div className="flex flex-1 flex-col overflow-hidden">
         <AIChat selectedDatasets={selectedDatasets} />
       </div>
     </div>

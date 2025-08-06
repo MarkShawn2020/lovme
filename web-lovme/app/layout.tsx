@@ -10,6 +10,7 @@ import './styles/globals.css'
 import './styles/markdown.scss'
 import GlobalPublicStoreProvider from '@/context/global-public-context'
 import { DatasetAttr } from '@/types/feature'
+import cn from '@/utils/classnames'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -51,9 +52,13 @@ const LocaleLayout = async ({
   }
 
   return (
-    <html lang={locale ?? 'en'} className="h-full" suppressHydrationWarning>
+    <html
+      lang={locale ?? 'en'}
+      className="h-full antialiased"
+      suppressHydrationWarning
+    >
       <head>
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#F9F9F7" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -61,30 +66,50 @@ const LocaleLayout = async ({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
+        {/* Preconnect to optimize font loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
-        className="color-scheme h-full select-auto bg-background-body font-sans text-text-secondary"
+        className={cn(
+          // Base styles aligned with Claude design system
+          'h-full select-auto',
+          // Typography from design guide
+          'font-claude-sans text-claude-text-main',
+          // Background from design guide
+          'bg-claude-bg-main',
+          // Smooth transitions
+          'transition-colors duration-claude ease-claude',
+          // Color scheme
+          'color-scheme',
+        )}
         {...datasetMap}
       >
-        <BrowserInitializer>
-          <SentryInitializer>
-            <TanstackQueryInitializer>
-              <ThemeProvider
-                attribute='data-theme'
-                defaultTheme='supabase-dark'
-                themes={['light', 'dark', 'supabase-dark', 'system']}
-                enableSystem
-                disableTransitionOnChange
-              >
-                <I18nServer>
-                  <GlobalPublicStoreProvider>
-                    {children}
-                  </GlobalPublicStoreProvider>
-                </I18nServer>
-              </ThemeProvider>
-            </TanstackQueryInitializer>
-          </SentryInitializer>
-        </BrowserInitializer>
+        {/* Layout wrapper with proper nesting */}
+        <div className="relative min-h-screen flex flex-col">
+          <BrowserInitializer>
+            <SentryInitializer>
+              <TanstackQueryInitializer>
+                <ThemeProvider
+                  attribute='data-theme'
+                  defaultTheme='supabase-dark'
+                  themes={['light', 'dark', 'supabase-dark', 'system']}
+                  enableSystem
+                  disableTransitionOnChange
+                >
+                  <I18nServer>
+                    <GlobalPublicStoreProvider>
+                      {/* Main content area */}
+                      <main className="flex-1 w-full">
+                        {children}
+                      </main>
+                    </GlobalPublicStoreProvider>
+                  </I18nServer>
+                </ThemeProvider>
+              </TanstackQueryInitializer>
+            </SentryInitializer>
+          </BrowserInitializer>
+        </div>
         <RoutePrefixHandle />
       </body>
     </html>

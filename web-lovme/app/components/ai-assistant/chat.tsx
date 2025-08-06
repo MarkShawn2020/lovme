@@ -45,9 +45,9 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
   }, [input, selectedDatasets, handleSubmit])
 
   return (
-    <div className="flex h-full flex-col bg-claude-bg-main">
+    <div className="flex h-full flex-col">
       {/* Header - Aligned with design guide */}
-      <div className="border-b border-claude-border-subtle bg-white px-claude-gutter py-claude-m">
+      <div className="flex-shrink-0 border-b border-claude-border-subtle bg-white px-claude-gutter py-claude-m">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between">
             <div>
@@ -167,8 +167,8 @@ const AIChat = ({ selectedDatasets }: AIChatProps) => {
         </div>
       </div>
 
-      {/* Input Area - Enhanced design */}
-      <div className="shadow-claude-lg border-t border-claude-border-subtle bg-white">
+      {/* Input Area - Sticky at bottom */}
+      <div className="flex-shrink-0 border-t border-claude-border-subtle bg-white shadow-claude-lg">
         <form onSubmit={handleFormSubmit} className="mx-auto max-w-7xl px-claude-gutter py-claude-m">
           <div className="relative">
             <input
