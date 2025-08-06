@@ -61,13 +61,21 @@ export const getMarketplacePluginsByCollectionId = async (collectionId: string, 
         }),
       },
     )
+    
+    // Check if response is OK before parsing JSON
+    if (!marketplaceCollectionPluginsData.ok) {
+      console.warn(`Marketplace API not available: ${marketplaceCollectionPluginsData.status}`)
+      return []
+    }
+    
     const marketplaceCollectionPluginsDataJson = await marketplaceCollectionPluginsData.json()
-    plugins = marketplaceCollectionPluginsDataJson.data.plugins.map((plugin: Plugin) => {
+    plugins = marketplaceCollectionPluginsDataJson.data?.plugins?.map((plugin: Plugin) => {
       return getFormattedPlugin(plugin)
-    })
+    }) || []
   }
   // eslint-disable-next-line unused-imports/no-unused-vars
   catch (e) {
+    console.warn('Marketplace API error:', e)
     plugins = []
   }
 
@@ -77,6 +85,15 @@ export const getMarketplacePluginsByCollectionId = async (collectionId: string, 
 export const getMarketplaceCollectionsAndPlugins = async (query?: CollectionsAndPluginsSearchParams) => {
   let marketplaceCollections = [] as MarketplaceCollection[]
   let marketplaceCollectionPluginsMap = {} as Record<string, Plugin[]>
+  
+  // Skip marketplace calls if not configured
+  if (!MARKETPLACE_API_PREFIX) {
+    return {
+      marketplaceCollections,
+      marketplaceCollectionPluginsMap,
+    }
+  }
+  
   try {
     let marketplaceUrl = `${MARKETPLACE_API_PREFIX}/collections?page=1&page_size=100`
     if (query?.condition)
@@ -84,8 +101,17 @@ export const getMarketplaceCollectionsAndPlugins = async (query?: CollectionsAnd
     if (query?.type)
       marketplaceUrl += `&type=${query.type}`
     const marketplaceCollectionsData = await globalThis.fetch(marketplaceUrl, { cache: 'no-store' })
+    
+    if (!marketplaceCollectionsData.ok) {
+      console.warn(`Marketplace collections API not available: ${marketplaceCollectionsData.status}`)
+      return {
+        marketplaceCollections,
+        marketplaceCollectionPluginsMap,
+      }
+    }
+    
     const marketplaceCollectionsDataJson = await marketplaceCollectionsData.json()
-    marketplaceCollections = marketplaceCollectionsDataJson.data.collections
+    marketplaceCollections = marketplaceCollectionsDataJson.data?.collections || []
     await Promise.all(marketplaceCollections.map(async (collection: MarketplaceCollection) => {
       const plugins = await getMarketplacePluginsByCollectionId(collection.name, query)
 
@@ -94,6 +120,7 @@ export const getMarketplaceCollectionsAndPlugins = async (query?: CollectionsAnd
   }
   // eslint-disable-next-line unused-imports/no-unused-vars
   catch (e) {
+    console.warn('Marketplace collections error:', e)
     marketplaceCollections = []
     marketplaceCollectionPluginsMap = {}
   }

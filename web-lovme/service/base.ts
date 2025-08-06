@@ -1,4 +1,4 @@
-import { API_PREFIX, IS_CE_EDITION, PUBLIC_API_PREFIX } from '@/config'
+import { API_PREFIX, IS_CE_EDITION, MARKETPLACE_API_PREFIX, PUBLIC_API_PREFIX } from '@/config'
 import { refreshAccessTokenOrRelogin } from './refresh-token'
 import Toast from '@/app/components/base/toast'
 import { basePath } from '@/utils/var'
@@ -560,6 +560,20 @@ export const getPublic = <T>(url: string, options = {}, otherOptions?: IOtherOpt
 
 // For Marketplace API
 export const getMarketplace = <T>(url: string, options = {}, otherOptions?: IOtherOptions) => {
+  // Skip marketplace requests if not configured
+  if (!MARKETPLACE_API_PREFIX) {
+    // Return empty response instead of error for graceful degradation
+    return Promise.resolve({
+      data: {
+        plugins: [],
+        bundles: [],
+        collections: [],
+        total: 0,
+        page: 1,
+        page_size: 40,
+      }
+    } as T)
+  }
   return get<T>(url, options, { ...otherOptions, isMarketplaceAPI: true })
 }
 
@@ -569,6 +583,19 @@ export const post = <T>(url: string, options = {}, otherOptions?: IOtherOptions)
 
 // For Marketplace API
 export const postMarketplace = <T>(url: string, options = {}, otherOptions?: IOtherOptions) => {
+  // Skip marketplace requests if not configured
+  if (!MARKETPLACE_API_PREFIX) {
+    // Return empty response instead of error for graceful degradation
+    return Promise.resolve({
+      data: {
+        plugins: [],
+        bundles: [],
+        total: 0,
+        page: 1,
+        page_size: 40,
+      }
+    } as T)
+  }
   return post<T>(url, options, { ...otherOptions, isMarketplaceAPI: true })
 }
 

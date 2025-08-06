@@ -102,7 +102,7 @@ const Popup: FC<PopupProps> = ({
         {
           !filteredModelList.length && (
             <div className='break-all px-3 py-1.5 text-center text-xs leading-[18px] text-text-tertiary'>
-              {`No model found for “${searchText}”`}
+              {searchText ? `No model found for "${searchText}"` : t('common.modelProvider.noModelAvailable')}
             </div>
           )
         }

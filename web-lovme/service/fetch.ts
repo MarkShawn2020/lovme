@@ -189,7 +189,14 @@ async function base<T>(url: string, options: FetchOptionType = {}, otherOptions:
         })
         options.headers = mergedHeaders
       }
-      return globalThis.fetch(resource, options)
+      // Try to use the original fetch to bypass extension interference
+      const originalFetch = window.fetch.bind(window)
+      try {
+        return originalFetch(resource, options)
+      } catch (error) {
+        console.warn('Fetch intercepted by extension, retrying with globalThis.fetch', error)
+        return globalThis.fetch(resource, options)
+      }
     },
   })
 

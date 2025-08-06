@@ -18,6 +18,7 @@ import {
   getMarketplaceCollectionsAndPlugins,
 } from './utils'
 import i18n from '@/i18n/i18next-config'
+import { MARKETPLACE_API_PREFIX } from '@/config'
 import {
   useMutationPluginsFromMarketplace,
 } from '@/service/use-plugins'
@@ -70,6 +71,12 @@ export const useMarketplacePlugins = () => {
     setPrevPlugins(undefined)
   }, [reset])
   const handleUpdatePlugins = useCallback((pluginsSearchParams: PluginsSearchParams) => {
+    // Skip if marketplace is not configured
+    if (!MARKETPLACE_API_PREFIX) {
+      setPrevPlugins([])
+      return
+    }
+    
     mutateAsync(pluginsSearchParams).then((res) => {
       const currentPage = pluginsSearchParams.page || 1
       const resPlugins = res.data.bundles || res.data.plugins

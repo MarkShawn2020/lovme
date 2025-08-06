@@ -121,7 +121,7 @@ const ProviderList = () => {
 
   return (
     <>
-      <div className='relative flex h-0 shrink-0 grow overflow-hidden'>
+      <div className='relative flex h-full overflow-hidden'>
         <div
           ref={containerRef}
           className='relative flex grow flex-col overflow-y-auto bg-background-body'

@@ -37,6 +37,7 @@ import { getMarketplacePluginsByCollectionId } from '@/app/components/plugins/ma
 import { useModalContextSelector } from '@/context/modal-context'
 import { useEventEmitterContextContext } from '@/context/event-emitter'
 import { UPDATE_MODEL_PROVIDER_CUSTOM_MODEL_LIST } from './provider-added-card'
+import { MARKETPLACE_API_PREFIX } from '@/config'
 
 type UseDefaultModelAndModelList = (
   defaultModel: DefaultModelResponse | undefined,
@@ -259,6 +260,12 @@ export const useMarketplaceAllPlugins = (providers: ModelProvider[], searchText:
   } = useMarketplacePlugins()
 
   const getCollectionPlugins = useCallback(async () => {
+    // Skip marketplace calls if not configured
+    if (!MARKETPLACE_API_PREFIX) {
+      setCollectionPlugins([])
+      return
+    }
+    
     const collectionPlugins = await getMarketplacePluginsByCollectionId('__model-settings-pinned-models')
 
     setCollectionPlugins(collectionPlugins)
@@ -269,6 +276,11 @@ export const useMarketplaceAllPlugins = (providers: ModelProvider[], searchText:
   }, [getCollectionPlugins])
 
   useEffect(() => {
+    // Skip marketplace calls if not configured
+    if (!MARKETPLACE_API_PREFIX) {
+      return
+    }
+    
     if (searchText) {
       queryPluginsWithDebounced({
         query: searchText,
