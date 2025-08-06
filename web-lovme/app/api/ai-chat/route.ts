@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai'
-import { convertToModelMessages, streamText } from 'ai'
+import { streamText } from 'ai'
 import type { NextRequest } from 'next/server'
 import { getServerSideUserInfo } from '@/app/api/utils'
 import { API_PREFIX } from '@/config'
@@ -42,7 +42,7 @@ IMPORTANT RULES:
 
 Context from knowledge bases:
 ${context}`,
-      messages: convertToModelMessages(messages),
+      messages,
       temperature: 0.2, // Lower temperature for more consistent, factual responses
       tools: {
         searchMoreContent: {
@@ -59,19 +59,20 @@ ${context}`,
           },
         },
       },
-    })
-
-    return result.toUIMessageStreamResponse({
-      getAnnotations: () => {
-        // Include source annotations for transparency
-        return relevantContent.map(item => ({
-          documentName: item.document_name,
-          documentId: item.document_id,
-          score: item.score,
-          content: `${item.content.substring(0, 100)}...`,
-        }))
+      experimental_telemetry: {
+        metadata: {
+          // Include source annotations for transparency
+          sources: relevantContent.map(item => ({
+            documentName: item.document_name,
+            documentId: item.document_id,
+            score: item.score,
+            content: `${item.content.substring(0, 100)}...`,
+          })),
+        },
       },
     })
+
+    return result.toDataStreamResponse()
   }
  catch (error) {
     console.error('AI Chat error:', error)

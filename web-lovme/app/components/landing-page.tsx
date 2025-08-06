@@ -276,7 +276,7 @@ const LandingPage = () => {
                             'bg-white dark:bg-gray-900',
                             'border border-gray-200 dark:border-gray-800',
                             'transition-all duration-300',
-                            'hover:scale-105 hover:-translate-y-1',
+                            'hover:-translate-y-1 hover:scale-105',
                             'hover:border-amber-400/50 dark:hover:border-amber-400/40',
                             'shadow-sm hover:shadow-lg dark:shadow-none dark:hover:shadow-amber-400/10',
                           )}
@@ -299,7 +299,7 @@ const LandingPage = () => {
                   </div>
 
                   {/* Minimal floating accents */}
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <div className="pointer-events-none absolute inset-0 overflow-hidden">
                     {[0, 1, 2].map(i => (
                       <div
                         key={i}
@@ -335,8 +335,8 @@ const LandingPage = () => {
               <div className="bg-components-panel-bg/50 hover:bg-components-panel-bg/70 flex items-center justify-center rounded-lg border border-divider-regular p-8 transition-all hover:border-amber-400/30">
                 <div className="text-center">
                   <div className="mx-auto h-12 w-12">
-                    <img 
-                      src="/assets/nextjs-icon.svg" 
+                    <img
+                      src="/assets/nextjs-icon.svg"
                       alt="Next.js"
                       className="h-full w-full dark:invert"
                     />
