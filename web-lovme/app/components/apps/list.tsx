@@ -175,13 +175,13 @@ const List = () => {
 
   return (
     <>
-      <div ref={containerRef} className='relative flex h-0 shrink-0 grow flex-col overflow-y-auto bg-background-body'>
+      <div ref={containerRef} className='relative flex h-full flex-col overflow-hidden bg-claude-bg-main'>
         {dragging && (
           <div className="absolute inset-0 z-50 m-0.5 rounded-2xl border-2 border-dashed border-components-dropzone-border-accent bg-[rgba(21,90,239,0.14)] p-2">
           </div>
         )}
 
-        <div className='sticky top-0 z-10 flex flex-wrap items-center justify-between gap-y-2 bg-background-body px-12 pb-2 pt-4 leading-[56px]'>
+        <div className='sticky top-0 z-10 flex flex-wrap items-center justify-between gap-y-2 border-b border-claude-border-subtle bg-white px-claude-gutter pb-2 pt-4 leading-[56px] shadow-claude-sm'>
           <TabSliderNew
             value={activeTab}
             onChange={setActiveTab}
@@ -206,18 +206,22 @@ const List = () => {
           </div>
         </div>
         {(data && data[0].total > 0)
-          ? <div className='relative grid grow grid-cols-1 content-start gap-4 px-12 pt-2 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 2k:grid-cols-6'>
-            {isCurrentWorkspaceEditor
-              && <NewAppCard ref={newAppCardRef} onSuccess={mutate} />}
-            {data.map(({ data: apps }) => apps.map(app => (
-              <AppCard key={app.id} app={app} onRefresh={mutate} />
-            )))}
-          </div>
-          : <div className='relative grid grow grid-cols-1 content-start gap-4 overflow-hidden px-12 pt-2 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 2k:grid-cols-6'>
-            {isCurrentWorkspaceEditor
-              && <NewAppCard ref={newAppCardRef} className='z-10' onSuccess={mutate} />}
-            <Empty />
-          </div>}
+          ? <div className='flex-1 overflow-y-auto px-claude-gutter py-claude-m'>
+              <div className='grid grid-cols-1 gap-claude-m sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 2k:grid-cols-6'>
+                {isCurrentWorkspaceEditor
+                  && <NewAppCard ref={newAppCardRef} onSuccess={mutate} />}
+                {data.map(({ data: apps }) => apps.map(app => (
+                  <AppCard key={app.id} app={app} onRefresh={mutate} />
+                )))}
+              </div>
+            </div>
+          : <div className='flex-1 overflow-y-auto px-claude-gutter py-claude-m'>
+              <div className='grid grid-cols-1 gap-claude-m sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 2k:grid-cols-6'>
+                {isCurrentWorkspaceEditor
+                  && <NewAppCard ref={newAppCardRef} className='z-10' onSuccess={mutate} />}
+                <Empty />
+              </div>
+            </div>}
 
         {isCurrentWorkspaceEditor && (
           <div

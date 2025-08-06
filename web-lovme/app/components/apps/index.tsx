@@ -14,12 +14,12 @@ const Apps = () => {
   useEducationInit()
 
   return (
-    <div className='relative flex h-0 shrink-0 grow flex-col overflow-y-auto bg-background-body'>
+    <div className='flex h-full flex-col overflow-hidden bg-claude-bg-main'>
       <List />
       {!systemFeatures.branding.enabled && (
         <Footer />
       )}
-    </div >
+    </div>
   )
 }
 
